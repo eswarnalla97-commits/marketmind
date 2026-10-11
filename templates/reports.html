@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}Executive Reports & Insights — MarketMind{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-lg-4 py-4">
+
+  <!-- Header -->
+  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+    <div>
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-purple-subtle text-purple rounded-pill small fw-bold mb-2" style="background: rgba(124, 58, 237, 0.1); color: #7c3aed;">
+        <i class="fa-solid fa-file-invoice"></i> Intelligence Dissemination
+      </div>
+      <h2 class="fw-bold text-dark mb-1">Executive Reports & Data-Driven Insights</h2>
+      <p class="text-muted small mb-0">Consolidated analytics reports derived directly from FactSales Star Schema dimensions and mining models.</p>
+    </div>
+    <div class="d-flex flex-wrap gap-2">
+      <button onclick="window.print()" class="btn btn-outline-secondary btn-sm">
+        <i class="fa-solid fa-print me-1"></i> Print / PDF
+      </button>
+      <div class="dropdown">
+        <button class="btn btn-mm-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-download me-1"></i> Export Report CSV
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li><a class="dropdown-item" href="{{ url_for('api.api_export_report', report_type='sales') }}"><i class="fa-solid fa-chart-line me-2 text-primary"></i> Monthly Sales Performance</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('api.api_export_report', report_type='products') }}"><i class="fa-solid fa-box me-2 text-success"></i> Product Performance Ranking</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('api.api_export_report', report_type='segments') }}"><i class="fa-solid fa-users me-2 text-info"></i> Customer Segmentation Roster</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('api.api_export_report', report_type='associations') }}"><i class="fa-solid fa-basket-shopping me-2 text-warning"></i> Association Rules (Apriori)</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Automated Insights Highlights Grid -->
+  <div class="row g-3 mb-4">
+    {% for ins in insights %}
+    <div class="col-lg-3 col-md-6">
+      <div class="mm-card p-3 h-100">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="badge {{ ins.badge_color }}">{{ ins.badge }}</span>
+          <i class="fa-solid {{ ins.icon }} text-muted"></i>
+        </div>
+        <h6 class="fw-bold text-dark mb-2">{{ ins.title }}</h6>
+        <p class="text-muted small mb-0">{{ ins.text }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Multi-Report Tabs Container -->
+  <div class="mm-card mb-4">
+    <div class="mm-card-header p-2 bg-light">
+      <ul class="nav nav-tabs card-header-tabs" id="reportTabs" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active fw-bold" id="sales-rep-tab" data-bs-toggle="tab" data-bs-target="#salesRepPane" type="button">
+            <i class="fa-solid fa-chart-line me-1 text-primary"></i> 1. Sales & Revenue Trends
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link fw-bold" id="products-rep-tab" data-bs-toggle="tab" data-bs-target="#productsRepPane" type="button">
+            <i class="fa-solid fa-box me-1 text-success"></i> 2. Product Catalog Rankings
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link fw-bold" id="cust-rep-tab" data-bs-toggle="tab" data-bs-target="#custRepPane" type="button">
+            <i class="fa-solid fa-users me-1 text-info"></i> 3. Customer RFM Profiles
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link fw-bold" id="mining-rep-tab" data-bs-toggle="tab" data-bs-target="#miningRepPane" type="button">
+            <i class="fa-solid fa-cart-shopping me-1 text-purple"></i> 4. Market Basket Cross-Sell Rules
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mm-card-body p-4">
+      <div class="tab-content" id="reportTabsContent">
+
+        <!-- REPORT 1: SALES TRENDS -->
+        <div class="tab-pane fade show active" id="salesRepPane" role="tabpanel">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold text-dark mb-0">Sales & Revenue Performance Matrix</h5>
+              <small class="text-muted">Aggregated across calendar intervals from DimDate.</small>
+            </div>
+            <a href="{{ url_for('api.api_export_report', report_type='sales') }}" class="btn btn-outline-primary btn-sm">
+              <i class="fa-solid fa-file-csv me-1"></i> Export Sales CSV
+            </a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover mm-table mb-0" id="salesReportTable">
+              <thead>
+                <tr>
+                  <th>Period</th>
+                  <th>Month</th>
+                  <th>Year</th>
+                  <th class="text-end">Orders Completed</th>
+                  <th class="text-end">Units Sold</th>
+                  <th class="text-end">Gross Revenue (₹)</th>
+                </tr>
+              </thead>
+              <tbody id="salesReportBody">
+                <tr><td colspan="6" class="text-center py-4 text-muted"><i class="fa-solid fa-spinner fa-spin me-2"></i> Loading sales figures...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- REPORT 2: PRODUCT RANKINGS -->
+        <div class="tab-pane fade" id="productsRepPane" role="tabpanel">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold text-dark mb-0">Product Catalog Performance Breakdown</h5>
+              <small class="text-muted">Item-level volume, order count, and revenue yield.</small>
+            </div>
+            <a href="{{ url_for('api.api_export_report', report_type='products') }}" class="btn btn-outline-success btn-sm">
+              <i class="fa-solid fa-file-csv me-1"></i> Export Products CSV
+            </a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover mm-table mb-0" id="productsReportTable">
+              <thead>
+                <tr>
+                  <th>Product ID</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th class="text-end">Unit Price (₹)</th>
+                  <th class="text-end">Units Sold</th>
+                  <th class="text-end">Gross Revenue (₹)</th>
+                  <th class="text-end">Unique Orders</th>
+                </tr>
+              </thead>
+              <tbody id="productsReportBody">
+                <tr><td colspan="7" class="text-center py-4 text-muted"><i class="fa-solid fa-spinner fa-spin me-2"></i> Loading product rankings...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- REPORT 3: CUSTOMER RFM -->
+        <div class="tab-pane fade" id="custRepPane" role="tabpanel">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold text-dark mb-0">Customer Behavioral Segmentation Roster</h5>
+              <small class="text-muted">Classified into personas via standardized K-Means clustering.</small>
+            </div>
+            <a href="{{ url_for('api.api_export_report', report_type='segments') }}" class="btn btn-outline-info btn-sm">
+              <i class="fa-solid fa-file-csv me-1"></i> Export Segments CSV
+            </a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover mm-table mb-0" id="custReportTable">
+              <thead>
+                <tr>
+                  <th>Customer ID</th>
+                  <th>State / Region</th>
+                  <th class="text-end">Total Spend (₹)</th>
+                  <th class="text-end">Order Count</th>
+                  <th class="text-end">AOV (₹)</th>
+                  <th class="text-end">Recency (Days)</th>
+                  <th>Assigned Segment</th>
+                </tr>
+              </thead>
+              <tbody id="custReportBody">
+                <tr><td colspan="7" class="text-center py-4 text-muted"><i class="fa-solid fa-spinner fa-spin me-2"></i> Loading customer segmentation profiles...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- REPORT 4: ASSOCIATION RULES -->
+        <div class="tab-pane fade" id="miningRepPane" role="tabpanel">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold text-dark mb-0">Market Basket Association Rules</h5>
+              <small class="text-muted">Derived using mlxtend Apriori with mathematical synergy indicators.</small>
+            </div>
+            <a href="{{ url_for('api.api_export_report', report_type='associations') }}" class="btn btn-outline-warning btn-sm text-dark">
+              <i class="fa-solid fa-file-csv me-1"></i> Export Rules CSV
+            </a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover mm-table mb-0" id="miningReportTable">
+              <thead>
+                <tr>
+                  <th>Antecedent</th>
+                  <th>Consequent</th>
+                  <th class="text-end">Support</th>
+                  <th class="text-end">Confidence</th>
+                  <th class="text-center">Lift</th>
+                  <th>Business Recommendation</th>
+                </tr>
+              </thead>
+              <tbody id="miningReportBody">
+                <tr><td colspan="6" class="text-center py-4 text-muted"><i class="fa-solid fa-spinner fa-spin me-2"></i> Loading association rules...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/reports.js') }}"></script>
+{% endblock %}

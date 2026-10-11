@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+{% block title %}OLAP Multidimensional Analytics — MarketMind{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-lg-4 py-4">
+
+  <!-- Header -->
+  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+    <div>
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-info-subtle text-info rounded-pill small fw-bold mb-2">
+        <i class="fa-solid fa-cubes"></i> Data Warehouse Cube Operations
+      </div>
+      <h2 class="fw-bold text-dark mb-1">OLAP Multi-dimensional Analytics</h2>
+      <p class="text-muted small mb-0">Experience fundamental Online Analytical Processing operators: Roll-up, Drill-down, Slice, Dice, and Pivot on the Star Schema.</p>
+    </div>
+    <div>
+      <span class="badge bg-dark px-3 py-2 text-white">
+        <i class="fa-solid fa-database text-warning me-1"></i> Star Schema SQL Cube Engine
+      </span>
+    </div>
+  </div>
+
+  <!-- OLAP Operators Tab Navigation -->
+  <div class="mm-card mb-4">
+    <div class="mm-card-header p-2 bg-light">
+      <ul class="nav nav-pills gap-2" id="olapTab" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active fw-bold" id="rollup-tab" data-bs-toggle="pill" data-bs-target="#rollupPane" type="button">
+            <i class="fa-solid fa-arrow-up-right-dots me-1"></i> 1. Roll-Up (Climb Hierarchy)
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link fw-bold" id="drilldown-tab" data-bs-toggle="pill" data-bs-target="#drilldownPane" type="button">
+            <i class="fa-solid fa-arrow-down-wide-short me-1"></i> 2. Drill-Down (Finer Grain)
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link fw-bold" id="slice-tab" data-bs-toggle="pill" data-bs-target="#slicePane" type="button">
+            <i class="fa-solid fa-pizza-slice me-1"></i> 3. Slice (1D Filter)
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link fw-bold" id="dice-tab" data-bs-toggle="pill" data-bs-target="#dicePane" type="button">
+            <i class="fa-solid fa-dice-d6 me-1"></i> 4. Dice (Sub-Cube Multi-D)
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link fw-bold" id="pivot-tab" data-bs-toggle="pill" data-bs-target="#pivotPane" type="button">
+            <i class="fa-solid fa-table me-1"></i> 5. Pivot (Cross-Tab Matrix)
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mm-card-body p-4">
+      <div class="tab-content" id="olapTabContent">
+
+        <!-- 1. ROLL-UP PANE -->
+        <div class="tab-pane fade show active" id="rollupPane" role="tabpanel">
+          <div class="row g-3 align-items-center mb-3">
+            <div class="col-md-5">
+              <h6 class="fw-bold mb-1">Roll-Up Aggregation</h6>
+              <small class="text-muted">Aggregates measures (Revenue, Units) climbing up the temporal dimension hierarchy: Daily &rarr; Monthly &rarr; Quarterly &rarr; Yearly.</small>
+            </div>
+            <div class="col-md-7 d-flex justify-content-md-end gap-2">
+              <div class="btn-group" role="group" id="rollupLevelGroup">
+                <button type="button" class="btn btn-outline-primary btn-sm" data-level="daily">Daily</button>
+                <button type="button" class="btn btn-outline-primary btn-sm active" data-level="monthly">Monthly</button>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-level="quarterly">Quarterly</button>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-level="yearly">Yearly</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. DRILL-DOWN PANE -->
+        <div class="tab-pane fade" id="drilldownPane" role="tabpanel">
+          <div class="row g-3 align-items-center mb-3">
+            <div class="col-md-6">
+              <h6 class="fw-bold mb-1">Drill-Down Disaggregation</h6>
+              <small class="text-muted">Steps down from coarse summaries into detailed components (e.g. Category down to individual catalog products).</small>
+            </div>
+            <div class="col-md-6 d-flex justify-content-md-end gap-2">
+              <select id="drilldownCategorySelect" class="form-select form-select-sm" style="max-width: 220px;">
+                {% for cat in filter_opts.categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+              </select>
+              <button id="execDrilldownBtn" class="btn btn-primary btn-sm">Drill Down Into Category</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. SLICE PANE -->
+        <div class="tab-pane fade" id="slicePane" role="tabpanel">
+          <div class="row g-3 align-items-center mb-3">
+            <div class="col-md-6">
+              <h6 class="fw-bold mb-1">Slice Operator</h6>
+              <small class="text-muted">Fixes exactly ONE dimension to an exact value, revealing the 2D cross-section plane.</small>
+            </div>
+            <div class="col-md-6 d-flex justify-content-md-end gap-2">
+              <select id="sliceCategorySelect" class="form-select form-select-sm" style="max-width: 220px;">
+                {% for cat in filter_opts.categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+              </select>
+              <button id="execSliceBtn" class="btn btn-primary btn-sm">Slice by Category</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. DICE PANE -->
+        <div class="tab-pane fade" id="dicePane" role="tabpanel">
+          <div class="row g-3 align-items-end mb-3">
+            <div class="col-lg-3 col-md-6">
+              <label class="small fw-bold text-muted">Category Dimension:</label>
+              <select id="diceCatSelect" class="form-select form-select-sm">
+                <option value="all">All Categories</option>
+                {% for cat in filter_opts.categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <label class="small fw-bold text-muted">Country Dimension:</label>
+              <select id="diceCountrySelect" class="form-select form-select-sm">
+                <option value="all">All Countries</option>
+                {% for c in countries %}
+                <option value="{{ c }}">{{ c }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <label class="small fw-bold text-muted">Quarter Dimension:</label>
+              <select id="diceQuarterSelect" class="form-select form-select-sm">
+                <option value="all">All Quarters</option>
+                <option value="1">Q1</option>
+                <option value="2">Q2</option>
+                <option value="3">Q3</option>
+                <option value="4">Q4</option>
+              </select>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <button id="execDiceBtn" class="btn btn-primary btn-sm w-100">
+                <i class="fa-solid fa-dice-d6 me-1"></i> Extract Sub-Cube (Dice)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. PIVOT PANE -->
+        <div class="tab-pane fade" id="pivotPane" role="tabpanel">
+          <div class="row g-3 align-items-center mb-3">
+            <div class="col-md-7">
+              <h6 class="fw-bold mb-1">Pivot (Cross-Tabulation Matrix)</h6>
+              <small class="text-muted">Rotates dimensional axes to display a Category &times; Quarter revenue matrix.</small>
+            </div>
+            <div class="col-md-5 text-md-end">
+              <button id="refreshPivotBtn" class="btn btn-outline-primary btn-sm">
+                <i class="fa-solid fa-rotate me-1"></i> Refresh Matrix
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Results Grid & Chart Row -->
+  <div class="row g-4 mb-4">
+    <!-- OLAP Chart Visualizer -->
+    <div class="col-lg-6">
+      <div class="mm-card h-100">
+        <div class="mm-card-header">
+          <div>
+            <h5 class="fw-bold mb-0" id="olapChartTitle">OLAP Visualizer</h5>
+            <small class="text-muted" id="olapChartSubtitle">Visual representation of current cube query</small>
+          </div>
+          <span class="badge bg-primary-subtle text-primary" id="olapChartBadge">Chart</span>
+        </div>
+        <div class="mm-card-body">
+          <div style="height: 320px; position: relative;">
+            <canvas id="olapChartCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SQL Query Inspector Box -->
+    <div class="col-lg-6">
+      <div class="mm-card h-100 d-flex flex-column">
+        <div class="mm-card-header bg-dark text-white border-dark">
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-terminal text-info"></i>
+            <span class="fw-bold small">Generated Star Schema SQL Query Inspector</span>
+          </div>
+          <span class="badge bg-secondary font-monospace" id="sqlOperationTag">SQL</span>
+        </div>
+        <div class="mm-card-body p-0 flex-grow-1 bg-dark">
+          <pre class="sql-inspector-box m-0 h-100 border-0" id="sqlQueryText">-- Executing OLAP query...</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Grid Results Table -->
+  <div class="mm-card mb-4">
+    <div class="mm-card-header">
+      <div>
+        <h5 class="fw-bold mb-0" id="olapTableTitle">OLAP Data Grid Results</h5>
+        <small class="text-muted">Raw result set returned from data warehouse dimensional joins</small>
+      </div>
+      <span class="badge bg-light text-dark border" id="olapRowCountBadge">0 Rows</span>
+    </div>
+    <div class="mm-card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover mm-table mb-0" id="olapDataTable">
+          <thead id="olapTableHead">
+            <tr><th>Loading columns...</th></tr>
+          </thead>
+          <tbody id="olapTableBody">
+            <tr><td class="text-center py-4 text-muted"><i class="fa-solid fa-spinner fa-spin me-2"></i> Querying warehouse cube...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/olap.js') }}"></script>
+{% endblock %}

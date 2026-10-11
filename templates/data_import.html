@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+
+{% block title %}Data Import & ETL Portal — MarketMind{% endblock %}
+
+{% block content %}
+<div class="container px-lg-4 py-4">
+
+  <!-- Header -->
+  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+    <div>
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-primary-subtle text-primary rounded-pill small fw-bold mb-2">
+        <i class="fa-solid fa-gears"></i> Warehouse ETL Pipeline
+      </div>
+      <h2 class="fw-bold text-dark mb-1">Data Ingestion & Cleansing Portal</h2>
+      <p class="text-muted small mb-0">Extract from CSV, Cleanse dirty rows into Staging, Transform keys, and Load into FactSales.</p>
+    </div>
+    <div class="d-flex gap-2">
+      <a href="{{ url_for('api.api_download_template') }}" class="btn btn-outline-primary btn-sm">
+        <i class="fa-solid fa-file-csv me-1"></i> Download Template CSV
+      </a>
+      <a href="{{ url_for('api.api_download_sample_data') }}" class="btn btn-outline-secondary btn-sm">
+        <i class="fa-solid fa-download me-1"></i> Sample Dataset (1,282 rows)
+      </a>
+    </div>
+  </div>
+
+  <!-- Row: Upload Dropzone & Schema Requirements -->
+  <div class="row g-4 mb-4">
+    <!-- Upload Dropzone & Execution Area -->
+    <div class="col-lg-7">
+      <div class="mm-card p-4 h-100">
+        <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-cloud-arrow-up text-primary me-2"></i> Upload Transaction CSV</h5>
+
+        <div class="upload-dropzone mb-3" id="dropzone">
+          <i class="fa-solid fa-file-csv display-4 text-primary mb-2"></i>
+          <h6 class="fw-bold text-dark mb-1">Drag and drop your transaction CSV here</h6>
+          <p class="text-muted small mb-3">or browse from your local Windows files</p>
+          <input type="file" id="csvFileInput" class="d-none" accept=".csv">
+          <button type="button" class="btn btn-sm btn-outline-primary fw-bold" onclick="document.getElementById('csvFileInput').click()">
+            <i class="fa-solid fa-folder-open me-1"></i> Choose CSV File
+          </button>
+        </div>
+
+        <!-- Selected File Status Badge -->
+        <div id="fileStatusBox" class="p-3 bg-light rounded-3 border d-none mb-3">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-file-lines text-primary fa-lg"></i>
+              <div>
+                <strong id="selectedFileName" class="text-dark small d-block">filename.csv</strong>
+                <span id="selectedFileSize" class="text-muted" style="font-size: 0.75rem;">124 KB</span>
+              </div>
+            </div>
+            <span id="validationBadge" class="badge bg-secondary">Validating...</span>
+          </div>
+          <div id="validationMsg" class="small text-muted mt-2"></div>
+        </div>
+
+        <!-- Actions Bar -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-2 border-top">
+          <button id="runETLBtn" class="btn btn-mm-primary" disabled>
+            <i class="fa-solid fa-play me-1"></i> Run Complete ETL Pipeline
+          </button>
+          <button id="reloadSampleBtn" class="btn btn-outline-secondary btn-sm">
+            <i class="fa-solid fa-rotate-left me-1"></i> Reload Default Sample Data
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Dictionary & Schema Requirements Table -->
+    <div class="col-lg-5">
+      <div class="mm-card p-4 h-100">
+        <h5 class="fw-bold text-dark mb-2"><i class="fa-solid fa-table-list text-info me-2"></i> Required Schema Columns</h5>
+        <p class="text-muted small mb-3">Your transaction CSV must provide these exact 9 header columns:</p>
+        
+        <div class="table-responsive small">
+          <table class="table table-sm table-bordered mm-table">
+            <thead>
+              <tr>
+                <th>Column</th>
+                <th>Type</th>
+                <th>Target Dimension / Fact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>InvoiceNo</code></td><td>Text</td><td>DimOrder (Natural Key)</td></tr>
+              <tr><td><code>InvoiceDate</code></td><td>Date</td><td>DimDate (YYYY-MM-DD)</td></tr>
+              <tr><td><code>CustomerID</code></td><td>Text</td><td>DimCustomer (Natural Key)</td></tr>
+              <tr><td><code>ProductID</code></td><td>Text</td><td>DimProduct (Natural Key)</td></tr>
+              <tr><td><code>ProductName</code></td><td>Text</td><td>DimProduct (Name)</td></tr>
+              <tr><td><code>Category</code></td><td>Text</td><td>DimProduct (Category)</td></tr>
+              <tr><td><code>Quantity</code></td><td>Int &gt; 0</td><td>FactSales (Measure)</td></tr>
+              <tr><td><code>UnitPrice</code></td><td>Float &gt; 0 (INR ₹)</td><td>FactSales (Measure)</td></tr>
+              <tr><td><code>Country</code></td><td>Text (State / Region)</td><td>DimCustomer (Country)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ETL Results Telemetry Modal/Card (Shown after run) -->
+  <div id="etlResultsCard" class="mm-card p-4 mb-4 d-none border-success-subtle bg-light">
+    <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+      <div class="d-flex align-items-center gap-2">
+        <i class="fa-solid fa-circle-check text-success fa-lg"></i>
+        <h5 class="fw-bold text-dark mb-0">ETL Execution Summary</h5>
+      </div>
+      <span id="etlBatchBadge" class="badge bg-success font-monospace">BATCH_SUCCESS</span>
+    </div>
+    
+    <div class="row g-3 text-center">
+      <div class="col-6 col-md-3">
+        <div class="p-3 bg-white rounded border">
+          <span class="text-muted small text-uppercase fw-bold d-block">Total Read</span>
+          <h4 id="etlTotalRead" class="fw-bold text-dark mb-0">0</h4>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-3 bg-white rounded border">
+          <span class="text-success small text-uppercase fw-bold d-block">Accepted Facts</span>
+          <h4 id="etlAccepted" class="fw-bold text-success mb-0">0</h4>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-3 bg-white rounded border">
+          <span class="text-warning small text-uppercase fw-bold d-block">Duplicates Deduplicated</span>
+          <h4 id="etlDuplicates" class="fw-bold text-warning mb-0">0</h4>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-3 bg-white rounded border">
+          <span class="text-danger small text-uppercase fw-bold d-block">Rejected to Staging</span>
+          <h4 id="etlRejected" class="fw-bold text-danger mb-0">0</h4>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3 text-end">
+      <a href="{{ url_for('main.dashboard') }}" class="btn btn-mm-primary btn-sm">
+        <i class="fa-solid fa-chart-line me-1"></i> View Updated Dashboard Facts
+      </a>
+    </div>
+  </div>
+
+  <!-- Historical ETL Audit Log & Staging Errors Tabs -->
+  <div class="mm-card mb-4">
+    <div class="mm-card-header">
+      <ul class="nav nav-tabs card-header-tabs" id="etlTabs" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active fw-bold" id="history-tab" data-bs-toggle="tab" data-bs-target="#historyPane" type="button" role="tab">
+            <i class="fa-solid fa-clock-rotate-left me-1"></i> ETL Batch Execution History
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link fw-bold" id="errors-tab" data-bs-toggle="tab" data-bs-target="#errorsPane" type="button" role="tab">
+            <i class="fa-solid fa-triangle-exclamation text-danger me-1"></i> Staging Area Rejections & Audit
+          </button>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="mm-card-body p-0">
+      <div class="tab-content" id="etlTabsContent">
+        
+        <!-- Tab 1: History -->
+        <div class="tab-pane fade show active p-3" id="historyPane" role="tabpanel">
+          <div class="table-responsive">
+            <table class="table table-hover mm-table mb-0">
+              <thead>
+                <tr>
+                  <th>Batch ID</th>
+                  <th>Source File</th>
+                  <th>Total Rows</th>
+                  <th>Accepted</th>
+                  <th>Rejected</th>
+                  <th>Duplicates</th>
+                  <th>Duration (s)</th>
+                  <th>Status</th>
+                  <th>Timestamp</th>
+                </tr>
+              </thead>
+              <tbody id="etlHistoryBody">
+                {% for h in etl_history %}
+                <tr>
+                  <td><code class="text-primary">{{ h.BatchID }}</code></td>
+                  <td>{{ h.FileName }}</td>
+                  <td class="fw-bold">{{ h.TotalRecords }}</td>
+                  <td class="text-success fw-bold">{{ h.AcceptedRecords }}</td>
+                  <td class="text-danger fw-bold">{{ h.RejectedRecords }}</td>
+                  <td class="text-warning fw-bold">{{ h.DuplicateRecords }}</td>
+                  <td>{{ h.ExecutionTimeSeconds }}s</td>
+                  <td>
+                    {% if h.Status == 'Success' %}
+                    <span class="badge bg-success">Success</span>
+                    {% elif h.Status == 'Partial' %}
+                    <span class="badge bg-warning text-dark">Partial</span>
+                    {% else %}
+                    <span class="badge bg-danger">Failed</span>
+                    {% endif %}
+                  </td>
+                  <td class="text-muted small">{{ h.CreatedAt }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                  <td colspan="9" class="text-center py-4 text-muted">No ETL runs recorded yet.</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Staging Errors -->
+        <div class="tab-pane fade p-3" id="errorsPane" role="tabpanel">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <small class="text-muted">Rows isolated in <code>StagingTransactions</code> due to invalid prices, null keys, or format discrepancies.</small>
+            <button id="refreshErrorsBtn" class="btn btn-sm btn-outline-secondary">
+              <i class="fa-solid fa-rotate me-1"></i> Refresh Staging
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-sm table-hover mm-table mb-0">
+              <thead>
+                <tr>
+                  <th>Staging ID</th>
+                  <th>Batch ID</th>
+                  <th>Invoice No</th>
+                  <th>Customer ID</th>
+                  <th>Product ID</th>
+                  <th>Validation Status</th>
+                  <th>Error Description</th>
+                  <th>Logged At</th>
+                </tr>
+              </thead>
+              <tbody id="stagingErrorsBody">
+                <tr>
+                  <td colspan="8" class="text-center py-4 text-muted">Loading staging logs...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/data_import.js') }}"></script>
+{% endblock %}

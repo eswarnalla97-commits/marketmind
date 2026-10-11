@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}Contact & Viva Feedback — MarketMind{% endblock %}
+
+{% block content %}
+<div class="container px-lg-4 py-5">
+
+  <!-- Header -->
+  <div class="mb-5 text-center" style="max-width: 720px; margin: 0 auto;">
+    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-primary-subtle text-primary rounded-pill small fw-bold mb-2">
+      <i class="fa-solid fa-comments"></i> Academic Viva & Feedback Portal
+    </div>
+    <h2 class="display-6 fw-bold text-dark">Get in Touch with the MarketMind Team</h2>
+    <p class="text-muted">
+      Have questions regarding the Star Schema ETL design, Apriori mining implementation, or need to submit evaluator feedback for practical viva review?
+    </p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Feedback Form Left Column -->
+    <div class="col-lg-7">
+      <div class="mm-card p-4">
+        <h4 class="fw-bold text-dark mb-3"><i class="fa-solid fa-paper-plane text-primary me-2"></i> Submit Inquiry or Evaluator Review</h4>
+        <p class="text-muted small mb-4">Every submission is validated and committed directly into the data warehouse <code>FeedbackSubmissions</code> table.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="contactName" class="form-label small fw-bold text-dark">Your Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="contactName" placeholder="e.g. Dr. Jane Smith" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="contactEmail" class="form-label small fw-bold text-dark">Email Address <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="contactEmail" placeholder="e.g. evaluator@university.edu" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="contactCategory" class="form-label small fw-bold text-dark">Category</label>
+              <select class="form-select" id="contactCategory">
+                <option value="Viva Feedback" selected>Viva / Academic Evaluation</option>
+                <option value="Data Mining Inquiry">Data Mining Algorithm Inquiry</option>
+                <option value="ETL Pipeline Bug">ETL Pipeline Feedback</option>
+                <option value="General Question">General Question</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="contactRating" class="form-label small fw-bold text-dark">Project Rating</label>
+              <select class="form-select" id="contactRating">
+                <option value="5" selected>&starf;&starf;&starf;&starf;&starf; (5/5 Excellent)</option>
+                <option value="4">&starf;&starf;&starf;&starf;&star; (4/5 Very Good)</option>
+                <option value="3">&starf;&starf;&starf;&star;&star; (3/5 Good)</option>
+                <option value="2">&starf;&starf;&star;&star;&star; (2/5 Fair)</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="contactSubject" class="form-label small fw-bold text-dark">Subject <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="contactSubject" placeholder="e.g. Feedback on Star Schema Granularity" required>
+              <div class="invalid-feedback">Please enter a subject.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="contactMessage" class="form-label small fw-bold text-dark">Your Detailed Message <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="contactMessage" rows="4" placeholder="Write your feedback, questions, or evaluation remarks here..." required></textarea>
+              <div class="invalid-feedback">Please provide message content.</div>
+            </div>
+
+            <div class="col-12 pt-2">
+              <button type="submit" id="submitFeedbackBtn" class="btn btn-mm-primary w-100 py-2">
+                <i class="fa-solid fa-paper-plane me-2"></i> Save Feedback to Database
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div id="contactAlert" class="alert d-none mt-3 mb-0" role="alert"></div>
+      </div>
+    </div>
+
+    <!-- Right Column: Student Project Info & Recent Reviews -->
+    <div class="col-lg-5">
+      <!-- Project Metadata Card -->
+      <div class="mm-card p-4 mb-4">
+        <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-graduation-cap text-primary me-2"></i> Project Credentials</h5>
+        <div class="list-group list-group-flush small">
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Degree Program</span>
+            <span class="fw-bold text-dark">B.Tech Computer Science & Engg.</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Course Subject</span>
+            <span class="fw-bold text-dark">Data Warehousing & Data Mining (DWDM)</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Project Type</span>
+            <span class="badge bg-primary-subtle text-primary">Mini Project / Portal</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Architecture Mode</span>
+            <span class="fw-bold text-dark">Star Schema + REST API + UI</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Primary Runtime</span>
+            <span class="fw-bold text-dark">Windows Laptop via VS Code</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Evaluator Feedback Card -->
+      <div class="mm-card p-4">
+        <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-clock-rotate-left text-warning me-2"></i> Evaluator Feedback Log</h5>
+        <div class="d-flex flex-column gap-3" id="feedbackList">
+          {% for fb in feedbacks %}
+          <div class="p-3 bg-light rounded-3 border">
+            <div class="d-flex justify-content-between align-items-start mb-1">
+              <div>
+                <strong class="text-dark small">{{ fb.Name }}</strong>
+                <span class="text-muted" style="font-size: 0.75rem;">&bull; {{ fb.Category }}</span>
+              </div>
+              <span class="badge bg-warning text-dark small">&starf; {{ fb.Rating }}/5</span>
+            </div>
+            <div class="fw-semibold small text-primary mb-1">{{ fb.Subject }}</div>
+            <p class="text-muted small mb-1">{{ fb.Message }}</p>
+            <div class="text-muted" style="font-size: 0.72rem;"><i class="fa-solid fa-calendar-day me-1"></i> {{ fb.SubmittedAt }}</div>
+          </div>
+          {% else %}
+          <div class="text-center py-3 text-muted small">No feedback recorded yet. Be the first to submit!</div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+{% endblock %}

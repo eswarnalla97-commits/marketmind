@@ -1,0 +1,6 @@
+InvoiceNo,InvoiceDate,CustomerID,ProductID,ProductName,Category,Quantity,UnitPrice,Country
+INV-IN-80001,2024-06-15,IND-CUST-2001,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-80001,2024-06-15,IND-CUST-2001,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-80002,2024-06-16,IND-CUST-2002,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-80002,2024-06-16,IND-CUST-2002,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,2,399.0,Karnataka
+INV-IN-80003,2024-06-17,IND-CUST-2003,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR

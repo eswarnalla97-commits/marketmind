@@ -1,0 +1,1283 @@
+InvoiceNo,InvoiceDate,CustomerID,ProductID,ProductName,Category,Quantity,UnitPrice,Country
+INV-IN-70001,2024-04-01,IND-CUST-1001,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Tamil Nadu
+INV-IN-70002,2024-05-08,IND-CUST-1001,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70002,2024-05-08,IND-CUST-1001,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70003,2024-04-13,IND-CUST-1001,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Tamil Nadu
+INV-IN-70004,2024-12-04,IND-CUST-1001,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70004,2024-12-04,IND-CUST-1001,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Tamil Nadu
+INV-IN-70004,2024-12-04,IND-CUST-1001,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Tamil Nadu
+INV-IN-70005,2024-10-02,IND-CUST-1001,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70005,2024-10-02,IND-CUST-1001,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,2,399.0,Tamil Nadu
+INV-IN-70006,2024-05-16,IND-CUST-1001,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70006,2024-05-16,IND-CUST-1001,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Tamil Nadu
+INV-IN-70007,2024-09-19,IND-CUST-1001,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Tamil Nadu
+INV-IN-70007,2024-09-19,IND-CUST-1001,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Tamil Nadu
+INV-IN-70008,2024-10-03,IND-CUST-1001,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70008,2024-10-03,IND-CUST-1001,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Tamil Nadu
+INV-IN-70009,2024-06-03,IND-CUST-1002,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70009,2024-06-03,IND-CUST-1002,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70009,2024-06-03,IND-CUST-1002,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Karnataka
+INV-IN-70010,2024-07-14,IND-CUST-1002,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Karnataka
+INV-IN-70010,2024-07-14,IND-CUST-1002,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Karnataka
+INV-IN-70011,2024-08-09,IND-CUST-1002,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Karnataka
+INV-IN-70012,2024-12-12,IND-CUST-1002,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70012,2024-12-12,IND-CUST-1002,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Karnataka
+INV-IN-70012,2024-12-12,IND-CUST-1002,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Karnataka
+INV-IN-70013,2024-07-20,IND-CUST-1003,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70013,2024-07-20,IND-CUST-1003,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Telangana
+INV-IN-70014,2024-02-12,IND-CUST-1003,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Telangana
+INV-IN-70014,2024-02-12,IND-CUST-1003,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Telangana
+INV-IN-70015,2024-11-20,IND-CUST-1003,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Telangana
+INV-IN-70015,2024-11-20,IND-CUST-1003,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Telangana
+INV-IN-70015,2024-11-20,IND-CUST-1003,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,2,1499.0,Telangana
+INV-IN-70016,2024-05-22,IND-CUST-1003,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Telangana
+INV-IN-70016,2024-05-22,IND-CUST-1003,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Telangana
+INV-IN-70017,2024-12-08,IND-CUST-1004,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Uttar Pradesh
+INV-IN-70017,2024-12-08,IND-CUST-1004,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Uttar Pradesh
+INV-IN-70017,2024-12-08,IND-CUST-1004,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,2,599.0,Uttar Pradesh
+INV-IN-70018,2024-10-08,IND-CUST-1004,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Uttar Pradesh
+INV-IN-70018,2024-10-08,IND-CUST-1004,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Uttar Pradesh
+INV-IN-70019,2024-05-07,IND-CUST-1004,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Uttar Pradesh
+INV-IN-70020,2024-05-21,IND-CUST-1004,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Uttar Pradesh
+INV-IN-70020,2024-05-21,IND-CUST-1004,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Uttar Pradesh
+INV-IN-70020,2024-05-21,IND-CUST-1004,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Uttar Pradesh
+INV-IN-70020,2024-05-21,IND-CUST-1004,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Uttar Pradesh
+INV-IN-70021,2024-02-03,IND-CUST-1004,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Uttar Pradesh
+INV-IN-70021,2024-02-03,IND-CUST-1004,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Uttar Pradesh
+INV-IN-70022,2024-08-04,IND-CUST-1004,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Uttar Pradesh
+INV-IN-70022,2024-08-04,IND-CUST-1004,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Uttar Pradesh
+INV-IN-70023,2024-01-05,IND-CUST-1004,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Uttar Pradesh
+INV-IN-70024,2024-10-07,IND-CUST-1004,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Uttar Pradesh
+INV-IN-70024,2024-10-07,IND-CUST-1004,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Uttar Pradesh
+INV-IN-70025,2024-12-09,IND-CUST-1004,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Uttar Pradesh
+INV-IN-70026,2024-11-15,IND-CUST-1004,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Uttar Pradesh
+INV-IN-70026,2024-11-15,IND-CUST-1004,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Uttar Pradesh
+INV-IN-70027,2024-03-11,IND-CUST-1005,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Delhi NCR
+INV-IN-70028,2024-08-21,IND-CUST-1005,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Delhi NCR
+INV-IN-70028,2024-08-21,IND-CUST-1005,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Delhi NCR
+INV-IN-70029,2024-02-12,IND-CUST-1005,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,3,850.0,Delhi NCR
+INV-IN-70029,2024-02-12,IND-CUST-1005,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Delhi NCR
+INV-IN-70029,2024-02-12,IND-CUST-1005,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,3,2999.0,Delhi NCR
+INV-IN-70030,2024-04-13,IND-CUST-1005,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Delhi NCR
+INV-IN-70031,2024-02-29,IND-CUST-1005,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70032,2024-11-07,IND-CUST-1005,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70033,2024-01-15,IND-CUST-1005,A404,Genuine RFID Leather Wallet,Apparel & Fashion,3,1199.0,Delhi NCR
+INV-IN-70034,2024-04-12,IND-CUST-1005,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70034,2024-04-12,IND-CUST-1005,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Delhi NCR
+INV-IN-70034,2024-04-12,IND-CUST-1005,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Delhi NCR
+INV-IN-70035,2024-06-27,IND-CUST-1005,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70035,2024-06-27,IND-CUST-1005,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70036,2024-08-04,IND-CUST-1005,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Delhi NCR
+INV-IN-70037,2024-04-30,IND-CUST-1006,F305,Speed Skipping Jump Rope,Fitness & Wellness,2,349.0,Maharashtra
+INV-IN-70037,2024-04-30,IND-CUST-1006,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Maharashtra
+INV-IN-70038,2024-11-29,IND-CUST-1006,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Maharashtra
+INV-IN-70038,2024-11-29,IND-CUST-1006,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70038,2024-11-29,IND-CUST-1006,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Maharashtra
+INV-IN-70038,2024-11-29,IND-CUST-1006,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Maharashtra
+INV-IN-70039,2024-07-15,IND-CUST-1006,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70039,2024-07-15,IND-CUST-1006,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70040,2024-10-12,IND-CUST-1007,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70040,2024-10-12,IND-CUST-1007,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70041,2024-05-04,IND-CUST-1007,A404,Genuine RFID Leather Wallet,Apparel & Fashion,2,1199.0,Maharashtra
+INV-IN-70042,2024-02-18,IND-CUST-1007,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70042,2024-02-18,IND-CUST-1007,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70042,2024-02-18,IND-CUST-1007,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Maharashtra
+INV-IN-70043,2024-08-06,IND-CUST-1007,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Maharashtra
+INV-IN-70044,2024-05-09,IND-CUST-1007,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70044,2024-05-09,IND-CUST-1007,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70044,2024-05-09,IND-CUST-1007,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70044,2024-05-09,IND-CUST-1007,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Maharashtra
+INV-IN-70045,2024-09-26,IND-CUST-1007,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70046,2024-10-30,IND-CUST-1008,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,3,850.0,Tamil Nadu
+INV-IN-70046,2024-10-30,IND-CUST-1008,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Tamil Nadu
+INV-IN-70046,2024-10-30,IND-CUST-1008,H206,Silicone Baking & Roti Mat,Home & Kitchen,2,449.0,Tamil Nadu
+INV-IN-70047,2024-10-08,IND-CUST-1008,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70047,2024-10-08,IND-CUST-1008,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Tamil Nadu
+INV-IN-70048,2024-02-26,IND-CUST-1009,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70048,2024-02-26,IND-CUST-1009,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70049,2024-11-21,IND-CUST-1009,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,2,699.0,Karnataka
+INV-IN-70050,2024-05-08,IND-CUST-1010,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70050,2024-05-08,IND-CUST-1010,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Gujarat
+INV-IN-70051,2024-09-25,IND-CUST-1010,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Gujarat
+INV-IN-70051,2024-09-25,IND-CUST-1010,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Gujarat
+INV-IN-70052,2024-10-19,IND-CUST-1010,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Gujarat
+INV-IN-70053,2024-05-16,IND-CUST-1010,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Gujarat
+INV-IN-70054,2024-01-03,IND-CUST-1010,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Gujarat
+INV-IN-70054,2024-01-03,IND-CUST-1010,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Gujarat
+INV-IN-70055,2024-12-18,IND-CUST-1010,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70055,2024-12-18,IND-CUST-1010,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Gujarat
+INV-IN-70055,2024-12-18,IND-CUST-1010,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Gujarat
+INV-IN-70056,2024-04-26,IND-CUST-1010,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Gujarat
+INV-IN-70056,2024-04-26,IND-CUST-1010,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Gujarat
+INV-IN-70057,2024-06-26,IND-CUST-1011,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Gujarat
+INV-IN-70057,2024-06-26,IND-CUST-1011,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Gujarat
+INV-IN-70057,2024-06-26,IND-CUST-1011,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Gujarat
+INV-IN-70057,2024-06-26,IND-CUST-1011,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Gujarat
+INV-IN-70058,2024-07-14,IND-CUST-1011,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Gujarat
+INV-IN-70059,2024-11-20,IND-CUST-1011,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Gujarat
+INV-IN-70060,2024-04-29,IND-CUST-1011,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,2,799.0,Gujarat
+INV-IN-70060,2024-04-29,IND-CUST-1011,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Gujarat
+INV-IN-70061,2024-06-28,IND-CUST-1012,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70061,2024-06-28,IND-CUST-1012,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Karnataka
+INV-IN-70062,2024-09-11,IND-CUST-1012,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Karnataka
+INV-IN-70062,2024-09-11,IND-CUST-1012,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70063,2024-06-11,IND-CUST-1012,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,3,850.0,Karnataka
+INV-IN-70063,2024-06-11,IND-CUST-1012,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70063,2024-06-11,IND-CUST-1012,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Karnataka
+INV-IN-70064,2024-04-07,IND-CUST-1012,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70064,2024-04-07,IND-CUST-1012,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70065,2024-10-09,IND-CUST-1012,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70065,2024-10-09,IND-CUST-1012,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70066,2024-11-19,IND-CUST-1012,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70067,2024-10-10,IND-CUST-1012,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,3,2999.0,Karnataka
+INV-IN-70067,2024-10-10,IND-CUST-1012,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,2,1299.0,Karnataka
+INV-IN-70068,2024-11-28,IND-CUST-1013,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Kerala
+INV-IN-70069,2024-08-01,IND-CUST-1013,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Kerala
+INV-IN-70069,2024-08-01,IND-CUST-1013,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Kerala
+INV-IN-70070,2024-09-18,IND-CUST-1013,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Kerala
+INV-IN-70071,2024-08-01,IND-CUST-1013,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Kerala
+INV-IN-70071,2024-08-01,IND-CUST-1013,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Kerala
+INV-IN-70072,2024-10-24,IND-CUST-1014,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Maharashtra
+INV-IN-70073,2024-06-26,IND-CUST-1014,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70073,2024-06-26,IND-CUST-1014,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70074,2024-12-24,IND-CUST-1014,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70074,2024-12-24,IND-CUST-1014,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70075,2024-08-31,IND-CUST-1014,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Maharashtra
+INV-IN-70076,2024-01-20,IND-CUST-1014,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70076,2024-01-20,IND-CUST-1014,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Maharashtra
+INV-IN-70077,2024-09-27,IND-CUST-1014,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Maharashtra
+INV-IN-70078,2024-03-21,IND-CUST-1014,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70078,2024-03-21,IND-CUST-1014,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70078,2024-03-21,IND-CUST-1014,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Maharashtra
+INV-IN-70079,2024-06-12,IND-CUST-1014,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Maharashtra
+INV-IN-70079,2024-06-12,IND-CUST-1014,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Maharashtra
+INV-IN-70080,2024-05-28,IND-CUST-1014,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,2,799.0,Maharashtra
+INV-IN-70081,2024-02-22,IND-CUST-1014,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70081,2024-02-22,IND-CUST-1014,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70081,2024-02-22,IND-CUST-1014,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70082,2024-03-16,IND-CUST-1014,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70082,2024-03-16,IND-CUST-1014,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70083,2024-08-13,IND-CUST-1015,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Gujarat
+INV-IN-70084,2024-06-09,IND-CUST-1015,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Gujarat
+INV-IN-70084,2024-06-09,IND-CUST-1015,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Gujarat
+INV-IN-70085,2024-01-22,IND-CUST-1016,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Gujarat
+INV-IN-70085,2024-01-22,IND-CUST-1016,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Gujarat
+INV-IN-70085,2024-01-22,IND-CUST-1016,F304,High-Density Muscle Foam Roller,Fitness & Wellness,2,799.0,Gujarat
+INV-IN-70085,2024-01-22,IND-CUST-1016,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Gujarat
+INV-IN-70086,2024-01-15,IND-CUST-1016,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70086,2024-01-15,IND-CUST-1016,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Gujarat
+INV-IN-70087,2024-04-17,IND-CUST-1016,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Gujarat
+INV-IN-70088,2024-04-06,IND-CUST-1016,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70088,2024-04-06,IND-CUST-1016,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Gujarat
+INV-IN-70088,2024-04-06,IND-CUST-1016,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Gujarat
+INV-IN-70089,2024-11-08,IND-CUST-1017,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Delhi NCR
+INV-IN-70090,2024-02-20,IND-CUST-1018,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70090,2024-02-20,IND-CUST-1018,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70091,2024-06-30,IND-CUST-1018,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70091,2024-06-30,IND-CUST-1018,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70091,2024-06-30,IND-CUST-1018,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Karnataka
+INV-IN-70092,2024-06-18,IND-CUST-1018,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Karnataka
+INV-IN-70093,2024-07-22,IND-CUST-1018,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Karnataka
+INV-IN-70094,2024-08-21,IND-CUST-1019,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Gujarat
+INV-IN-70095,2024-02-07,IND-CUST-1019,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Gujarat
+INV-IN-70095,2024-02-07,IND-CUST-1019,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Gujarat
+INV-IN-70095,2024-02-07,IND-CUST-1019,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,2,599.0,Gujarat
+INV-IN-70096,2024-03-26,IND-CUST-1020,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,2,999.0,Uttar Pradesh
+INV-IN-70097,2024-05-23,IND-CUST-1020,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Uttar Pradesh
+INV-IN-70098,2024-03-30,IND-CUST-1020,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70098,2024-03-30,IND-CUST-1020,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Uttar Pradesh
+INV-IN-70099,2024-03-11,IND-CUST-1021,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Telangana
+INV-IN-70099,2024-03-11,IND-CUST-1021,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Telangana
+INV-IN-70099,2024-03-11,IND-CUST-1021,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Telangana
+INV-IN-70099,2024-03-11,IND-CUST-1021,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Telangana
+INV-IN-70100,2024-09-08,IND-CUST-1021,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Telangana
+INV-IN-70100,2024-09-08,IND-CUST-1021,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Telangana
+INV-IN-70101,2024-05-01,IND-CUST-1021,F305,Speed Skipping Jump Rope,Fitness & Wellness,2,349.0,Telangana
+INV-IN-70102,2024-11-27,IND-CUST-1021,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Telangana
+INV-IN-70102,2024-11-27,IND-CUST-1021,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Telangana
+INV-IN-70102,2024-11-27,IND-CUST-1021,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Telangana
+INV-IN-70103,2024-01-27,IND-CUST-1021,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Telangana
+INV-IN-70104,2024-10-11,IND-CUST-1021,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Telangana
+INV-IN-70104,2024-10-11,IND-CUST-1021,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Telangana
+INV-IN-70104,2024-10-11,IND-CUST-1021,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Telangana
+INV-IN-70105,2024-03-16,IND-CUST-1021,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Telangana
+INV-IN-70106,2024-01-15,IND-CUST-1021,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Telangana
+INV-IN-70106,2024-01-15,IND-CUST-1021,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Telangana
+INV-IN-70107,2024-03-31,IND-CUST-1021,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70107,2024-03-31,IND-CUST-1021,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Telangana
+INV-IN-70107,2024-03-31,IND-CUST-1021,A404,Genuine RFID Leather Wallet,Apparel & Fashion,2,1199.0,Telangana
+INV-IN-70108,2024-09-20,IND-CUST-1021,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Telangana
+INV-IN-70109,2024-12-04,IND-CUST-1021,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Telangana
+INV-IN-70109,2024-12-04,IND-CUST-1021,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Telangana
+INV-IN-70109,2024-12-04,IND-CUST-1021,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Telangana
+INV-IN-70110,2024-02-12,IND-CUST-1022,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70110,2024-02-12,IND-CUST-1022,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Karnataka
+INV-IN-70110,2024-02-12,IND-CUST-1022,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Karnataka
+INV-IN-70111,2024-11-02,IND-CUST-1022,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70111,2024-11-02,IND-CUST-1022,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70111,2024-11-02,IND-CUST-1022,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Karnataka
+INV-IN-70112,2024-04-27,IND-CUST-1022,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70112,2024-04-27,IND-CUST-1022,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70113,2024-06-10,IND-CUST-1022,H206,Silicone Baking & Roti Mat,Home & Kitchen,2,449.0,Karnataka
+INV-IN-70114,2024-02-17,IND-CUST-1023,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70115,2024-10-12,IND-CUST-1023,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70115,2024-10-12,IND-CUST-1023,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70115,2024-10-12,IND-CUST-1023,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,3,799.0,Maharashtra
+INV-IN-70115,2024-10-12,IND-CUST-1023,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Maharashtra
+INV-IN-70116,2024-10-23,IND-CUST-1023,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70116,2024-10-23,IND-CUST-1023,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-70117,2024-10-12,IND-CUST-1023,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70117,2024-10-12,IND-CUST-1023,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70117,2024-10-12,IND-CUST-1023,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70118,2024-01-16,IND-CUST-1024,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70118,2024-01-16,IND-CUST-1024,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70119,2024-03-15,IND-CUST-1024,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Maharashtra
+INV-IN-70120,2024-01-17,IND-CUST-1024,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70120,2024-01-17,IND-CUST-1024,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70121,2024-06-09,IND-CUST-1024,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Maharashtra
+INV-IN-70122,2024-03-21,IND-CUST-1024,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70122,2024-03-21,IND-CUST-1024,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70122,2024-03-21,IND-CUST-1024,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Maharashtra
+INV-IN-70123,2024-05-20,IND-CUST-1024,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70123,2024-05-20,IND-CUST-1024,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70123,2024-05-20,IND-CUST-1024,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Maharashtra
+INV-IN-70124,2024-02-23,IND-CUST-1025,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70124,2024-02-23,IND-CUST-1025,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Tamil Nadu
+INV-IN-70125,2024-04-10,IND-CUST-1025,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Tamil Nadu
+INV-IN-70126,2024-09-07,IND-CUST-1025,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70126,2024-09-07,IND-CUST-1025,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Tamil Nadu
+INV-IN-70126,2024-09-07,IND-CUST-1025,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70127,2024-08-12,IND-CUST-1026,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Karnataka
+INV-IN-70127,2024-08-12,IND-CUST-1026,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70127,2024-08-12,IND-CUST-1026,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Karnataka
+INV-IN-70128,2024-01-12,IND-CUST-1026,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Karnataka
+INV-IN-70129,2024-07-05,IND-CUST-1026,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70129,2024-07-05,IND-CUST-1026,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70129,2024-07-05,IND-CUST-1026,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Karnataka
+INV-IN-70130,2024-04-24,IND-CUST-1026,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70130,2024-04-24,IND-CUST-1026,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Karnataka
+INV-IN-70130,2024-04-24,IND-CUST-1026,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70131,2024-12-28,IND-CUST-1027,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70132,2024-04-18,IND-CUST-1028,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Tamil Nadu
+INV-IN-70133,2024-11-14,IND-CUST-1028,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,2,999.0,Tamil Nadu
+INV-IN-70134,2024-07-10,IND-CUST-1028,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70134,2024-07-10,IND-CUST-1028,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70134,2024-07-10,IND-CUST-1028,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70135,2024-03-08,IND-CUST-1028,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Tamil Nadu
+INV-IN-70135,2024-03-08,IND-CUST-1028,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Tamil Nadu
+INV-IN-70136,2024-04-21,IND-CUST-1029,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Maharashtra
+INV-IN-70137,2024-03-12,IND-CUST-1029,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,2,6499.0,Maharashtra
+INV-IN-70138,2024-03-15,IND-CUST-1029,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Maharashtra
+INV-IN-70139,2024-01-09,IND-CUST-1029,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Maharashtra
+INV-IN-70139,2024-01-09,IND-CUST-1029,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70139,2024-01-09,IND-CUST-1029,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Maharashtra
+INV-IN-70140,2024-10-25,IND-CUST-1030,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70140,2024-10-25,IND-CUST-1030,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,2,1499.0,Maharashtra
+INV-IN-70141,2024-07-22,IND-CUST-1030,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70142,2024-11-11,IND-CUST-1030,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70143,2024-04-12,IND-CUST-1031,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Rajasthan
+INV-IN-70144,2024-03-14,IND-CUST-1031,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Rajasthan
+INV-IN-70144,2024-03-14,IND-CUST-1031,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Rajasthan
+INV-IN-70145,2024-10-26,IND-CUST-1031,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Rajasthan
+INV-IN-70145,2024-10-26,IND-CUST-1031,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Rajasthan
+INV-IN-70146,2024-05-19,IND-CUST-1031,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Rajasthan
+INV-IN-70146,2024-05-19,IND-CUST-1031,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Rajasthan
+INV-IN-70147,2024-03-22,IND-CUST-1032,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70147,2024-03-22,IND-CUST-1032,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,2,399.0,Tamil Nadu
+INV-IN-70147,2024-03-22,IND-CUST-1032,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Tamil Nadu
+INV-IN-70148,2024-05-02,IND-CUST-1032,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Tamil Nadu
+INV-IN-70149,2024-08-28,IND-CUST-1032,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,3,2999.0,Tamil Nadu
+INV-IN-70149,2024-08-28,IND-CUST-1032,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Tamil Nadu
+INV-IN-70149,2024-08-28,IND-CUST-1032,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Tamil Nadu
+INV-IN-70150,2024-04-14,IND-CUST-1033,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Gujarat
+INV-IN-70150,2024-04-14,IND-CUST-1033,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Gujarat
+INV-IN-70151,2024-02-07,IND-CUST-1033,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Gujarat
+INV-IN-70152,2024-04-13,IND-CUST-1033,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,2,6499.0,Gujarat
+INV-IN-70152,2024-04-13,IND-CUST-1033,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70153,2024-03-05,IND-CUST-1034,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70153,2024-03-05,IND-CUST-1034,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,2,1499.0,Karnataka
+INV-IN-70154,2024-08-12,IND-CUST-1034,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Karnataka
+INV-IN-70154,2024-08-12,IND-CUST-1034,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,2,1299.0,Karnataka
+INV-IN-70154,2024-08-12,IND-CUST-1034,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70154,2024-08-12,IND-CUST-1034,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70155,2024-02-12,IND-CUST-1034,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70155,2024-02-12,IND-CUST-1034,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70155,2024-02-12,IND-CUST-1034,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70156,2024-05-27,IND-CUST-1034,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Karnataka
+INV-IN-70157,2024-11-12,IND-CUST-1034,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70157,2024-11-12,IND-CUST-1034,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70158,2024-11-08,IND-CUST-1034,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70158,2024-11-08,IND-CUST-1034,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70159,2024-05-03,IND-CUST-1034,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70159,2024-05-03,IND-CUST-1034,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70160,2024-10-02,IND-CUST-1034,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70160,2024-10-02,IND-CUST-1034,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Karnataka
+INV-IN-70161,2024-06-30,IND-CUST-1034,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70161,2024-06-30,IND-CUST-1034,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70161,2024-06-30,IND-CUST-1034,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Karnataka
+INV-IN-70162,2024-10-06,IND-CUST-1034,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70162,2024-10-06,IND-CUST-1034,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70162,2024-10-06,IND-CUST-1034,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Karnataka
+INV-IN-70163,2024-07-02,IND-CUST-1034,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Karnataka
+INV-IN-70164,2024-10-07,IND-CUST-1035,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Karnataka
+INV-IN-70164,2024-10-07,IND-CUST-1035,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Karnataka
+INV-IN-70164,2024-10-07,IND-CUST-1035,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Karnataka
+INV-IN-70164,2024-10-07,IND-CUST-1035,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Karnataka
+INV-IN-70165,2024-04-14,IND-CUST-1035,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Karnataka
+INV-IN-70165,2024-04-14,IND-CUST-1035,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Karnataka
+INV-IN-70166,2024-07-23,IND-CUST-1035,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Karnataka
+INV-IN-70167,2024-04-08,IND-CUST-1035,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Karnataka
+INV-IN-70167,2024-04-08,IND-CUST-1035,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70168,2024-07-08,IND-CUST-1035,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70168,2024-07-08,IND-CUST-1035,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Karnataka
+INV-IN-70169,2024-04-06,IND-CUST-1035,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70169,2024-04-06,IND-CUST-1035,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70170,2024-10-17,IND-CUST-1036,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70171,2024-02-23,IND-CUST-1037,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Uttar Pradesh
+INV-IN-70171,2024-02-23,IND-CUST-1037,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Uttar Pradesh
+INV-IN-70172,2024-12-20,IND-CUST-1037,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Uttar Pradesh
+INV-IN-70172,2024-12-20,IND-CUST-1037,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Uttar Pradesh
+INV-IN-70173,2024-08-11,IND-CUST-1037,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70173,2024-08-11,IND-CUST-1037,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Uttar Pradesh
+INV-IN-70174,2024-12-14,IND-CUST-1037,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70174,2024-12-14,IND-CUST-1037,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Uttar Pradesh
+INV-IN-70174,2024-12-14,IND-CUST-1037,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Uttar Pradesh
+INV-IN-70175,2024-11-27,IND-CUST-1037,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Uttar Pradesh
+INV-IN-70175,2024-11-27,IND-CUST-1037,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Uttar Pradesh
+INV-IN-70176,2024-08-19,IND-CUST-1037,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Uttar Pradesh
+INV-IN-70177,2024-07-09,IND-CUST-1038,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Tamil Nadu
+INV-IN-70178,2024-10-12,IND-CUST-1038,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70178,2024-10-12,IND-CUST-1038,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70179,2024-06-25,IND-CUST-1038,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70179,2024-06-25,IND-CUST-1038,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Tamil Nadu
+INV-IN-70180,2024-09-14,IND-CUST-1039,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,West Bengal
+INV-IN-70181,2024-11-07,IND-CUST-1039,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,West Bengal
+INV-IN-70181,2024-11-07,IND-CUST-1039,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,West Bengal
+INV-IN-70181,2024-11-07,IND-CUST-1039,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,West Bengal
+INV-IN-70181,2024-11-07,IND-CUST-1039,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,2,5999.0,West Bengal
+INV-IN-70182,2024-05-31,IND-CUST-1039,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,West Bengal
+INV-IN-70183,2024-11-08,IND-CUST-1039,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,West Bengal
+INV-IN-70183,2024-11-08,IND-CUST-1039,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,West Bengal
+INV-IN-70183,2024-11-08,IND-CUST-1039,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,West Bengal
+INV-IN-70184,2024-10-22,IND-CUST-1040,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70184,2024-10-22,IND-CUST-1040,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Karnataka
+INV-IN-70184,2024-10-22,IND-CUST-1040,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,2,599.0,Karnataka
+INV-IN-70185,2024-10-10,IND-CUST-1040,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Karnataka
+INV-IN-70186,2024-01-30,IND-CUST-1040,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70187,2024-04-26,IND-CUST-1040,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Karnataka
+INV-IN-70187,2024-04-26,IND-CUST-1040,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70187,2024-04-26,IND-CUST-1040,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Karnataka
+INV-IN-70188,2024-06-05,IND-CUST-1040,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,2,699.0,Karnataka
+INV-IN-70189,2024-03-20,IND-CUST-1040,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Karnataka
+INV-IN-70189,2024-03-20,IND-CUST-1040,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Karnataka
+INV-IN-70189,2024-03-20,IND-CUST-1040,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Karnataka
+INV-IN-70190,2024-11-25,IND-CUST-1040,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Karnataka
+INV-IN-70191,2024-09-12,IND-CUST-1041,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Tamil Nadu
+INV-IN-70192,2024-12-17,IND-CUST-1041,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Tamil Nadu
+INV-IN-70192,2024-12-17,IND-CUST-1041,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Tamil Nadu
+INV-IN-70193,2024-09-05,IND-CUST-1041,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70193,2024-09-05,IND-CUST-1041,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Tamil Nadu
+INV-IN-70193,2024-09-05,IND-CUST-1041,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Tamil Nadu
+INV-IN-70194,2024-07-09,IND-CUST-1041,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70194,2024-07-09,IND-CUST-1041,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70195,2024-11-07,IND-CUST-1042,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70195,2024-11-07,IND-CUST-1042,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Tamil Nadu
+INV-IN-70196,2024-10-23,IND-CUST-1043,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Karnataka
+INV-IN-70197,2024-08-28,IND-CUST-1043,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70197,2024-08-28,IND-CUST-1043,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70198,2024-08-23,IND-CUST-1043,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70199,2024-09-11,IND-CUST-1043,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Karnataka
+INV-IN-70200,2024-02-26,IND-CUST-1043,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70200,2024-02-26,IND-CUST-1043,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70201,2024-07-25,IND-CUST-1043,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70201,2024-07-25,IND-CUST-1043,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Karnataka
+INV-IN-70202,2024-11-07,IND-CUST-1044,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Rajasthan
+INV-IN-70202,2024-11-07,IND-CUST-1044,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Rajasthan
+INV-IN-70203,2024-07-22,IND-CUST-1044,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Rajasthan
+INV-IN-70204,2024-08-23,IND-CUST-1044,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Rajasthan
+INV-IN-70204,2024-08-23,IND-CUST-1044,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Rajasthan
+INV-IN-70204,2024-08-23,IND-CUST-1044,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Rajasthan
+INV-IN-70205,2024-03-13,IND-CUST-1045,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70205,2024-03-13,IND-CUST-1045,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Maharashtra
+INV-IN-70205,2024-03-13,IND-CUST-1045,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Maharashtra
+INV-IN-70206,2024-09-18,IND-CUST-1045,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70206,2024-09-18,IND-CUST-1045,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70207,2024-02-27,IND-CUST-1045,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Maharashtra
+INV-IN-70208,2024-12-02,IND-CUST-1045,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70209,2024-10-26,IND-CUST-1045,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70209,2024-10-26,IND-CUST-1045,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70210,2024-12-25,IND-CUST-1045,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70210,2024-12-25,IND-CUST-1045,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70211,2024-04-15,IND-CUST-1045,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,2,799.0,Maharashtra
+INV-IN-70211,2024-04-15,IND-CUST-1045,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Maharashtra
+INV-IN-70212,2024-03-12,IND-CUST-1045,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Maharashtra
+INV-IN-70212,2024-03-12,IND-CUST-1045,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70213,2024-03-30,IND-CUST-1045,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70213,2024-03-30,IND-CUST-1045,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70213,2024-03-30,IND-CUST-1045,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Maharashtra
+INV-IN-70213,2024-03-30,IND-CUST-1045,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70214,2024-04-26,IND-CUST-1045,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70214,2024-04-26,IND-CUST-1045,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Maharashtra
+INV-IN-70215,2024-10-14,IND-CUST-1045,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70216,2024-11-04,IND-CUST-1046,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Maharashtra
+INV-IN-70216,2024-11-04,IND-CUST-1046,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Maharashtra
+INV-IN-70216,2024-11-04,IND-CUST-1046,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70217,2024-03-11,IND-CUST-1046,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70217,2024-03-11,IND-CUST-1046,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Maharashtra
+INV-IN-70218,2024-11-01,IND-CUST-1046,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70218,2024-11-01,IND-CUST-1046,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70218,2024-11-01,IND-CUST-1046,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70219,2024-10-28,IND-CUST-1046,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70219,2024-10-28,IND-CUST-1046,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70219,2024-10-28,IND-CUST-1046,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Maharashtra
+INV-IN-70220,2024-04-20,IND-CUST-1047,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Gujarat
+INV-IN-70220,2024-04-20,IND-CUST-1047,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Gujarat
+INV-IN-70220,2024-04-20,IND-CUST-1047,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Gujarat
+INV-IN-70220,2024-04-20,IND-CUST-1047,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Gujarat
+INV-IN-70221,2024-02-19,IND-CUST-1047,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Gujarat
+INV-IN-70222,2024-08-21,IND-CUST-1047,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70223,2024-11-16,IND-CUST-1047,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Gujarat
+INV-IN-70223,2024-11-16,IND-CUST-1047,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,2,599.0,Gujarat
+INV-IN-70224,2024-10-15,IND-CUST-1048,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Maharashtra
+INV-IN-70224,2024-10-15,IND-CUST-1048,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70224,2024-10-15,IND-CUST-1048,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70225,2024-07-21,IND-CUST-1048,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70226,2024-08-25,IND-CUST-1049,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Rajasthan
+INV-IN-70227,2024-05-04,IND-CUST-1049,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Rajasthan
+INV-IN-70228,2024-05-30,IND-CUST-1049,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Rajasthan
+INV-IN-70228,2024-05-30,IND-CUST-1049,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Rajasthan
+INV-IN-70228,2024-05-30,IND-CUST-1049,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Rajasthan
+INV-IN-70229,2024-05-30,IND-CUST-1049,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Rajasthan
+INV-IN-70229,2024-05-30,IND-CUST-1049,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Rajasthan
+INV-IN-70229,2024-05-30,IND-CUST-1049,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Rajasthan
+INV-IN-70230,2024-11-13,IND-CUST-1050,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Kerala
+INV-IN-70230,2024-11-13,IND-CUST-1050,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Kerala
+INV-IN-70231,2024-03-19,IND-CUST-1051,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70231,2024-03-19,IND-CUST-1051,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Maharashtra
+INV-IN-70231,2024-03-19,IND-CUST-1051,H206,Silicone Baking & Roti Mat,Home & Kitchen,2,449.0,Maharashtra
+INV-IN-70232,2024-04-22,IND-CUST-1051,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Maharashtra
+INV-IN-70233,2024-03-14,IND-CUST-1051,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70233,2024-03-14,IND-CUST-1051,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70234,2024-03-08,IND-CUST-1051,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70234,2024-03-08,IND-CUST-1051,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70234,2024-03-08,IND-CUST-1051,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70234,2024-03-08,IND-CUST-1051,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Maharashtra
+INV-IN-70235,2024-11-12,IND-CUST-1052,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Telangana
+INV-IN-70235,2024-11-12,IND-CUST-1052,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Telangana
+INV-IN-70235,2024-11-12,IND-CUST-1052,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Telangana
+INV-IN-70236,2024-09-03,IND-CUST-1052,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Telangana
+INV-IN-70236,2024-09-03,IND-CUST-1052,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Telangana
+INV-IN-70236,2024-09-03,IND-CUST-1052,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Telangana
+INV-IN-70236,2024-09-03,IND-CUST-1052,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,2,399.0,Telangana
+INV-IN-70237,2024-09-02,IND-CUST-1053,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70237,2024-09-02,IND-CUST-1053,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Karnataka
+INV-IN-70238,2024-03-12,IND-CUST-1053,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70239,2024-07-27,IND-CUST-1053,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70239,2024-07-27,IND-CUST-1053,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70240,2024-02-01,IND-CUST-1053,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Karnataka
+INV-IN-70240,2024-02-01,IND-CUST-1053,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70241,2024-04-19,IND-CUST-1054,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70241,2024-04-19,IND-CUST-1054,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70241,2024-04-19,IND-CUST-1054,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Maharashtra
+INV-IN-70242,2024-03-22,IND-CUST-1054,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Maharashtra
+INV-IN-70243,2024-08-23,IND-CUST-1054,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70243,2024-08-23,IND-CUST-1054,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70244,2024-11-13,IND-CUST-1055,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70244,2024-11-13,IND-CUST-1055,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70244,2024-11-13,IND-CUST-1055,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,2,749.0,Delhi NCR
+INV-IN-70245,2024-07-31,IND-CUST-1056,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70245,2024-07-31,IND-CUST-1056,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Uttar Pradesh
+INV-IN-70245,2024-07-31,IND-CUST-1056,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Uttar Pradesh
+INV-IN-70246,2024-10-12,IND-CUST-1056,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Uttar Pradesh
+INV-IN-70246,2024-10-12,IND-CUST-1056,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Uttar Pradesh
+INV-IN-70246,2024-10-12,IND-CUST-1056,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Uttar Pradesh
+INV-IN-70247,2024-06-03,IND-CUST-1056,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Uttar Pradesh
+INV-IN-70247,2024-06-03,IND-CUST-1056,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Uttar Pradesh
+INV-IN-70247,2024-06-03,IND-CUST-1056,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Uttar Pradesh
+INV-IN-70247,2024-06-03,IND-CUST-1056,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,3,599.0,Uttar Pradesh
+INV-IN-70248,2024-10-13,IND-CUST-1056,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Uttar Pradesh
+INV-IN-70248,2024-10-13,IND-CUST-1056,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Uttar Pradesh
+INV-IN-70248,2024-10-13,IND-CUST-1056,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Uttar Pradesh
+INV-IN-70249,2024-04-08,IND-CUST-1056,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Uttar Pradesh
+INV-IN-70249,2024-04-08,IND-CUST-1056,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Uttar Pradesh
+INV-IN-70249,2024-04-08,IND-CUST-1056,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Uttar Pradesh
+INV-IN-70250,2024-04-17,IND-CUST-1057,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,2,5999.0,Delhi NCR
+INV-IN-70251,2024-03-02,IND-CUST-1057,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Delhi NCR
+INV-IN-70252,2024-04-15,IND-CUST-1057,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70252,2024-04-15,IND-CUST-1057,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Delhi NCR
+INV-IN-70253,2024-10-01,IND-CUST-1057,F305,Speed Skipping Jump Rope,Fitness & Wellness,2,349.0,Delhi NCR
+INV-IN-70254,2024-08-27,IND-CUST-1057,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70254,2024-08-27,IND-CUST-1057,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Delhi NCR
+INV-IN-70255,2024-06-10,IND-CUST-1057,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70255,2024-06-10,IND-CUST-1057,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Delhi NCR
+INV-IN-70255,2024-06-10,IND-CUST-1057,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Delhi NCR
+INV-IN-70256,2024-04-11,IND-CUST-1057,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Delhi NCR
+INV-IN-70256,2024-04-11,IND-CUST-1057,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Delhi NCR
+INV-IN-70256,2024-04-11,IND-CUST-1057,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Delhi NCR
+INV-IN-70257,2024-12-08,IND-CUST-1058,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,West Bengal
+INV-IN-70258,2024-04-26,IND-CUST-1059,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70258,2024-04-26,IND-CUST-1059,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Karnataka
+INV-IN-70258,2024-04-26,IND-CUST-1059,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Karnataka
+INV-IN-70259,2024-02-03,IND-CUST-1059,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70259,2024-02-03,IND-CUST-1059,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Karnataka
+INV-IN-70260,2024-09-20,IND-CUST-1059,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70260,2024-09-20,IND-CUST-1059,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70261,2024-09-29,IND-CUST-1060,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70262,2024-12-12,IND-CUST-1060,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Tamil Nadu
+INV-IN-70262,2024-12-12,IND-CUST-1060,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Tamil Nadu
+INV-IN-70263,2024-04-09,IND-CUST-1060,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Tamil Nadu
+INV-IN-70264,2024-02-11,IND-CUST-1060,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70264,2024-02-11,IND-CUST-1060,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Tamil Nadu
+INV-IN-70264,2024-02-11,IND-CUST-1060,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70265,2024-02-16,IND-CUST-1061,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Telangana
+INV-IN-70265,2024-02-16,IND-CUST-1061,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Telangana
+INV-IN-70265,2024-02-16,IND-CUST-1061,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Telangana
+INV-IN-70266,2024-09-09,IND-CUST-1061,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70267,2024-11-16,IND-CUST-1061,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Telangana
+INV-IN-70267,2024-11-16,IND-CUST-1061,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Telangana
+INV-IN-70268,2024-11-04,IND-CUST-1061,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Telangana
+INV-IN-70269,2024-04-13,IND-CUST-1062,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Gujarat
+INV-IN-70270,2024-11-14,IND-CUST-1062,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70270,2024-11-14,IND-CUST-1062,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Gujarat
+INV-IN-70271,2024-04-11,IND-CUST-1062,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Gujarat
+INV-IN-70272,2024-09-10,IND-CUST-1062,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Gujarat
+INV-IN-70272,2024-09-10,IND-CUST-1062,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Gujarat
+INV-IN-70272,2024-09-10,IND-CUST-1062,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Gujarat
+INV-IN-70272,2024-09-10,IND-CUST-1062,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Gujarat
+INV-IN-70273,2024-10-11,IND-CUST-1063,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Maharashtra
+INV-IN-70274,2024-11-13,IND-CUST-1063,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70274,2024-11-13,IND-CUST-1063,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70275,2024-11-21,IND-CUST-1063,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70275,2024-11-21,IND-CUST-1063,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70276,2024-06-07,IND-CUST-1063,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70276,2024-06-07,IND-CUST-1063,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70277,2024-10-13,IND-CUST-1063,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-70278,2024-02-18,IND-CUST-1063,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70279,2024-11-25,IND-CUST-1064,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70280,2024-03-29,IND-CUST-1065,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Uttar Pradesh
+INV-IN-70280,2024-03-29,IND-CUST-1065,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Uttar Pradesh
+INV-IN-70281,2024-01-23,IND-CUST-1065,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Uttar Pradesh
+INV-IN-70281,2024-01-23,IND-CUST-1065,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Uttar Pradesh
+INV-IN-70282,2024-11-17,IND-CUST-1066,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70282,2024-11-17,IND-CUST-1066,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Karnataka
+INV-IN-70283,2024-07-22,IND-CUST-1066,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Karnataka
+INV-IN-70283,2024-07-22,IND-CUST-1066,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70284,2024-11-30,IND-CUST-1066,F305,Speed Skipping Jump Rope,Fitness & Wellness,2,349.0,Karnataka
+INV-IN-70285,2024-04-13,IND-CUST-1066,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,3,2999.0,Karnataka
+INV-IN-70285,2024-04-13,IND-CUST-1066,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,2,1499.0,Karnataka
+INV-IN-70286,2024-12-22,IND-CUST-1066,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70286,2024-12-22,IND-CUST-1066,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Karnataka
+INV-IN-70287,2024-10-16,IND-CUST-1066,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70287,2024-10-16,IND-CUST-1066,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Karnataka
+INV-IN-70287,2024-10-16,IND-CUST-1066,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70287,2024-10-16,IND-CUST-1066,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Karnataka
+INV-IN-70288,2024-07-29,IND-CUST-1066,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70289,2024-03-20,IND-CUST-1066,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,4,6499.0,Karnataka
+INV-IN-70290,2024-12-07,IND-CUST-1067,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Uttar Pradesh
+INV-IN-70291,2024-10-31,IND-CUST-1068,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Maharashtra
+INV-IN-70291,2024-10-31,IND-CUST-1068,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70292,2024-02-22,IND-CUST-1068,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,3,2299.0,Maharashtra
+INV-IN-70293,2024-09-07,IND-CUST-1068,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70293,2024-09-07,IND-CUST-1068,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70293,2024-09-07,IND-CUST-1068,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70294,2024-03-01,IND-CUST-1069,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70295,2024-01-05,IND-CUST-1069,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70295,2024-01-05,IND-CUST-1069,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,2,599.0,Maharashtra
+INV-IN-70296,2024-04-04,IND-CUST-1069,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70296,2024-04-04,IND-CUST-1069,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70296,2024-04-04,IND-CUST-1069,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Maharashtra
+INV-IN-70297,2024-06-13,IND-CUST-1070,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Telangana
+INV-IN-70297,2024-06-13,IND-CUST-1070,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Telangana
+INV-IN-70297,2024-06-13,IND-CUST-1070,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,2,1899.0,Telangana
+INV-IN-70298,2024-05-05,IND-CUST-1070,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70298,2024-05-05,IND-CUST-1070,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Telangana
+INV-IN-70299,2024-07-27,IND-CUST-1070,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Telangana
+INV-IN-70300,2024-11-11,IND-CUST-1070,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Telangana
+INV-IN-70301,2024-04-20,IND-CUST-1070,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Telangana
+INV-IN-70301,2024-04-20,IND-CUST-1070,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Telangana
+INV-IN-70301,2024-04-20,IND-CUST-1070,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Telangana
+INV-IN-70302,2024-02-29,IND-CUST-1070,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Telangana
+INV-IN-70302,2024-02-29,IND-CUST-1070,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Telangana
+INV-IN-70302,2024-02-29,IND-CUST-1070,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Telangana
+INV-IN-70303,2024-06-28,IND-CUST-1070,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Telangana
+INV-IN-70303,2024-06-28,IND-CUST-1070,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Telangana
+INV-IN-70303,2024-06-28,IND-CUST-1070,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Telangana
+INV-IN-70304,2024-04-08,IND-CUST-1071,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70304,2024-04-08,IND-CUST-1071,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Delhi NCR
+INV-IN-70304,2024-04-08,IND-CUST-1071,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Delhi NCR
+INV-IN-70305,2024-04-10,IND-CUST-1071,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Delhi NCR
+INV-IN-70306,2024-04-28,IND-CUST-1071,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Delhi NCR
+INV-IN-70307,2024-09-17,IND-CUST-1071,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Delhi NCR
+INV-IN-70307,2024-09-17,IND-CUST-1071,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Delhi NCR
+INV-IN-70308,2024-12-09,IND-CUST-1072,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70308,2024-12-09,IND-CUST-1072,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70309,2024-10-17,IND-CUST-1073,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70309,2024-10-17,IND-CUST-1073,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Delhi NCR
+INV-IN-70309,2024-10-17,IND-CUST-1073,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Delhi NCR
+INV-IN-70310,2024-09-11,IND-CUST-1073,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70310,2024-09-11,IND-CUST-1073,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70310,2024-09-11,IND-CUST-1073,F305,Speed Skipping Jump Rope,Fitness & Wellness,2,349.0,Delhi NCR
+INV-IN-70311,2024-01-23,IND-CUST-1073,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Delhi NCR
+INV-IN-70312,2024-12-01,IND-CUST-1073,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Delhi NCR
+INV-IN-70313,2024-02-27,IND-CUST-1074,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Delhi NCR
+INV-IN-70314,2024-03-17,IND-CUST-1074,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Delhi NCR
+INV-IN-70314,2024-03-17,IND-CUST-1074,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,2,399.0,Delhi NCR
+INV-IN-70315,2024-10-19,IND-CUST-1075,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70315,2024-10-19,IND-CUST-1075,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70315,2024-10-19,IND-CUST-1075,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70315,2024-10-19,IND-CUST-1075,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70316,2024-07-30,IND-CUST-1075,H206,Silicone Baking & Roti Mat,Home & Kitchen,2,449.0,Maharashtra
+INV-IN-70316,2024-07-30,IND-CUST-1075,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70317,2024-05-07,IND-CUST-1075,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Maharashtra
+INV-IN-70318,2024-05-18,IND-CUST-1075,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-70319,2024-06-21,IND-CUST-1076,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Rajasthan
+INV-IN-70319,2024-06-21,IND-CUST-1076,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Rajasthan
+INV-IN-70320,2024-09-21,IND-CUST-1076,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Rajasthan
+INV-IN-70321,2024-09-06,IND-CUST-1076,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Rajasthan
+INV-IN-70322,2024-11-21,IND-CUST-1076,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Rajasthan
+INV-IN-70322,2024-11-21,IND-CUST-1076,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Rajasthan
+INV-IN-70322,2024-11-21,IND-CUST-1076,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Rajasthan
+INV-IN-70323,2024-02-08,IND-CUST-1077,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70323,2024-02-08,IND-CUST-1077,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Delhi NCR
+INV-IN-70323,2024-02-08,IND-CUST-1077,H206,Silicone Baking & Roti Mat,Home & Kitchen,2,449.0,Delhi NCR
+INV-IN-70323,2024-02-08,IND-CUST-1077,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,2,599.0,Delhi NCR
+INV-IN-70324,2024-06-19,IND-CUST-1077,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70324,2024-06-19,IND-CUST-1077,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70324,2024-06-19,IND-CUST-1077,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70324,2024-06-19,IND-CUST-1077,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Delhi NCR
+INV-IN-70325,2024-03-17,IND-CUST-1077,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70326,2024-09-23,IND-CUST-1078,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70327,2024-08-05,IND-CUST-1078,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Maharashtra
+INV-IN-70328,2024-02-23,IND-CUST-1078,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70328,2024-02-23,IND-CUST-1078,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70328,2024-02-23,IND-CUST-1078,H206,Silicone Baking & Roti Mat,Home & Kitchen,4,449.0,Maharashtra
+INV-IN-70329,2024-03-15,IND-CUST-1078,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70329,2024-03-15,IND-CUST-1078,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70330,2024-04-20,IND-CUST-1078,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Maharashtra
+INV-IN-70331,2024-03-15,IND-CUST-1079,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Karnataka
+INV-IN-70332,2024-09-06,IND-CUST-1079,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70332,2024-09-06,IND-CUST-1079,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Karnataka
+INV-IN-70333,2024-12-20,IND-CUST-1080,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70333,2024-12-20,IND-CUST-1080,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70334,2024-07-20,IND-CUST-1080,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70334,2024-07-20,IND-CUST-1080,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70335,2024-07-17,IND-CUST-1080,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70335,2024-07-17,IND-CUST-1080,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70335,2024-07-17,IND-CUST-1080,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,3,1299.0,Karnataka
+INV-IN-70335,2024-07-17,IND-CUST-1080,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Karnataka
+INV-IN-70336,2024-10-19,IND-CUST-1080,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70336,2024-10-19,IND-CUST-1080,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,2,1499.0,Karnataka
+INV-IN-70337,2024-01-09,IND-CUST-1080,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Karnataka
+INV-IN-70337,2024-01-09,IND-CUST-1080,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,2,399.0,Karnataka
+INV-IN-70338,2024-05-27,IND-CUST-1080,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Karnataka
+INV-IN-70339,2024-10-31,IND-CUST-1081,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70339,2024-10-31,IND-CUST-1081,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-70339,2024-10-31,IND-CUST-1081,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70340,2024-08-18,IND-CUST-1081,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Maharashtra
+INV-IN-70341,2024-11-06,IND-CUST-1082,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Karnataka
+INV-IN-70341,2024-11-06,IND-CUST-1082,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70341,2024-11-06,IND-CUST-1082,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Karnataka
+INV-IN-70342,2024-03-31,IND-CUST-1083,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Uttar Pradesh
+INV-IN-70342,2024-03-31,IND-CUST-1083,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Uttar Pradesh
+INV-IN-70342,2024-03-31,IND-CUST-1083,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Uttar Pradesh
+INV-IN-70342,2024-03-31,IND-CUST-1083,H206,Silicone Baking & Roti Mat,Home & Kitchen,2,449.0,Uttar Pradesh
+INV-IN-70343,2024-05-18,IND-CUST-1083,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Uttar Pradesh
+INV-IN-70344,2024-05-20,IND-CUST-1083,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Uttar Pradesh
+INV-IN-70344,2024-05-20,IND-CUST-1083,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Uttar Pradesh
+INV-IN-70345,2024-08-22,IND-CUST-1083,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70345,2024-08-22,IND-CUST-1083,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Uttar Pradesh
+INV-IN-70346,2024-05-11,IND-CUST-1083,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Uttar Pradesh
+INV-IN-70346,2024-05-11,IND-CUST-1083,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Uttar Pradesh
+INV-IN-70347,2024-01-08,IND-CUST-1083,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Uttar Pradesh
+INV-IN-70347,2024-01-08,IND-CUST-1083,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Uttar Pradesh
+INV-IN-70348,2024-01-20,IND-CUST-1083,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Uttar Pradesh
+INV-IN-70348,2024-01-20,IND-CUST-1083,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Uttar Pradesh
+INV-IN-70349,2024-02-10,IND-CUST-1083,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Uttar Pradesh
+INV-IN-70350,2024-09-22,IND-CUST-1083,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,2,6499.0,Uttar Pradesh
+INV-IN-70350,2024-09-22,IND-CUST-1083,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Uttar Pradesh
+INV-IN-70351,2024-08-22,IND-CUST-1083,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Uttar Pradesh
+INV-IN-70351,2024-08-22,IND-CUST-1083,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Uttar Pradesh
+INV-IN-70351,2024-08-22,IND-CUST-1083,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Uttar Pradesh
+INV-IN-70352,2024-09-10,IND-CUST-1083,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Uttar Pradesh
+INV-IN-70353,2024-07-29,IND-CUST-1083,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Uttar Pradesh
+INV-IN-70353,2024-07-29,IND-CUST-1083,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Uttar Pradesh
+INV-IN-70354,2024-01-31,IND-CUST-1084,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70355,2024-05-31,IND-CUST-1084,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,3,850.0,Karnataka
+INV-IN-70355,2024-05-31,IND-CUST-1084,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70356,2024-02-22,IND-CUST-1084,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Karnataka
+INV-IN-70356,2024-02-22,IND-CUST-1084,F304,High-Density Muscle Foam Roller,Fitness & Wellness,3,799.0,Karnataka
+INV-IN-70357,2024-10-25,IND-CUST-1085,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70357,2024-10-25,IND-CUST-1085,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-70357,2024-10-25,IND-CUST-1085,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Maharashtra
+INV-IN-70358,2024-03-08,IND-CUST-1085,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70358,2024-03-08,IND-CUST-1085,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,2,599.0,Maharashtra
+INV-IN-70359,2024-06-17,IND-CUST-1085,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70359,2024-06-17,IND-CUST-1085,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,2,599.0,Maharashtra
+INV-IN-70360,2024-10-27,IND-CUST-1085,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70360,2024-10-27,IND-CUST-1085,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70361,2024-08-01,IND-CUST-1086,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,West Bengal
+INV-IN-70362,2024-04-01,IND-CUST-1086,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,West Bengal
+INV-IN-70362,2024-04-01,IND-CUST-1086,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,West Bengal
+INV-IN-70363,2024-07-16,IND-CUST-1086,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,3,2999.0,West Bengal
+INV-IN-70363,2024-07-16,IND-CUST-1086,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,West Bengal
+INV-IN-70364,2024-07-02,IND-CUST-1086,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,West Bengal
+INV-IN-70364,2024-07-02,IND-CUST-1086,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,West Bengal
+INV-IN-70365,2024-03-12,IND-CUST-1087,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70365,2024-03-12,IND-CUST-1087,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Delhi NCR
+INV-IN-70366,2024-01-09,IND-CUST-1087,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,2,399.0,Delhi NCR
+INV-IN-70366,2024-01-09,IND-CUST-1087,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70367,2024-02-04,IND-CUST-1087,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,2,5999.0,Delhi NCR
+INV-IN-70368,2024-02-27,IND-CUST-1087,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70369,2024-01-27,IND-CUST-1088,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Gujarat
+INV-IN-70369,2024-01-27,IND-CUST-1088,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Gujarat
+INV-IN-70370,2024-12-16,IND-CUST-1088,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70370,2024-12-16,IND-CUST-1088,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Gujarat
+INV-IN-70371,2024-03-18,IND-CUST-1088,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Gujarat
+INV-IN-70371,2024-03-18,IND-CUST-1088,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Gujarat
+INV-IN-70371,2024-03-18,IND-CUST-1088,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Gujarat
+INV-IN-70371,2024-03-18,IND-CUST-1088,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Gujarat
+INV-IN-70372,2024-11-26,IND-CUST-1088,O501,Hardcover Ruled Journal Notebook,Office & Stationery,4,499.0,Gujarat
+INV-IN-70373,2024-07-03,IND-CUST-1088,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Gujarat
+INV-IN-70373,2024-07-03,IND-CUST-1088,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Gujarat
+INV-IN-70374,2024-05-19,IND-CUST-1088,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70374,2024-05-19,IND-CUST-1088,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Gujarat
+INV-IN-70375,2024-08-30,IND-CUST-1088,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,3,2999.0,Gujarat
+INV-IN-70375,2024-08-30,IND-CUST-1088,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Gujarat
+INV-IN-70375,2024-08-30,IND-CUST-1088,F305,Speed Skipping Jump Rope,Fitness & Wellness,2,349.0,Gujarat
+INV-IN-70376,2024-02-28,IND-CUST-1089,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Maharashtra
+INV-IN-70376,2024-02-28,IND-CUST-1089,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70377,2024-07-11,IND-CUST-1089,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70378,2024-07-29,IND-CUST-1089,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Maharashtra
+INV-IN-70379,2024-10-09,IND-CUST-1089,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70379,2024-10-09,IND-CUST-1089,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-70380,2024-02-10,IND-CUST-1090,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70380,2024-02-10,IND-CUST-1090,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Delhi NCR
+INV-IN-70380,2024-02-10,IND-CUST-1090,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,2,599.0,Delhi NCR
+INV-IN-70381,2024-07-14,IND-CUST-1090,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70381,2024-07-14,IND-CUST-1090,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,2,1499.0,Delhi NCR
+INV-IN-70381,2024-07-14,IND-CUST-1090,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,3,999.0,Delhi NCR
+INV-IN-70382,2024-08-20,IND-CUST-1091,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,2,599.0,Telangana
+INV-IN-70383,2024-09-10,IND-CUST-1091,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Telangana
+INV-IN-70383,2024-09-10,IND-CUST-1091,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Telangana
+INV-IN-70384,2024-11-27,IND-CUST-1091,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Telangana
+INV-IN-70385,2024-12-26,IND-CUST-1092,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Rajasthan
+INV-IN-70386,2024-06-12,IND-CUST-1092,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Rajasthan
+INV-IN-70386,2024-06-12,IND-CUST-1092,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Rajasthan
+INV-IN-70387,2024-02-10,IND-CUST-1092,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Rajasthan
+INV-IN-70387,2024-02-10,IND-CUST-1092,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Rajasthan
+INV-IN-70388,2024-12-10,IND-CUST-1092,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Rajasthan
+INV-IN-70388,2024-12-10,IND-CUST-1092,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Rajasthan
+INV-IN-70389,2024-05-12,IND-CUST-1092,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Rajasthan
+INV-IN-70390,2024-08-03,IND-CUST-1092,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Rajasthan
+INV-IN-70390,2024-08-03,IND-CUST-1092,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,2,799.0,Rajasthan
+INV-IN-70391,2024-10-23,IND-CUST-1092,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Rajasthan
+INV-IN-70392,2024-05-31,IND-CUST-1093,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Delhi NCR
+INV-IN-70392,2024-05-31,IND-CUST-1093,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Delhi NCR
+INV-IN-70393,2024-07-12,IND-CUST-1093,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70393,2024-07-12,IND-CUST-1093,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,2,749.0,Delhi NCR
+INV-IN-70394,2024-11-01,IND-CUST-1093,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,3,899.0,Delhi NCR
+INV-IN-70394,2024-11-01,IND-CUST-1093,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,2,699.0,Delhi NCR
+INV-IN-70395,2024-03-22,IND-CUST-1093,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70395,2024-03-22,IND-CUST-1093,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70395,2024-03-22,IND-CUST-1093,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Delhi NCR
+INV-IN-70396,2024-05-02,IND-CUST-1094,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Uttar Pradesh
+INV-IN-70396,2024-05-02,IND-CUST-1094,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Uttar Pradesh
+INV-IN-70397,2024-07-04,IND-CUST-1094,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70397,2024-07-04,IND-CUST-1094,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Uttar Pradesh
+INV-IN-70398,2024-01-15,IND-CUST-1094,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Uttar Pradesh
+INV-IN-70398,2024-01-15,IND-CUST-1094,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Uttar Pradesh
+INV-IN-70399,2024-07-23,IND-CUST-1094,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Uttar Pradesh
+INV-IN-70399,2024-07-23,IND-CUST-1094,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Uttar Pradesh
+INV-IN-70400,2024-07-15,IND-CUST-1094,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Uttar Pradesh
+INV-IN-70400,2024-07-15,IND-CUST-1094,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Uttar Pradesh
+INV-IN-70401,2024-05-18,IND-CUST-1094,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Uttar Pradesh
+INV-IN-70402,2024-08-29,IND-CUST-1095,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Maharashtra
+INV-IN-70403,2024-10-24,IND-CUST-1095,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70403,2024-10-24,IND-CUST-1095,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Maharashtra
+INV-IN-70404,2024-08-20,IND-CUST-1095,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70405,2024-09-16,IND-CUST-1095,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,3,2999.0,Maharashtra
+INV-IN-70405,2024-09-16,IND-CUST-1095,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-70406,2024-02-11,IND-CUST-1096,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Delhi NCR
+INV-IN-70407,2024-02-05,IND-CUST-1096,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Delhi NCR
+INV-IN-70407,2024-02-05,IND-CUST-1096,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Delhi NCR
+INV-IN-70407,2024-02-05,IND-CUST-1096,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Delhi NCR
+INV-IN-70408,2024-03-18,IND-CUST-1096,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Delhi NCR
+INV-IN-70408,2024-03-18,IND-CUST-1096,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70409,2024-05-27,IND-CUST-1096,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Delhi NCR
+INV-IN-70409,2024-05-27,IND-CUST-1096,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Delhi NCR
+INV-IN-70410,2024-01-21,IND-CUST-1096,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Delhi NCR
+INV-IN-70410,2024-01-21,IND-CUST-1096,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Delhi NCR
+INV-IN-70410,2024-01-21,IND-CUST-1096,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,2,899.0,Delhi NCR
+INV-IN-70411,2024-06-19,IND-CUST-1096,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,2,2299.0,Delhi NCR
+INV-IN-70412,2024-01-12,IND-CUST-1096,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70412,2024-01-12,IND-CUST-1096,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Delhi NCR
+INV-IN-70412,2024-01-12,IND-CUST-1096,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Delhi NCR
+INV-IN-70412,2024-01-12,IND-CUST-1096,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Delhi NCR
+INV-IN-70413,2024-11-29,IND-CUST-1097,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Karnataka
+INV-IN-70414,2024-11-28,IND-CUST-1098,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70415,2024-02-04,IND-CUST-1099,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70415,2024-02-04,IND-CUST-1099,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Tamil Nadu
+INV-IN-70415,2024-02-04,IND-CUST-1099,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Tamil Nadu
+INV-IN-70415,2024-02-04,IND-CUST-1099,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70416,2024-08-22,IND-CUST-1099,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70416,2024-08-22,IND-CUST-1099,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Tamil Nadu
+INV-IN-70416,2024-08-22,IND-CUST-1099,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Tamil Nadu
+INV-IN-70417,2024-03-05,IND-CUST-1099,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Tamil Nadu
+INV-IN-70418,2024-08-31,IND-CUST-1099,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70419,2024-12-19,IND-CUST-1099,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70419,2024-12-19,IND-CUST-1099,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Tamil Nadu
+INV-IN-70420,2024-11-28,IND-CUST-1099,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Tamil Nadu
+INV-IN-70420,2024-11-28,IND-CUST-1099,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Tamil Nadu
+INV-IN-70421,2024-12-16,IND-CUST-1099,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Tamil Nadu
+INV-IN-70421,2024-12-16,IND-CUST-1099,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Tamil Nadu
+INV-IN-70422,2024-05-10,IND-CUST-1099,F304,High-Density Muscle Foam Roller,Fitness & Wellness,2,799.0,Tamil Nadu
+INV-IN-70423,2024-01-29,IND-CUST-1100,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Rajasthan
+INV-IN-70423,2024-01-29,IND-CUST-1100,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Rajasthan
+INV-IN-70423,2024-01-29,IND-CUST-1100,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Rajasthan
+INV-IN-70423,2024-01-29,IND-CUST-1100,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Rajasthan
+INV-IN-70424,2024-01-15,IND-CUST-1100,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Rajasthan
+INV-IN-70424,2024-01-15,IND-CUST-1100,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Rajasthan
+INV-IN-70424,2024-01-15,IND-CUST-1100,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Rajasthan
+INV-IN-70425,2024-02-01,IND-CUST-1100,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Rajasthan
+INV-IN-70426,2024-10-24,IND-CUST-1101,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Kerala
+INV-IN-70427,2024-07-18,IND-CUST-1102,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Gujarat
+INV-IN-70428,2024-04-24,IND-CUST-1102,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Gujarat
+INV-IN-70429,2024-03-29,IND-CUST-1102,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Gujarat
+INV-IN-70429,2024-03-29,IND-CUST-1102,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Gujarat
+INV-IN-70430,2024-10-14,IND-CUST-1102,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70431,2024-04-25,IND-CUST-1102,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Gujarat
+INV-IN-70432,2024-05-31,IND-CUST-1102,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Gujarat
+INV-IN-70432,2024-05-31,IND-CUST-1102,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,2,749.0,Gujarat
+INV-IN-70432,2024-05-31,IND-CUST-1102,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70433,2024-04-10,IND-CUST-1102,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70433,2024-04-10,IND-CUST-1102,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Gujarat
+INV-IN-70433,2024-04-10,IND-CUST-1102,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,4,399.0,Gujarat
+INV-IN-70433,2024-04-10,IND-CUST-1102,F304,High-Density Muscle Foam Roller,Fitness & Wellness,4,799.0,Gujarat
+INV-IN-70434,2024-03-15,IND-CUST-1103,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70434,2024-03-15,IND-CUST-1103,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Delhi NCR
+INV-IN-70434,2024-03-15,IND-CUST-1103,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70435,2024-01-04,IND-CUST-1103,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70435,2024-01-04,IND-CUST-1103,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Delhi NCR
+INV-IN-70435,2024-01-04,IND-CUST-1103,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70436,2024-08-11,IND-CUST-1103,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Delhi NCR
+INV-IN-70437,2024-10-01,IND-CUST-1103,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Delhi NCR
+INV-IN-70437,2024-10-01,IND-CUST-1103,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Delhi NCR
+INV-IN-70437,2024-10-01,IND-CUST-1103,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Delhi NCR
+INV-IN-70438,2024-01-04,IND-CUST-1103,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70439,2024-07-16,IND-CUST-1103,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70439,2024-07-16,IND-CUST-1103,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Delhi NCR
+INV-IN-70440,2024-05-29,IND-CUST-1103,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70440,2024-05-29,IND-CUST-1103,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70441,2024-07-03,IND-CUST-1104,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70442,2024-03-09,IND-CUST-1104,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70442,2024-03-09,IND-CUST-1104,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Delhi NCR
+INV-IN-70443,2024-11-30,IND-CUST-1104,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Delhi NCR
+INV-IN-70444,2024-11-01,IND-CUST-1104,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70445,2024-08-02,IND-CUST-1104,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70445,2024-08-02,IND-CUST-1104,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70446,2024-12-22,IND-CUST-1104,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70447,2024-05-19,IND-CUST-1104,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70448,2024-11-13,IND-CUST-1104,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70448,2024-11-13,IND-CUST-1104,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70448,2024-11-13,IND-CUST-1104,F305,Speed Skipping Jump Rope,Fitness & Wellness,3,349.0,Delhi NCR
+INV-IN-70449,2024-07-03,IND-CUST-1104,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,2,6499.0,Delhi NCR
+INV-IN-70450,2024-12-19,IND-CUST-1104,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70451,2024-10-21,IND-CUST-1105,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Karnataka
+INV-IN-70452,2024-04-03,IND-CUST-1106,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,4,1699.0,Karnataka
+INV-IN-70452,2024-04-03,IND-CUST-1106,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Karnataka
+INV-IN-70453,2024-01-14,IND-CUST-1106,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Karnataka
+INV-IN-70453,2024-01-14,IND-CUST-1106,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Karnataka
+INV-IN-70454,2024-02-23,IND-CUST-1107,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70454,2024-02-23,IND-CUST-1107,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Delhi NCR
+INV-IN-70455,2024-09-11,IND-CUST-1107,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Delhi NCR
+INV-IN-70456,2024-10-30,IND-CUST-1108,O501,Hardcover Ruled Journal Notebook,Office & Stationery,3,499.0,Kerala
+INV-IN-70456,2024-10-30,IND-CUST-1108,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Kerala
+INV-IN-70457,2024-04-13,IND-CUST-1109,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Tamil Nadu
+INV-IN-70457,2024-04-13,IND-CUST-1109,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Tamil Nadu
+INV-IN-70458,2024-04-19,IND-CUST-1109,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Tamil Nadu
+INV-IN-70458,2024-04-19,IND-CUST-1109,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Tamil Nadu
+INV-IN-70458,2024-04-19,IND-CUST-1109,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Tamil Nadu
+INV-IN-70459,2024-04-10,IND-CUST-1109,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Tamil Nadu
+INV-IN-70459,2024-04-10,IND-CUST-1109,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,2,399.0,Tamil Nadu
+INV-IN-70459,2024-04-10,IND-CUST-1109,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Tamil Nadu
+INV-IN-70460,2024-07-30,IND-CUST-1110,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70460,2024-07-30,IND-CUST-1110,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70460,2024-07-30,IND-CUST-1110,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,3,299.0,Maharashtra
+INV-IN-70461,2024-12-09,IND-CUST-1110,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70462,2024-05-08,IND-CUST-1110,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70462,2024-05-08,IND-CUST-1110,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70462,2024-05-08,IND-CUST-1110,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Maharashtra
+INV-IN-70463,2024-08-29,IND-CUST-1110,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Maharashtra
+INV-IN-70463,2024-08-29,IND-CUST-1110,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70464,2024-11-07,IND-CUST-1111,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Kerala
+INV-IN-70465,2024-11-19,IND-CUST-1111,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Kerala
+INV-IN-70465,2024-11-19,IND-CUST-1111,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Kerala
+INV-IN-70466,2024-01-04,IND-CUST-1112,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Delhi NCR
+INV-IN-70466,2024-01-04,IND-CUST-1112,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Delhi NCR
+INV-IN-70466,2024-01-04,IND-CUST-1112,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,2,999.0,Delhi NCR
+INV-IN-70467,2024-03-13,IND-CUST-1112,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,3,799.0,Delhi NCR
+INV-IN-70467,2024-03-13,IND-CUST-1112,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Delhi NCR
+INV-IN-70468,2024-01-30,IND-CUST-1112,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Delhi NCR
+INV-IN-70469,2024-02-17,IND-CUST-1112,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70470,2024-06-28,IND-CUST-1113,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70470,2024-06-28,IND-CUST-1113,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70471,2024-04-11,IND-CUST-1113,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70472,2024-05-10,IND-CUST-1113,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70472,2024-05-10,IND-CUST-1113,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70473,2024-07-22,IND-CUST-1113,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70473,2024-07-22,IND-CUST-1113,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70473,2024-07-22,IND-CUST-1113,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Maharashtra
+INV-IN-70474,2024-12-21,IND-CUST-1114,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70475,2024-10-13,IND-CUST-1115,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,2,599.0,Maharashtra
+INV-IN-70476,2024-12-21,IND-CUST-1116,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70477,2024-11-04,IND-CUST-1116,A404,Genuine RFID Leather Wallet,Apparel & Fashion,2,1199.0,Maharashtra
+INV-IN-70478,2024-12-21,IND-CUST-1116,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70479,2024-03-10,IND-CUST-1116,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70479,2024-03-10,IND-CUST-1116,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70480,2024-10-11,IND-CUST-1116,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Maharashtra
+INV-IN-70481,2024-04-07,IND-CUST-1117,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Tamil Nadu
+INV-IN-70482,2024-07-14,IND-CUST-1117,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Tamil Nadu
+INV-IN-70483,2024-08-31,IND-CUST-1117,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,2,999.0,Tamil Nadu
+INV-IN-70483,2024-08-31,IND-CUST-1117,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Tamil Nadu
+INV-IN-70484,2024-02-12,IND-CUST-1117,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70484,2024-02-12,IND-CUST-1117,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Tamil Nadu
+INV-IN-70484,2024-02-12,IND-CUST-1117,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70485,2024-02-02,IND-CUST-1118,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70486,2024-08-20,IND-CUST-1118,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70486,2024-08-20,IND-CUST-1118,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Karnataka
+INV-IN-70487,2024-05-28,IND-CUST-1118,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Karnataka
+INV-IN-70488,2024-12-17,IND-CUST-1118,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70488,2024-12-17,IND-CUST-1118,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70488,2024-12-17,IND-CUST-1118,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Karnataka
+INV-IN-70489,2024-11-28,IND-CUST-1118,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70489,2024-11-28,IND-CUST-1118,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,2,1299.0,Karnataka
+INV-IN-70490,2024-12-16,IND-CUST-1119,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Uttar Pradesh
+INV-IN-70490,2024-12-16,IND-CUST-1119,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Uttar Pradesh
+INV-IN-70491,2024-05-23,IND-CUST-1119,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Uttar Pradesh
+INV-IN-70492,2024-08-27,IND-CUST-1119,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Uttar Pradesh
+INV-IN-70493,2024-11-17,IND-CUST-1119,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Uttar Pradesh
+INV-IN-70494,2024-02-08,IND-CUST-1119,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Uttar Pradesh
+INV-IN-70495,2024-04-21,IND-CUST-1120,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70495,2024-04-21,IND-CUST-1120,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Tamil Nadu
+INV-IN-70496,2024-07-18,IND-CUST-1120,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70496,2024-07-18,IND-CUST-1120,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Tamil Nadu
+INV-IN-70496,2024-07-18,IND-CUST-1120,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70497,2024-07-26,IND-CUST-1120,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,3,2999.0,Tamil Nadu
+INV-IN-70497,2024-07-26,IND-CUST-1120,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Tamil Nadu
+INV-IN-70498,2024-03-29,IND-CUST-1120,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70498,2024-03-29,IND-CUST-1120,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Tamil Nadu
+INV-IN-70498,2024-03-29,IND-CUST-1120,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Tamil Nadu
+INV-IN-70499,2024-05-08,IND-CUST-1121,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Delhi NCR
+INV-IN-70499,2024-05-08,IND-CUST-1121,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70499,2024-05-08,IND-CUST-1121,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Delhi NCR
+INV-IN-70499,2024-05-08,IND-CUST-1121,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Delhi NCR
+INV-IN-70500,2024-05-19,IND-CUST-1121,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Delhi NCR
+INV-IN-70501,2024-09-09,IND-CUST-1121,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70501,2024-09-09,IND-CUST-1121,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70502,2024-10-13,IND-CUST-1122,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70502,2024-10-13,IND-CUST-1122,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Delhi NCR
+INV-IN-70503,2024-02-23,IND-CUST-1123,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70503,2024-02-23,IND-CUST-1123,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70504,2024-03-24,IND-CUST-1123,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70505,2024-01-11,IND-CUST-1123,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70505,2024-01-11,IND-CUST-1123,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70505,2024-01-11,IND-CUST-1123,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Maharashtra
+INV-IN-70506,2024-02-15,IND-CUST-1124,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70506,2024-02-15,IND-CUST-1124,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Karnataka
+INV-IN-70506,2024-02-15,IND-CUST-1124,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,3,999.0,Karnataka
+INV-IN-70507,2024-04-13,IND-CUST-1124,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,3,1599.0,Karnataka
+INV-IN-70507,2024-04-13,IND-CUST-1124,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Karnataka
+INV-IN-70507,2024-04-13,IND-CUST-1124,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70507,2024-04-13,IND-CUST-1124,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Karnataka
+INV-IN-70508,2024-03-14,IND-CUST-1124,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70508,2024-03-14,IND-CUST-1124,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Karnataka
+INV-IN-70508,2024-03-14,IND-CUST-1124,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70508,2024-03-14,IND-CUST-1124,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Karnataka
+INV-IN-70509,2024-05-02,IND-CUST-1124,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Karnataka
+INV-IN-70510,2024-05-29,IND-CUST-1125,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Telangana
+INV-IN-70511,2024-06-19,IND-CUST-1125,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70511,2024-06-19,IND-CUST-1125,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Telangana
+INV-IN-70511,2024-06-19,IND-CUST-1125,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Telangana
+INV-IN-70511,2024-06-19,IND-CUST-1125,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Telangana
+INV-IN-70512,2024-03-20,IND-CUST-1125,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Telangana
+INV-IN-70513,2024-06-10,IND-CUST-1125,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70513,2024-06-10,IND-CUST-1125,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Telangana
+INV-IN-70514,2024-01-19,IND-CUST-1126,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Karnataka
+INV-IN-70515,2024-04-10,IND-CUST-1126,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70515,2024-04-10,IND-CUST-1126,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70515,2024-04-10,IND-CUST-1126,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Karnataka
+INV-IN-70516,2024-04-04,IND-CUST-1126,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70517,2024-02-15,IND-CUST-1127,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Maharashtra
+INV-IN-70518,2024-11-08,IND-CUST-1127,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70518,2024-11-08,IND-CUST-1127,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Maharashtra
+INV-IN-70519,2024-11-27,IND-CUST-1127,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Maharashtra
+INV-IN-70520,2024-08-21,IND-CUST-1127,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70520,2024-08-21,IND-CUST-1127,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70520,2024-08-21,IND-CUST-1127,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Maharashtra
+INV-IN-70521,2024-10-24,IND-CUST-1128,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Rajasthan
+INV-IN-70521,2024-10-24,IND-CUST-1128,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Rajasthan
+INV-IN-70521,2024-10-24,IND-CUST-1128,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Rajasthan
+INV-IN-70521,2024-10-24,IND-CUST-1128,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Rajasthan
+INV-IN-70522,2024-04-29,IND-CUST-1129,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70522,2024-04-29,IND-CUST-1129,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70522,2024-04-29,IND-CUST-1129,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Maharashtra
+INV-IN-70523,2024-08-21,IND-CUST-1129,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70524,2024-09-24,IND-CUST-1129,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Maharashtra
+INV-IN-70525,2024-03-31,IND-CUST-1129,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70525,2024-03-31,IND-CUST-1129,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Maharashtra
+INV-IN-70525,2024-03-31,IND-CUST-1129,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Maharashtra
+INV-IN-70526,2024-04-25,IND-CUST-1129,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70526,2024-04-25,IND-CUST-1129,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70526,2024-04-25,IND-CUST-1129,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70527,2024-03-13,IND-CUST-1129,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70527,2024-03-13,IND-CUST-1129,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70528,2024-04-06,IND-CUST-1129,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70528,2024-04-06,IND-CUST-1129,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70529,2024-10-21,IND-CUST-1130,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Karnataka
+INV-IN-70529,2024-10-21,IND-CUST-1130,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70530,2024-11-07,IND-CUST-1131,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Uttar Pradesh
+INV-IN-70530,2024-11-07,IND-CUST-1131,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Uttar Pradesh
+INV-IN-70530,2024-11-07,IND-CUST-1131,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70530,2024-11-07,IND-CUST-1131,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,3,699.0,Uttar Pradesh
+INV-IN-70531,2024-12-05,IND-CUST-1132,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Karnataka
+INV-IN-70531,2024-12-05,IND-CUST-1132,A404,Genuine RFID Leather Wallet,Apparel & Fashion,1,1199.0,Karnataka
+INV-IN-70532,2024-07-30,IND-CUST-1132,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Karnataka
+INV-IN-70533,2024-05-16,IND-CUST-1132,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Karnataka
+INV-IN-70533,2024-05-16,IND-CUST-1132,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Karnataka
+INV-IN-70534,2024-07-13,IND-CUST-1132,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70534,2024-07-13,IND-CUST-1132,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70534,2024-07-13,IND-CUST-1132,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Karnataka
+INV-IN-70534,2024-07-13,IND-CUST-1132,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Karnataka
+INV-IN-70535,2024-01-06,IND-CUST-1133,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Gujarat
+INV-IN-70536,2024-01-18,IND-CUST-1133,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Gujarat
+INV-IN-70537,2024-02-18,IND-CUST-1133,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,3,1999.0,Gujarat
+INV-IN-70538,2024-03-03,IND-CUST-1133,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70539,2024-11-08,IND-CUST-1134,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Tamil Nadu
+INV-IN-70539,2024-11-08,IND-CUST-1134,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Tamil Nadu
+INV-IN-70539,2024-11-08,IND-CUST-1134,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Tamil Nadu
+INV-IN-70540,2024-01-05,IND-CUST-1135,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Tamil Nadu
+INV-IN-70541,2024-12-19,IND-CUST-1135,E103,USB-C 7-in-1 Multiport Hub,Electronics & Gadgets,1,1899.0,Tamil Nadu
+INV-IN-70542,2024-10-27,IND-CUST-1135,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70542,2024-10-27,IND-CUST-1135,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Tamil Nadu
+INV-IN-70542,2024-10-27,IND-CUST-1135,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Tamil Nadu
+INV-IN-70542,2024-10-27,IND-CUST-1135,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Tamil Nadu
+INV-IN-70543,2024-10-14,IND-CUST-1135,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Tamil Nadu
+INV-IN-70544,2024-07-23,IND-CUST-1135,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Tamil Nadu
+INV-IN-70544,2024-07-23,IND-CUST-1135,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70545,2024-07-25,IND-CUST-1135,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Tamil Nadu
+INV-IN-70546,2024-11-22,IND-CUST-1135,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Tamil Nadu
+INV-IN-70546,2024-11-22,IND-CUST-1135,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70546,2024-11-22,IND-CUST-1135,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Tamil Nadu
+INV-IN-70547,2024-02-11,IND-CUST-1136,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Gujarat
+INV-IN-70548,2024-05-27,IND-CUST-1136,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Gujarat
+INV-IN-70549,2024-01-07,IND-CUST-1136,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70549,2024-01-07,IND-CUST-1136,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Gujarat
+INV-IN-70549,2024-01-07,IND-CUST-1136,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Gujarat
+INV-IN-70550,2024-01-20,IND-CUST-1136,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,3,850.0,Gujarat
+INV-IN-70550,2024-01-20,IND-CUST-1136,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Gujarat
+INV-IN-70551,2024-07-24,IND-CUST-1136,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70551,2024-07-24,IND-CUST-1136,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Gujarat
+INV-IN-70552,2024-02-06,IND-CUST-1136,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Gujarat
+INV-IN-70553,2024-11-11,IND-CUST-1137,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Tamil Nadu
+INV-IN-70553,2024-11-11,IND-CUST-1137,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Tamil Nadu
+INV-IN-70554,2024-07-28,IND-CUST-1138,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70554,2024-07-28,IND-CUST-1138,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70555,2024-09-20,IND-CUST-1138,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Maharashtra
+INV-IN-70555,2024-09-20,IND-CUST-1138,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Maharashtra
+INV-IN-70556,2024-05-05,IND-CUST-1138,A404,Genuine RFID Leather Wallet,Apparel & Fashion,2,1199.0,Maharashtra
+INV-IN-70556,2024-05-05,IND-CUST-1138,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Maharashtra
+INV-IN-70557,2024-02-05,IND-CUST-1138,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70557,2024-02-05,IND-CUST-1138,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70558,2024-06-30,IND-CUST-1138,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70558,2024-06-30,IND-CUST-1138,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70559,2024-07-24,IND-CUST-1139,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70559,2024-07-24,IND-CUST-1139,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Maharashtra
+INV-IN-70559,2024-07-24,IND-CUST-1139,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,3,599.0,Maharashtra
+INV-IN-70559,2024-07-24,IND-CUST-1139,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Maharashtra
+INV-IN-70560,2024-05-30,IND-CUST-1139,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70560,2024-05-30,IND-CUST-1139,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Maharashtra
+INV-IN-70561,2024-03-25,IND-CUST-1139,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Maharashtra
+INV-IN-70561,2024-03-25,IND-CUST-1139,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Maharashtra
+INV-IN-70561,2024-03-25,IND-CUST-1139,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Maharashtra
+INV-IN-70562,2024-07-10,IND-CUST-1140,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70562,2024-07-10,IND-CUST-1140,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,2,599.0,Karnataka
+INV-IN-70562,2024-07-10,IND-CUST-1140,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Karnataka
+INV-IN-70562,2024-07-10,IND-CUST-1140,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70563,2024-09-03,IND-CUST-1140,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70563,2024-09-03,IND-CUST-1140,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70563,2024-09-03,IND-CUST-1140,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,3,1699.0,Karnataka
+INV-IN-70564,2024-10-22,IND-CUST-1140,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70564,2024-10-22,IND-CUST-1140,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70564,2024-10-22,IND-CUST-1140,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Karnataka
+INV-IN-70565,2024-04-06,IND-CUST-1141,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70565,2024-04-06,IND-CUST-1141,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,2,1299.0,Telangana
+INV-IN-70566,2024-04-05,IND-CUST-1141,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70566,2024-04-05,IND-CUST-1141,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Telangana
+INV-IN-70567,2024-07-25,IND-CUST-1141,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70567,2024-07-25,IND-CUST-1141,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,2,1499.0,Telangana
+INV-IN-70567,2024-07-25,IND-CUST-1141,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,2,2499.0,Telangana
+INV-IN-70568,2024-10-12,IND-CUST-1141,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Telangana
+INV-IN-70568,2024-10-12,IND-CUST-1141,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Telangana
+INV-IN-70568,2024-10-12,IND-CUST-1141,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Telangana
+INV-IN-70569,2024-09-13,IND-CUST-1141,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Telangana
+INV-IN-70569,2024-09-13,IND-CUST-1141,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Telangana
+INV-IN-70569,2024-09-13,IND-CUST-1141,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Telangana
+INV-IN-70570,2024-12-20,IND-CUST-1141,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Telangana
+INV-IN-70570,2024-12-20,IND-CUST-1141,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Telangana
+INV-IN-70570,2024-12-20,IND-CUST-1141,A403,Waterproof Urban Laptop Backpack,Apparel & Fashion,1,2299.0,Telangana
+INV-IN-70571,2024-10-14,IND-CUST-1142,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70572,2024-06-29,IND-CUST-1142,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Tamil Nadu
+INV-IN-70572,2024-06-29,IND-CUST-1142,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,3,299.0,Tamil Nadu
+INV-IN-70573,2024-05-26,IND-CUST-1142,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Tamil Nadu
+INV-IN-70573,2024-05-26,IND-CUST-1142,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Tamil Nadu
+INV-IN-70574,2024-11-11,IND-CUST-1142,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Tamil Nadu
+INV-IN-70574,2024-11-11,IND-CUST-1142,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Tamil Nadu
+INV-IN-70574,2024-11-11,IND-CUST-1142,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Tamil Nadu
+INV-IN-70575,2024-03-24,IND-CUST-1142,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70575,2024-03-24,IND-CUST-1142,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Tamil Nadu
+INV-IN-70576,2024-11-27,IND-CUST-1142,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Tamil Nadu
+INV-IN-70576,2024-11-27,IND-CUST-1142,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Tamil Nadu
+INV-IN-70576,2024-11-27,IND-CUST-1142,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Tamil Nadu
+INV-IN-70577,2024-10-30,IND-CUST-1143,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Delhi NCR
+INV-IN-70578,2024-12-25,IND-CUST-1144,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Gujarat
+INV-IN-70579,2024-08-31,IND-CUST-1144,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Gujarat
+INV-IN-70579,2024-08-31,IND-CUST-1144,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Gujarat
+INV-IN-70579,2024-08-31,IND-CUST-1144,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Gujarat
+INV-IN-70579,2024-08-31,IND-CUST-1144,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Gujarat
+INV-IN-70580,2024-05-07,IND-CUST-1144,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Gujarat
+INV-IN-70581,2024-03-29,IND-CUST-1144,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Gujarat
+INV-IN-70581,2024-03-29,IND-CUST-1144,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Gujarat
+INV-IN-70582,2024-10-04,IND-CUST-1144,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Gujarat
+INV-IN-70583,2024-10-30,IND-CUST-1144,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Gujarat
+INV-IN-70584,2024-11-24,IND-CUST-1144,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70584,2024-11-24,IND-CUST-1144,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Gujarat
+INV-IN-70585,2024-06-07,IND-CUST-1144,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70585,2024-06-07,IND-CUST-1144,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Gujarat
+INV-IN-70585,2024-06-07,IND-CUST-1144,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Gujarat
+INV-IN-70586,2024-10-01,IND-CUST-1144,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,2,799.0,Gujarat
+INV-IN-70586,2024-10-01,IND-CUST-1144,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,1,1999.0,Gujarat
+INV-IN-70587,2024-08-09,IND-CUST-1144,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Gujarat
+INV-IN-70588,2024-10-15,IND-CUST-1144,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Gujarat
+INV-IN-70588,2024-10-15,IND-CUST-1144,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Gujarat
+INV-IN-70589,2024-07-13,IND-CUST-1144,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Gujarat
+INV-IN-70589,2024-07-13,IND-CUST-1144,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Gujarat
+INV-IN-70589,2024-07-13,IND-CUST-1144,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Gujarat
+INV-IN-70590,2024-07-31,IND-CUST-1145,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70590,2024-07-31,IND-CUST-1145,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70590,2024-07-31,IND-CUST-1145,O504,Ergonomic Memory Foam Wrist Rest,Office & Stationery,1,599.0,Delhi NCR
+INV-IN-70591,2024-11-15,IND-CUST-1145,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70591,2024-11-15,IND-CUST-1145,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70591,2024-11-15,IND-CUST-1145,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70592,2024-03-06,IND-CUST-1145,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70593,2024-09-10,IND-CUST-1145,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Delhi NCR
+INV-IN-70593,2024-09-10,IND-CUST-1145,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Delhi NCR
+INV-IN-70593,2024-09-10,IND-CUST-1145,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70593,2024-09-10,IND-CUST-1145,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70594,2024-07-20,IND-CUST-1145,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Delhi NCR
+INV-IN-70594,2024-07-20,IND-CUST-1145,A402,Winter Fleece Zip-Up Hoodie,Apparel & Fashion,2,1999.0,Delhi NCR
+INV-IN-70595,2024-07-15,IND-CUST-1145,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,1,1699.0,Delhi NCR
+INV-IN-70596,2024-02-02,IND-CUST-1146,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70597,2024-01-28,IND-CUST-1146,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70597,2024-01-28,IND-CUST-1146,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70597,2024-01-28,IND-CUST-1146,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Maharashtra
+INV-IN-70598,2024-03-23,IND-CUST-1146,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70598,2024-03-23,IND-CUST-1146,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,2,899.0,Maharashtra
+INV-IN-70599,2024-05-01,IND-CUST-1147,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70600,2024-07-22,IND-CUST-1147,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,1,6499.0,Tamil Nadu
+INV-IN-70601,2024-03-21,IND-CUST-1147,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70601,2024-03-21,IND-CUST-1147,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70601,2024-03-21,IND-CUST-1147,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Tamil Nadu
+INV-IN-70602,2024-11-27,IND-CUST-1147,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Tamil Nadu
+INV-IN-70602,2024-11-27,IND-CUST-1147,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Tamil Nadu
+INV-IN-70602,2024-11-27,IND-CUST-1147,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Tamil Nadu
+INV-IN-70602,2024-11-27,IND-CUST-1147,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Tamil Nadu
+INV-IN-70603,2024-06-07,IND-CUST-1148,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Telangana
+INV-IN-70604,2024-10-07,IND-CUST-1148,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Telangana
+INV-IN-70604,2024-10-07,IND-CUST-1148,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Telangana
+INV-IN-70605,2024-10-11,IND-CUST-1149,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70605,2024-10-11,IND-CUST-1149,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Delhi NCR
+INV-IN-70605,2024-10-11,IND-CUST-1149,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,2,799.0,Delhi NCR
+INV-IN-70606,2024-09-17,IND-CUST-1149,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,2,2999.0,Delhi NCR
+INV-IN-70606,2024-09-17,IND-CUST-1149,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Delhi NCR
+INV-IN-70607,2024-11-14,IND-CUST-1149,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70607,2024-11-14,IND-CUST-1149,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Delhi NCR
+INV-IN-70608,2024-09-26,IND-CUST-1149,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Delhi NCR
+INV-IN-70609,2024-07-29,IND-CUST-1149,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Delhi NCR
+INV-IN-70610,2024-03-08,IND-CUST-1149,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Delhi NCR
+INV-IN-70610,2024-03-08,IND-CUST-1149,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Delhi NCR
+INV-IN-70611,2024-10-20,IND-CUST-1149,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Delhi NCR
+INV-IN-70612,2024-10-30,IND-CUST-1149,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Delhi NCR
+INV-IN-70612,2024-10-30,IND-CUST-1149,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Delhi NCR
+INV-IN-70613,2024-04-17,IND-CUST-1149,E108,Portable High-Speed SSD 1TB,Electronics & Gadgets,2,6499.0,Delhi NCR
+INV-IN-70613,2024-04-17,IND-CUST-1149,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Delhi NCR
+INV-IN-70614,2024-08-01,IND-CUST-1149,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Delhi NCR
+INV-IN-70615,2024-02-07,IND-CUST-1149,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Delhi NCR
+INV-IN-70616,2024-11-05,IND-CUST-1150,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70616,2024-11-05,IND-CUST-1150,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70616,2024-11-05,IND-CUST-1150,H205,Digital Kitchen Food & Spice Scale,Home & Kitchen,1,699.0,Maharashtra
+INV-IN-70617,2024-03-25,IND-CUST-1151,A404,Genuine RFID Leather Wallet,Apparel & Fashion,2,1199.0,Uttar Pradesh
+INV-IN-70618,2024-04-25,IND-CUST-1151,O503,Extended Vegan Leather Desk Blotter,Office & Stationery,1,999.0,Uttar Pradesh
+INV-IN-70619,2024-10-30,IND-CUST-1151,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Uttar Pradesh
+INV-IN-70620,2024-08-08,IND-CUST-1152,O501,Hardcover Ruled Journal Notebook,Office & Stationery,2,499.0,Gujarat
+INV-IN-70620,2024-08-08,IND-CUST-1152,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Gujarat
+INV-IN-70621,2024-11-05,IND-CUST-1152,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Gujarat
+INV-IN-70621,2024-11-05,IND-CUST-1152,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Gujarat
+INV-IN-70621,2024-11-05,IND-CUST-1152,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,4,2999.0,Gujarat
+INV-IN-70621,2024-11-05,IND-CUST-1152,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70622,2024-07-03,IND-CUST-1152,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Gujarat
+INV-IN-70622,2024-07-03,IND-CUST-1152,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Gujarat
+INV-IN-70622,2024-07-03,IND-CUST-1152,F305,Speed Skipping Jump Rope,Fitness & Wellness,1,349.0,Gujarat
+INV-IN-70623,2024-02-19,IND-CUST-1153,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Maharashtra
+INV-IN-70623,2024-02-19,IND-CUST-1153,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Maharashtra
+INV-IN-70623,2024-02-19,IND-CUST-1153,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70624,2024-10-20,IND-CUST-1153,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Maharashtra
+INV-IN-70624,2024-10-20,IND-CUST-1153,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Maharashtra
+INV-IN-70624,2024-10-20,IND-CUST-1153,H204,Electric Rapid Boil Kettle 1.5L,Home & Kitchen,2,1699.0,Maharashtra
+INV-IN-70625,2024-12-20,IND-CUST-1153,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Maharashtra
+INV-IN-70626,2024-10-23,IND-CUST-1153,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Maharashtra
+INV-IN-70626,2024-10-23,IND-CUST-1153,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Maharashtra
+INV-IN-70626,2024-10-23,IND-CUST-1153,A404,Genuine RFID Leather Wallet,Apparel & Fashion,3,1199.0,Maharashtra
+INV-IN-70626,2024-10-23,IND-CUST-1153,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,1,5999.0,Maharashtra
+INV-IN-70627,2024-11-05,IND-CUST-1153,A401,Pure Organic Cotton T-Shirt,Apparel & Fashion,1,799.0,Maharashtra
+INV-IN-70628,2024-10-12,IND-CUST-1154,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Karnataka
+INV-IN-70628,2024-10-12,IND-CUST-1154,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Karnataka
+INV-IN-70629,2024-11-26,IND-CUST-1155,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Gujarat
+INV-IN-70630,2024-07-21,IND-CUST-1156,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Uttar Pradesh
+INV-IN-70630,2024-07-21,IND-CUST-1156,F303,Insulated Stainless Steel Bottle 1L,Fitness & Wellness,1,899.0,Uttar Pradesh
+INV-IN-70631,2024-07-24,IND-CUST-1156,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Uttar Pradesh
+INV-IN-70631,2024-07-24,IND-CUST-1156,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Uttar Pradesh
+INV-IN-70632,2024-03-11,IND-CUST-1156,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Uttar Pradesh
+INV-IN-70632,2024-03-11,IND-CUST-1156,E106,Aluminum Ergonomic Laptop Stand,Electronics & Gadgets,1,1299.0,Uttar Pradesh
+INV-IN-70633,2024-11-12,IND-CUST-1156,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70634,2024-08-09,IND-CUST-1156,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70634,2024-08-09,IND-CUST-1156,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Uttar Pradesh
+INV-IN-70635,2024-04-08,IND-CUST-1156,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Uttar Pradesh
+INV-IN-70635,2024-04-08,IND-CUST-1156,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Uttar Pradesh
+INV-IN-70636,2024-11-16,IND-CUST-1157,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,2,850.0,Karnataka
+INV-IN-70636,2024-11-16,IND-CUST-1157,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70636,2024-11-16,IND-CUST-1157,H206,Silicone Baking & Roti Mat,Home & Kitchen,2,449.0,Karnataka
+INV-IN-70637,2024-02-28,IND-CUST-1157,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,2,299.0,Karnataka
+INV-IN-70638,2024-05-28,IND-CUST-1157,H201,Traditional Brass Filter Coffee Maker,Home & Kitchen,1,850.0,Karnataka
+INV-IN-70638,2024-05-28,IND-CUST-1157,H203,Ceramic Artisan Chai & Coffee Cups (Set of 6),Home & Kitchen,1,749.0,Karnataka
+INV-IN-70639,2024-10-03,IND-CUST-1157,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70639,2024-10-03,IND-CUST-1157,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70639,2024-10-03,IND-CUST-1157,E107,Fast Wireless Charging Pad 15W,Electronics & Gadgets,1,899.0,Karnataka
+INV-IN-70639,2024-10-03,IND-CUST-1157,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70640,2024-02-01,IND-CUST-1157,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70640,2024-02-01,IND-CUST-1157,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Karnataka
+INV-IN-70641,2024-07-18,IND-CUST-1157,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,1,1599.0,Karnataka
+INV-IN-70642,2024-11-29,IND-CUST-1157,O501,Hardcover Ruled Journal Notebook,Office & Stationery,1,499.0,Karnataka
+INV-IN-70642,2024-11-29,IND-CUST-1157,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Karnataka
+INV-IN-70642,2024-11-29,IND-CUST-1157,A405,Breathable Bamboo Socks (Pack of 3),Apparel & Fashion,1,449.0,Karnataka
+INV-IN-70642,2024-11-29,IND-CUST-1157,H202,Stainless Steel Reusable Coffee Mesh,Home & Kitchen,1,399.0,Karnataka
+INV-IN-70643,2024-12-04,IND-CUST-1158,E104,Active Noise-Cancelling Headphones,Electronics & Gadgets,2,5999.0,Gujarat
+INV-IN-70644,2024-07-19,IND-CUST-1159,E101,Mechanical Gaming Keyboard,Electronics & Gadgets,1,2999.0,Delhi NCR
+INV-IN-70644,2024-07-19,IND-CUST-1159,E102,Wireless Ergonomic Mouse,Electronics & Gadgets,1,1499.0,Delhi NCR
+INV-IN-70645,2024-07-03,IND-CUST-1159,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Delhi NCR
+INV-IN-70645,2024-07-03,IND-CUST-1159,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Delhi NCR
+INV-IN-70645,2024-07-03,IND-CUST-1159,E105,1080p Full-HD Streaming Webcam,Electronics & Gadgets,1,2499.0,Delhi NCR
+INV-IN-70645,2024-07-03,IND-CUST-1159,F304,High-Density Muscle Foam Roller,Fitness & Wellness,1,799.0,Delhi NCR
+INV-IN-70646,2024-03-15,IND-CUST-1159,O502,Precision Rollerball Gel Pens (Set of 10),Office & Stationery,1,299.0,Delhi NCR
+INV-IN-70647,2024-12-19,IND-CUST-1160,F301,Eco Ayurvedic Cork Yoga Mat,Fitness & Wellness,2,1599.0,Maharashtra
+INV-IN-70647,2024-12-19,IND-CUST-1160,F302,Fabric Resistance Loop Bands (Set of 3),Fitness & Wellness,1,599.0,Maharashtra
+INV-IN-70647,2024-12-19,IND-CUST-1160,H206,Silicone Baking & Roti Mat,Home & Kitchen,1,449.0,Maharashtra

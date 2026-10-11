@@ -1,0 +1,384 @@
+/* MarketMind — Modern Analytics Design System */
+:root {
+  --mm-primary: #4338ca;         /* Deep Indigo */
+  --mm-primary-hover: #3730a3;
+  --mm-secondary: #0ea5e9;       /* Bright Cyan-Blue */
+  --mm-accent-purple: #7c3aed;   /* Vibrant Violet */
+  --mm-dark-navy: #0f172a;       /* Slate 900 */
+  --mm-dark-slate: #1e293b;      /* Slate 800 */
+  --mm-light-bg: #f8fafc;        /* Slate 50 */
+  --mm-card-bg: #ffffff;
+  --mm-border: #e2e8f0;          /* Slate 200 */
+  --mm-text-main: #1e293b;
+  --mm-text-muted: #64748b;
+  --mm-success: #10b981;
+  --mm-warning: #f59e0b;
+  --mm-danger: #ef4444;
+  --mm-info: #06b6d4;
+  --mm-radius-sm: 8px;
+  --mm-radius: 14px;
+  --mm-radius-lg: 20px;
+  --mm-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --mm-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --mm-shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--mm-light-bg);
+  color: var(--mm-text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--mm-dark-navy);
+}
+
+.font-monospace {
+  font-family: 'JetBrains Mono', Consolas, monospace !important;
+}
+
+/* Modern Navbar */
+.marketmind-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--mm-border);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  padding: 0.75rem 0;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--mm-dark-navy) !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--mm-primary), var(--mm-accent-purple));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(67, 56, 202, 0.3);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--mm-text-muted) !important;
+  font-size: 0.92rem;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: var(--mm-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--mm-primary) !important;
+  background: rgba(67, 56, 202, 0.05);
+}
+
+.nav-link.active {
+  color: var(--mm-primary) !important;
+  font-weight: 700;
+  background: rgba(67, 56, 202, 0.08);
+}
+
+/* Secondary Portal Navigation Pill Bar */
+.portal-subnav {
+  background: #ffffff;
+  border-bottom: 1px solid var(--mm-border);
+  padding: 0.6rem 0;
+}
+
+.portal-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--mm-text-muted);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.portal-pill-link:hover {
+  background: #f1f5f9;
+  color: var(--mm-primary);
+}
+
+.portal-pill-link.active {
+  background: var(--mm-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
+}
+
+/* Cards & Surfaces */
+.mm-card {
+  background: var(--mm-card-bg);
+  border: 1px solid var(--mm-border);
+  border-radius: var(--mm-radius);
+  box-shadow: var(--mm-shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mm-card:hover {
+  box-shadow: var(--mm-shadow);
+}
+
+.mm-card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--mm-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.mm-card-body {
+  padding: 1.5rem;
+}
+
+/* KPI Summary Cards */
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid var(--mm-border);
+  border-radius: var(--mm-radius);
+  padding: 1.25rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--mm-shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--mm-primary), var(--mm-secondary));
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--mm-shadow);
+}
+
+.kpi-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.kpi-val {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--mm-dark-navy);
+  line-height: 1.2;
+}
+
+.kpi-label {
+  font-size: 0.83rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--mm-text-muted);
+}
+
+/* Buttons */
+.btn-mm-primary {
+  background: linear-gradient(135deg, var(--mm-primary), var(--mm-accent-purple));
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--mm-radius-sm);
+  padding: 0.6rem 1.25rem;
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-mm-primary:hover {
+  background: linear-gradient(135deg, var(--mm-primary-hover), var(--mm-primary));
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(67, 56, 202, 0.35);
+}
+
+.btn-mm-outline {
+  border: 1px solid var(--mm-border);
+  background: #ffffff;
+  color: var(--mm-dark-navy);
+  font-weight: 600;
+  border-radius: var(--mm-radius-sm);
+  padding: 0.55rem 1.15rem;
+  transition: all 0.2s ease;
+}
+
+.btn-mm-outline:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: var(--mm-primary);
+}
+
+/* Tables */
+.mm-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.mm-table th {
+  background-color: #f8fafc;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--mm-text-muted);
+  padding: 0.85rem 1rem;
+  border-bottom: 2px solid var(--mm-border);
+}
+
+.mm-table td {
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--mm-border);
+  font-size: 0.9rem;
+}
+
+.mm-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Badges */
+.badge-lift {
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+/* SQL Query Inspector Box */
+.sql-inspector-box {
+  background: #0f172a;
+  color: #38bdf8;
+  border-radius: var(--mm-radius-sm);
+  padding: 1rem 1.25rem;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 0.86rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  border: 1px solid #1e293b;
+  position: relative;
+}
+
+/* Hero Section */
+.hero-section {
+  background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, rgba(248, 250, 252, 0) 60%),
+              radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.08) 0%, rgba(248, 250, 252, 0) 60%);
+  padding: 5rem 0 4rem 0;
+  border-bottom: 1px solid var(--mm-border);
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: rgba(67, 56, 202, 0.1);
+  color: var(--mm-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(67, 56, 202, 0.2);
+}
+
+/* Step Pipeline Cards */
+.pipeline-step-card {
+  background: #ffffff;
+  border: 1px solid var(--mm-border);
+  border-radius: var(--mm-radius);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pipeline-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--mm-shadow);
+  border-color: var(--mm-primary);
+}
+
+.step-num-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--mm-primary);
+  color: #fff;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.marketmind-footer {
+  background: #ffffff;
+  border-top: 1px solid var(--mm-border);
+  margin-top: auto;
+  padding: 3rem 0 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* Upload Dropzone */
+.upload-dropzone {
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--mm-radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-dropzone:hover, .upload-dropzone.dragover {
+  border-color: var(--mm-primary);
+  background: rgba(67, 56, 202, 0.03);
+}
+
+/* Status Indicator Dot */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status-dot.online {
+  background-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}

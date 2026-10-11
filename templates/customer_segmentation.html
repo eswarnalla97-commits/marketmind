@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}Customer Segmentation (K-Means) — MarketMind{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-lg-4 py-4">
+
+  <!-- Header -->
+  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+    <div>
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-success-subtle text-success rounded-pill small fw-bold mb-2">
+        <i class="fa-solid fa-users-rays"></i> Machine Learning Behavioral Clustering
+      </div>
+      <h2 class="fw-bold text-dark mb-1">Customer RFM Segmentation</h2>
+      <p class="text-muted small mb-0">Unsupervised K-Means clustering with <code>StandardScaler</code> feature normalization on real warehouse accounts.</p>
+    </div>
+    <div class="d-flex gap-2">
+      <a href="{{ url_for('api.api_export_report', report_type='segments') }}" class="btn btn-outline-secondary btn-sm">
+        <i class="fa-solid fa-file-csv me-1"></i> Export Customer Segments CSV
+      </a>
+    </div>
+  </div>
+
+  <!-- Controls Panel -->
+  <div class="mm-card p-3 mb-4">
+    <div class="row align-items-center g-3">
+      <div class="col-md-6">
+        <div class="d-flex align-items-center gap-3">
+          <label for="kClustersSelect" class="fw-bold text-dark small text-nowrap">
+            <i class="fa-solid fa-layer-group text-primary me-1"></i> Number of Clusters (K):
+          </label>
+          <select id="kClustersSelect" class="form-select form-select-sm" style="max-width: 140px;">
+            <option value="2">K = 2 Clusters</option>
+            <option value="3">K = 3 Clusters</option>
+            <option value="4" selected>K = 4 (Optimal)</option>
+            <option value="5">K = 5 Clusters</option>
+            <option value="6">K = 6 Clusters</option>
+          </select>
+          <button id="reclusterBtn" class="btn btn-mm-primary btn-sm">
+            <i class="fa-solid fa-arrows-rotate me-1"></i> Re-Cluster
+          </button>
+        </div>
+      </div>
+      <div class="col-md-6 text-md-end text-muted small">
+        <i class="fa-solid fa-scale-unbalanced text-info me-1"></i> Normalized Features: <strong>Recency (Days), Frequency, Monetary ($), AOV ($)</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cluster Personas Cards Container -->
+  <div class="row g-3 mb-4" id="clusterCardsContainer">
+    <div class="col-12 text-center py-4 text-muted">
+      <i class="fa-solid fa-spinner fa-spin me-2"></i> Initializing K-Means clustering model...
+    </div>
+  </div>
+
+  <!-- Row: Spend vs Frequency Scatter & Segment Size Donut -->
+  <div class="row g-4 mb-4">
+    <!-- Spend vs Frequency Scatter Chart -->
+    <div class="col-lg-8">
+      <div class="mm-card h-100">
+        <div class="mm-card-header">
+          <div>
+            <h5 class="fw-bold mb-0">Customer Behavioral Distribution (Spend vs Orders)</h5>
+            <small class="text-muted">Color-coded by assigned K-Means cluster centroid</small>
+          </div>
+          <span class="badge bg-primary-subtle text-primary">2D Feature Projection</span>
+        </div>
+        <div class="mm-card-body">
+          <div style="height: 320px; position: relative;">
+            <canvas id="clusterScatterChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cluster Sizes Donut Chart -->
+    <div class="col-lg-4">
+      <div class="mm-card h-100">
+        <div class="mm-card-header">
+          <div>
+            <h5 class="fw-bold mb-0">Segment Share</h5>
+            <small class="text-muted">Customer volume across clusters</small>
+          </div>
+          <span class="badge bg-secondary-subtle text-secondary">Cohort Ratio</span>
+        </div>
+        <div class="mm-card-body d-flex flex-column justify-content-center">
+          <div style="height: 260px; position: relative;">
+            <canvas id="clusterDonutChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer Segmentation Roster Table -->
+  <div class="mm-card mb-4">
+    <div class="mm-card-header">
+      <div>
+        <h5 class="fw-bold mb-0">Segmented Customer Accounts</h5>
+        <small class="text-muted">Individual customer feature scores and assigned behavioral tier</small>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <input type="text" id="custSearchInput" class="form-control form-control-sm" placeholder="Search Customer ID or Country..." style="width: 220px;">
+      </div>
+    </div>
+    <div class="mm-card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover mm-table mb-0" id="customerTable">
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>State / Region</th>
+              <th class="text-end">Orders (Freq)</th>
+              <th class="text-end">Total Spend (₹)</th>
+              <th class="text-end">Avg Order Value (₹)</th>
+              <th class="text-end">Recency (Days Ago)</th>
+              <th class="text-center">Cluster</th>
+              <th>Assigned Behavioral Segment</th>
+            </tr>
+          </thead>
+          <tbody id="customerTableBody">
+            <tr>
+              <td colspan="8" class="text-center py-4 text-muted">
+                <i class="fa-solid fa-spinner fa-spin me-2"></i> Loading customer segmentation data...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/customer_segmentation.js') }}"></script>
+{% endblock %}

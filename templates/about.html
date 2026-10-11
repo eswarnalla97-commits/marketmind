@@ -1,0 +1,321 @@
+{% extends "base.html" %}
+
+{% block title %}About Project & DWDM Concepts — MarketMind{% endblock %}
+
+{% block content %}
+<div class="container px-lg-4 py-5">
+  <!-- Header -->
+  <div class="mb-5">
+    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-primary-subtle text-primary rounded-pill small fw-bold mb-2">
+      <i class="fa-solid fa-graduation-cap"></i> Academic Project Documentation
+    </div>
+    <h1 class="display-5 fw-bold text-dark">Data Warehousing & Data Mining (DWDM)</h1>
+    <p class="lead text-muted" style="max-width: 820px;">
+      Comprehensive documentation on the problem statement, architectural star schema design, OLAP multidimensional cubes, and machine learning data mining algorithms implemented in MarketMind.
+    </p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Main Content Left Column -->
+    <div class="col-lg-8">
+      
+      <!-- 1. Project Overview & Problem Statement -->
+      <div class="mm-card p-4 mb-4">
+        <h4 class="fw-bold text-dark mb-3">
+          <i class="fa-solid fa-bullseye text-primary me-2"></i> 1. Problem Statement & Motivation
+        </h4>
+        <p class="text-muted">
+          Modern e-commerce platforms process thousands of transactions daily. However, operational databases (OLTP) are optimized for transactional writes rather than analytical decision-making. Retail executives face three critical analytical challenges:
+        </p>
+        <div class="row g-3 my-2">
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-3 h-100 border">
+              <div class="fw-bold text-dark small mb-1"><i class="fa-solid fa-database text-danger me-1"></i> Data Silos</div>
+              <p class="text-muted small mb-0">Raw operational tables slow down multi-period aggregation and historical trend queries.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-3 h-100 border">
+              <div class="fw-bold text-dark small mb-1"><i class="fa-solid fa-cart-arrow-down text-warning me-1"></i> Unseen Co-purchases</div>
+              <p class="text-muted small mb-0">Retailers lack mathematical visibility into items purchased together, missing cross-sell bundling.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-3 h-100 border">
+              <div class="fw-bold text-dark small mb-1"><i class="fa-solid fa-user-slash text-info me-1"></i> Customer Churn</div>
+              <p class="text-muted small mb-0">Without behavioral segmentation, high-value and at-risk shoppers receive identical generic marketing.</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-muted mt-3 mb-0">
+          <strong>MarketMind addresses this problem</strong> by decoupling analytical queries into a dedicated Star Schema Data Warehouse and applying unsupervised machine learning (Apriori and K-Means) to derive actionable intelligence.
+        </p>
+      </div>
+
+      <!-- 2. Project Objectives -->
+      <div class="mm-card p-4 mb-4">
+        <h4 class="fw-bold text-dark mb-3">
+          <i class="fa-solid fa-list-check text-success me-2"></i> 2. Project Objectives
+        </h4>
+        <ul class="list-group list-group-flush text-muted">
+          <li class="list-group-item px-0 py-2 border-0 d-flex gap-2">
+            <i class="fa-solid fa-check-circle text-success mt-1"></i>
+            <span><strong>Star Schema Implementation:</strong> Design and populate a dimensional data warehouse schema consisting of FactSales and four dimensions (DimDate, DimProduct, DimCustomer, DimOrder) at line-item grain.</span>
+          </li>
+          <li class="list-group-item px-0 py-2 border-0 d-flex gap-2">
+            <i class="fa-solid fa-check-circle text-success mt-1"></i>
+            <span><strong>Automated ETL Pipeline:</strong> Construct an automated ingestion workflow that validates schema, eliminates duplicates, filters corrupt records into a staging area, and assigns surrogate keys.</span>
+          </li>
+          <li class="list-group-item px-0 py-2 border-0 d-flex gap-2">
+            <i class="fa-solid fa-check-circle text-success mt-1"></i>
+            <span><strong>Market Basket Analysis (Apriori):</strong> Uncover hidden purchase associations, calculate Support, Confidence, and Lift metrics, and translate rules into plain-English marketing recommendations.</span>
+          </li>
+          <li class="list-group-item px-0 py-2 border-0 d-flex gap-2">
+            <i class="fa-solid fa-check-circle text-success mt-1"></i>
+            <span><strong>Customer Behavioral Segmentation (K-Means):</strong> Cluster customers into distinct personas based on standardized RFM features (Recency, Frequency, Monetary spend, and Average Order Value).</span>
+          </li>
+          <li class="list-group-item px-0 py-2 border-0 d-flex gap-2">
+            <i class="fa-solid fa-check-circle text-success mt-1"></i>
+            <span><strong>OLAP Multi-dimensional Operations:</strong> Provide interactive Roll-up, Drill-down, Slice, Dice, and Pivot exploration alongside real-time SQL inspection.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. Data Warehousing Concepts -->
+      <div class="mm-card p-4 mb-4">
+        <h4 class="fw-bold text-dark mb-3">
+          <i class="fa-solid fa-cubes-stacked text-purple me-2" style="color: #7c3aed;"></i> 3. Data Warehousing Concepts Used
+        </h4>
+        
+        <h6 class="fw-bold text-dark mt-3">Star Schema Architecture</h6>
+        <p class="text-muted small">
+          MarketMind adopts a classic Kimball Star Schema. In this structure, a centralized <code>FactSales</code> table connects to surrounding de-normalized dimension tables via surrogate integer keys:
+        </p>
+        <div class="table-responsive mb-3">
+          <table class="table table-bordered table-sm mm-table">
+            <thead>
+              <tr>
+                <th>Table Name</th>
+                <th>Type</th>
+                <th>Surrogate Key</th>
+                <th>Business Key</th>
+                <th>Primary Attributes / Measures</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold text-primary">FactSales</td>
+                <td><span class="badge bg-primary">Fact</span></td>
+                <td>SalesKey</td>
+                <td>N/A</td>
+                <td>Quantity, UnitPrice, DiscountAmount, TotalAmount, ProfitMargin</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">DimCustomer</td>
+                <td><span class="badge bg-secondary">Dimension</span></td>
+                <td>CustomerKey</td>
+                <td>CustomerID</td>
+                <td>CustomerName, Country, Segment, FirstPurchaseDate</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">DimProduct</td>
+                <td><span class="badge bg-secondary">Dimension</span></td>
+                <td>ProductKey</td>
+                <td>ProductID</td>
+                <td>ProductName, Category, UnitPrice</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">DimDate</td>
+                <td><span class="badge bg-secondary">Dimension</span></td>
+                <td>DateKey (YYYYMMDD)</td>
+                <td>FullDate</td>
+                <td>Day, Month, MonthName, Quarter, Year, DayOfWeek, IsWeekend</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">DimOrder</td>
+                <td><span class="badge bg-secondary">Dimension</span></td>
+                <td>OrderKey</td>
+                <td>InvoiceNo</td>
+                <td>OrderDate, TotalItems, TotalOrderValue, OrderStatus</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h6 class="fw-bold text-dark mt-4">Granularity Definition</h6>
+        <div class="p-3 bg-light rounded-3 border mb-3">
+          <p class="small text-muted mb-0">
+            <strong>Grain:</strong> Exactly <em>one row per order item</em>. Defining the grain at the individual product line-item level avoids double-counting order totals when joining across product and customer dimensions, while retaining full fidelity for Apriori basket analysis.
+          </p>
+        </div>
+
+        <h6 class="fw-bold text-dark mt-4">Multidimensional OLAP Operations Demonstrated</h6>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3 h-100">
+              <span class="badge bg-primary mb-2">Roll-Up</span>
+              <p class="small text-muted mb-0">Summarizes data from daily transactions to monthly and yearly totals (moving up the hierarchy).</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3 h-100">
+              <span class="badge bg-info mb-2">Drill-Down</span>
+              <p class="small text-muted mb-0">De-aggregates summary data down into fine-grained components, e.g. yearly down to quarters or category down to individual items.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3 h-100">
+              <span class="badge bg-warning text-dark mb-2">Slice</span>
+              <p class="small text-muted mb-0">Filters the data cube by selecting a single dimension value (e.g., viewing sales exclusively for Category = 'Electronics').</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3 h-100">
+              <span class="badge bg-success mb-2">Dice</span>
+              <p class="small text-muted mb-0">Extracts a multi-dimensional sub-cube by specifying filtering criteria across multiple dimensions simultaneously.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Data Mining Algorithms -->
+      <div class="mm-card p-4 mb-4">
+        <h4 class="fw-bold text-dark mb-3">
+          <i class="fa-solid fa-brain text-warning me-2"></i> 4. Data Mining Algorithms Explained
+        </h4>
+
+        <div class="mb-4">
+          <h5 class="fw-bold text-dark">A. Apriori Association Rule Mining (mlxtend)</h5>
+          <p class="text-muted small">
+            The Apriori algorithm identifies frequent itemsets using candidate generation and the downward closure property: <em>all non-empty subsets of a frequent itemset must also be frequent</em>.
+          </p>
+          <div class="row g-2 text-center my-2">
+            <div class="col-md-4">
+              <div class="p-2 bg-light rounded border">
+                <small class="fw-bold d-block text-dark">Support(A &rarr; B)</small>
+                <code class="small text-primary">P(A &cup; B)</code>
+                <div class="text-muted" style="font-size: 0.72rem;">Frequency of joint purchase</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-2 bg-light rounded border">
+                <small class="fw-bold d-block text-dark">Confidence(A &rarr; B)</small>
+                <code class="small text-primary">P(B | A) = Sup(A&cup;B)/Sup(A)</code>
+                <div class="text-muted" style="font-size: 0.72rem;">Probability of B given A</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-2 bg-light rounded border">
+                <small class="fw-bold d-block text-dark">Lift(A &rarr; B)</small>
+                <code class="small text-primary">Conf(A&rarr;B) / Sup(B)</code>
+                <div class="text-muted" style="font-size: 0.72rem;">Synergy ratio (&gt; 1 = positive)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-3">
+
+        <div>
+          <h5 class="fw-bold text-dark">B. K-Means Customer Behavioral Clustering (scikit-learn)</h5>
+          <p class="text-muted small">
+            Partitions $N$ customers into $K$ distinct behavioral clusters. Each customer is represented by a normalized feature vector:
+          </p>
+          <ul class="text-muted small mb-3">
+            <li><strong>Recency:</strong> Days elapsed since the customer's most recent order.</li>
+            <li><strong>Frequency:</strong> Count of unique orders completed.</li>
+            <li><strong>Monetary:</strong> Cumulative spend across all transactions.</li>
+            <li><strong>AvgOrderValue (AOV):</strong> Monetary value divided by order count.</li>
+          </ul>
+          <div class="p-3 bg-light rounded-3 border small text-muted">
+            <i class="fa-solid fa-circle-info text-primary me-1"></i>
+            Features are scaled using <code>StandardScaler</code> (zero mean, unit variance) to ensure high-magnitude monetary values do not distort Euclidean distance computations during cluster centroid optimization.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Sidebar Info Cards -->
+    <div class="col-lg-4">
+      
+      <!-- Tech Stack Summary Card -->
+      <div class="mm-card p-4 mb-4">
+        <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-layer-group text-primary me-2"></i> Technology Stack</h5>
+        <div class="list-group list-group-flush small">
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Web Framework</span>
+            <span class="fw-bold text-dark">Python 3.10 / Flask 3.1</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Database Engine</span>
+            <span class="fw-bold text-dark">SQLite 3 (Star Schema)</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">ETL & Data Wrangling</span>
+            <span class="fw-bold text-dark">pandas & numpy</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Clustering ML</span>
+            <span class="fw-bold text-dark">scikit-learn</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Association Mining</span>
+            <span class="fw-bold text-dark">mlxtend 0.23+</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Frontend Styling</span>
+            <span class="fw-bold text-dark">Bootstrap 5.3 & CSS3</span>
+          </div>
+          <div class="list-group-item d-flex justify-content-between px-0 py-2">
+            <span class="text-muted">Data Visualization</span>
+            <span class="fw-bold text-dark">Chart.js 4.4</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expected Benefits Card -->
+      <div class="mm-card p-4 mb-4">
+        <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-chart-line text-success me-2"></i> Expected Benefits</h5>
+        <div class="d-flex flex-column gap-3 small">
+          <div class="d-flex gap-2">
+            <i class="fa-solid fa-check text-success mt-1"></i>
+            <div>
+              <strong class="text-dark">Optimized Product Bundles:</strong>
+              <p class="text-muted mb-0">Boost average order value by recommending proven complementary products at checkout.</p>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="fa-solid fa-check text-success mt-1"></i>
+            <div>
+              <strong class="text-dark">Targeted Retention Campaigns:</strong>
+              <p class="text-muted mb-0">Re-engage at-risk and lapsed customers before lifetime attrition occurs.</p>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="fa-solid fa-check text-success mt-1"></i>
+            <div>
+              <strong class="text-dark">Accelerated Analytical Queries:</strong>
+              <p class="text-muted mb-0">Star schema indexes deliver sub-second response times for multi-period OLAP cubes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Academic Metadata -->
+      <div class="mm-card p-4 border-primary-subtle bg-light">
+        <h6 class="fw-bold text-dark mb-2"><i class="fa-solid fa-award text-warning me-1"></i> Coursework Details</h6>
+        <p class="text-muted small mb-2">
+          Mini Project for <strong>Data Warehousing & Data Mining (DWDM)</strong>, Department of Computer Science and Engineering.
+        </p>
+        <div class="d-grid mt-3">
+          <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary btn-sm fw-bold">
+            <i class="fa-solid fa-comment-dots me-1"></i> Submit Evaluator Feedback
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

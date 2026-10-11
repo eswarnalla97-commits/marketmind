@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}MarketMind — E-commerce Customer Behavior Mining & Sales Analytics Portal{% endblock %}</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Chart.js 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <!-- Top Global Navigation -->
+  <nav class="navbar navbar-expand-lg marketmind-navbar">
+    <div class="container-fluid px-lg-4">
+      <a class="navbar-brand" href="{{ url_for('main.home') }}">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <span>Market<span class="text-primary">Mind</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mmNavbar" aria-controls="mmNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mmNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{{ url_for('main.home') }}">
+              <i class="fa-solid fa-house me-1"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{{ url_for('main.about') }}">
+              <i class="fa-solid fa-circle-info me-1"></i> About & DWDM
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/dashboard' %}active{% endif %}" href="{{ url_for('main.dashboard') }}">
+              <i class="fa-solid fa-chart-line me-1"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/data-import' %}active{% endif %}" href="{{ url_for('main.data-import') if false else url_for('main.data_import') }}">
+              <i class="fa-solid fa-file-import me-1"></i> ETL Portal
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/product-mining' %}active{% endif %}" href="{{ url_for('main.product_mining') }}">
+              <i class="fa-solid fa-diagram-project me-1"></i> Association Mining
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/customer-segmentation' %}active{% endif %}" href="{{ url_for('main.customer_segmentation') }}">
+              <i class="fa-solid fa-users-viewfinder me-1"></i> Customer Segments
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/olap' %}active{% endif %}" href="{{ url_for('main.olap') }}">
+              <i class="fa-solid fa-cubes me-1"></i> OLAP Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/reports' %}active{% endif %}" href="{{ url_for('main.reports') }}">
+              <i class="fa-solid fa-file-lines me-1"></i> Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/contact' %}active{% endif %}" href="{{ url_for('main.contact') }}">
+              <i class="fa-solid fa-envelope me-1"></i> Contact
+            </a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <span class="badge bg-light text-dark border px-3 py-2 d-none d-xl-inline-flex align-items-center gap-2">
+            <span class="status-dot online"></span>
+            <small class="fw-semibold">Star Schema: <strong>{{ global_stats.get('FactSales', 0) }}</strong> Facts</small>
+          </span>
+          <a href="{{ url_for('main.dashboard') }}" class="btn btn-mm-primary btn-sm">
+            <i class="fa-solid fa-bolt me-1"></i> Explore Analytics
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {% block portal_subnav %}
+  {% if request.path in ['/dashboard', '/data-import', '/product-mining', '/customer-segmentation', '/olap', '/reports'] %}
+  <!-- Portal Navigation Quick Switcher -->
+  <div class="portal-subnav d-none d-md-block">
+    <div class="container-fluid px-lg-4">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2 overflow-x-auto py-1">
+          <span class="text-muted small fw-bold text-uppercase me-2"><i class="fa-solid fa-compass me-1"></i> Portal:</span>
+          <a href="{{ url_for('main.dashboard') }}" class="portal-pill-link {% if request.path == '/dashboard' %}active{% endif %}">
+            <i class="fa-solid fa-gauge-high"></i> Dashboard
+          </a>
+          <a href="{{ url_for('main.data_import') }}" class="portal-pill-link {% if request.path == '/data-import' %}active{% endif %}">
+            <i class="fa-solid fa-database"></i> ETL Pipeline
+          </a>
+          <a href="{{ url_for('main.product_mining') }}" class="portal-pill-link {% if request.path == '/product-mining' %}active{% endif %}">
+            <i class="fa-solid fa-cart-shopping"></i> Apriori Mining
+          </a>
+          <a href="{{ url_for('main.customer_segmentation') }}" class="portal-pill-link {% if request.path == '/customer-segmentation' %}active{% endif %}">
+            <i class="fa-solid fa-layer-group"></i> K-Means Clusters
+          </a>
+          <a href="{{ url_for('main.olap') }}" class="portal-pill-link {% if request.path == '/olap' %}active{% endif %}">
+            <i class="fa-solid fa-cube"></i> OLAP Cube
+          </a>
+          <a href="{{ url_for('main.reports') }}" class="portal-pill-link {% if request.path == '/reports' %}active{% endif %}">
+            <i class="fa-solid fa-table-list"></i> Reports & Insights
+          </a>
+        </div>
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <small class="text-muted">
+            <i class="fa-solid fa-shield-halved text-success me-1"></i> B.Tech CSE DWDM Mini Project
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endblock %}
+
+  <!-- Main Body Content -->
+  <main class="flex-grow-1">
+    {% block content %}
+    {% if content_error %}
+    <div class="container py-5 text-center">
+      <div class="mm-card p-5 mx-auto" style="max-width: 600px;">
+        <i class="fa-solid fa-triangle-exclamation text-warning display-4 mb-3"></i>
+        <h3>Notice</h3>
+        <p class="text-muted">{{ content_error }}</p>
+        <a href="{{ url_for('main.home') }}" class="btn btn-mm-primary mt-2">Return to Home</a>
+      </div>
+    </div>
+    {% endif %}
+    {% endblock %}
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="marketmind-footer">
+    <div class="container px-lg-4">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 0.9rem;">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h5 class="mb-0 fw-bold">Market<span class="text-primary">Mind</span></h5>
+          </div>
+          <p class="text-muted small mb-3">
+            An end-to-end Data Warehousing & Data Mining (DWDM) platform integrating a Star Schema OLAP engine, Apriori Market Basket Association Mining, and K-Means Customer Behavioral Segmentation.
+          </p>
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle">DWDM Mini Project</span>
+            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">B.Tech CSE</span>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6 class="fw-bold mb-3">DWDM Modules</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 text-muted">
+            <li><a href="{{ url_for('main.dashboard') }}" class="text-decoration-none text-muted hover-primary">Sales Analytics</a></li>
+            <li><a href="{{ url_for('main.data_import') }}" class="text-decoration-none text-muted hover-primary">ETL Pipeline</a></li>
+            <li><a href="{{ url_for('main.product_mining') }}" class="text-decoration-none text-muted hover-primary">Apriori Algorithm</a></li>
+            <li><a href="{{ url_for('main.customer_segmentation') }}" class="text-decoration-none text-muted hover-primary">K-Means Clustering</a></li>
+            <li><a href="{{ url_for('main.olap') }}" class="text-decoration-none text-muted hover-primary">OLAP Operations</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6 class="fw-bold mb-3">Architecture</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 text-muted">
+            <li><span class="text-muted">Star Schema DW</span></li>
+            <li><span class="text-muted">FactSales Grain</span></li>
+            <li><span class="text-muted">mlxtend Mining</span></li>
+            <li><span class="text-muted">scikit-learn Clusters</span></li>
+            <li><span class="text-muted">Flask Backend</span></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h6 class="fw-bold mb-3">Project & Academic Info</h6>
+          <p class="text-muted small mb-2">
+            Designed and built for <strong>B.Tech Computer Science & Engineering</strong> practical curriculum demonstration in Data Warehousing and Data Mining.
+          </p>
+          <div class="p-3 bg-light rounded-3 border">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <span class="small fw-bold text-dark"><i class="fa-solid fa-database text-primary me-1"></i> Star Schema Grain:</span>
+              <span class="badge bg-success">1 Order Line Item</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="small fw-bold text-dark"><i class="fa-solid fa-server text-info me-1"></i> OLAP Engine:</span>
+              <span class="badge bg-dark">SQLite SQL Cube</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-3 border-top d-flex flex-column flex-md-row align-items-center justify-content-between small text-muted">
+        <div>
+          &copy; {{ current_year }} MarketMind Portal — Developed for DWDM Coursework. All rights reserved.
+        </div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="{{ url_for('main.about') }}" class="text-muted text-decoration-none">Project Docs</a>
+          <a href="{{ url_for('main.contact') }}" class="text-muted text-decoration-none">Viva Feedback</a>
+          <a href="{{ url_for('api.api_download_template') }}" class="text-muted text-decoration-none">CSV Template</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Global Main JS -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>
