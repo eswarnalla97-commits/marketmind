@@ -75,6 +75,7 @@ It integrates a Kimball Star Schema data warehouse, an automated ETL pipeline, O
 | **Page 7: OLAP Analytics** | `/olap` | Interactive Roll-up, Drill-down, Slice, Dice, and Pivot matrix with a live **SQL Query Inspector** showing the exact executed queries. |
 | **Page 8: Reports & Insights** | `/reports` | Consolidated Executive Reports for Sales, Products, Customers, and Association Rules with one-click CSV export and print layouts. |
 | **Page 9: Contact & Viva** | `/contact` | Academic credentials, course information, interactive feedback form that saves submissions into SQLite, and a live feedback log. |
+| **Page 10: Admin Dashboard** | `/admin` | Enterprise administration center: User management (RBAC), Order & line-item status updates, Product catalog SKU maintenance, ETL staging rejections recovery, live SQLite audit logging, and system settings. |
 
 ---
 
@@ -84,7 +85,7 @@ It integrates a Kimball Star Schema data warehouse, an automated ETL pipeline, O
 - **Data Engineering:** pandas, numpy, SQLite3
 - **Data Mining & ML:** `mlxtend` (Apriori algorithm), `scikit-learn` (StandardScaler & KMeans)
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+), Bootstrap 5.3, Chart.js 4.4, Font Awesome 6
-- **Testing:** Python `unittest` test suite (26 automated tests)
+- **Testing:** Python `unittest` test suite (36 automated tests)
 
 ---
 
@@ -196,6 +197,15 @@ http://127.0.0.1:5000
 - **OLAP Analytics:** [http://127.0.0.1:5000/olap](http://127.0.0.1:5000/olap)
 - **Executive Reports:** [http://127.0.0.1:5000/reports](http://127.0.0.1:5000/reports)
 - **Contact & Feedback:** [http://127.0.0.1:5000/contact](http://127.0.0.1:5000/contact)
+- **Admin Sign In:** [http://127.0.0.1:5000/admin/login](http://127.0.0.1:5000/admin/login)
+- **Admin Control Center:** [http://127.0.0.1:5000/admin/dashboard](http://127.0.0.1:5000/admin/dashboard)
+
+### Default Admin & Team Credentials:
+| Username | Password | Role | Permissions & Access Level |
+|---|---|---|---|
+| `admin` | `Admin@MarketMind2024` | **Admin** | Full system control: User CRUD, Product CRUD, Order updates, Staging recovery, Audit export. |
+| `analyst_priya` | `Priya@2024` | **Analyst** | Operational analytics: Order & product inspection, ETL triggers, feedback review. |
+| `viewer_arun` | `Viewer@2024` | **Viewer** | Read-only executive telemetry & dashboard cockpit. |
 
 ---
 

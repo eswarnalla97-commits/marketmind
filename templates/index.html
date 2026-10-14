@@ -3,169 +3,188 @@
 {% block title %}MarketMind — Turn Shopping Data into Smarter Decisions{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
+
+<!-- ── HERO SECTION ──────────────────────────────────────────────────────── -->
 <section class="hero-section">
   <div class="container px-lg-4">
     <div class="row align-items-center g-5">
-      <div class="col-lg-7">
+
+      <!-- Left: Headline & CTAs -->
+      <div class="col-lg-7 fade-in-up">
         <div class="hero-tag">
-          <i class="fa-solid fa-sparkles"></i> Data Warehousing & Data Mining Mini Project
+          <i class="fa-solid fa-microchip"></i>
+          Data Warehousing &amp; Mining · DWDM Mini Project
         </div>
-        <h1 class="display-4 fw-extrabold text-dark mb-3">
-          Turn Shopping Data into <span class="text-primary" style="background: linear-gradient(135deg, #4338ca, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Smarter Decisions</span>
+
+        <h1 class="display-4 fw-bold mb-3" style="line-height: 1.12; letter-spacing: -0.03em;">
+          Turn Shopping Data<br>into
+          <span>Smarter Decisions</span>
         </h1>
-        <p class="lead text-muted mb-4 pe-lg-4">
-          MarketMind is an enterprise-grade analytics and data mining portal engineered for modern e-commerce. Powered by an optimized Star Schema warehouse, Apriori market basket association discovery, and K-Means behavioral customer segmentation.
+
+        <p class="mb-5 pe-lg-4" style="color: var(--mm-text-muted); font-size: 1.05rem; max-width: 540px; line-height: 1.75;">
+          MarketMind is an enterprise-grade analytics and data mining portal powered by a Star Schema data warehouse, Apriori market basket discovery, and K-Means behavioral segmentation.
         </p>
-        <div class="d-flex flex-wrap align-items-center gap-3">
-          <a href="{{ url_for('main.dashboard') }}" class="btn btn-mm-primary btn-lg px-4 py-3">
-            <i class="fa-solid fa-chart-line me-2"></i> Explore Analytics
+
+        <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
+          <a href="{{ url_for('main.dashboard') }}" class="btn-mm-primary px-4 py-3" style="font-size: 0.95rem; border-radius: 12px;">
+            <i class="fa-solid fa-chart-line"></i> Explore Analytics
           </a>
-          <a href="{{ url_for('main.data_import') }}" class="btn btn-mm-outline btn-lg px-4 py-3">
-            <i class="fa-solid fa-upload me-2"></i> Get Started / Ingest Data
+          <a href="{{ url_for('admin.quick_login') }}" class="btn-mm-ghost px-4 py-3" style="font-size: 0.95rem; border-radius: 12px;">
+            <i class="fa-solid fa-shield-halved" style="color: var(--mm-warning);"></i> Admin Dashboard
           </a>
-          <a href="{{ url_for('main.about') }}" class="btn btn-link text-decoration-none text-muted fw-semibold px-2">
-            Learn About DWDM Architecture <i class="fa-solid fa-arrow-right ms-1"></i>
+          <a href="{{ url_for('main.about') }}" class="fw-semibold d-inline-flex align-items-center gap-2" style="color: var(--mm-text-muted); font-size: 0.9rem; text-decoration: none;">
+            Architecture Docs <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i>
           </a>
         </div>
 
         <!-- Live Metrics Bar -->
-        <div class="row g-3 mt-4 pt-3 border-top">
-          <div class="col-4">
-            <div class="h3 fw-bold text-dark mb-0">{{ kpis.total_revenue | inr }}</div>
-            <small class="text-muted fw-semibold text-uppercase" style="font-size: 0.75rem;">Mined Revenue</small>
+        <div class="row g-0" style="border: 1px solid var(--mm-border); border-radius: 14px; overflow: hidden; background: var(--mm-surface);">
+          <div class="col-4 p-3 text-center" style="border-right: 1px solid var(--mm-border);">
+            <div class="kpi-val" style="font-size: 1.4rem;" data-count-up="{{ kpis.total_revenue }}" data-prefix="₹">
+              {{ kpis.total_revenue | inr }}
+            </div>
+            <small style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 700; color: var(--mm-text-muted);">Revenue Mined</small>
           </div>
-          <div class="col-4 border-start ps-3">
-            <div class="h3 fw-bold text-dark mb-0">{{ "{:,}".format(kpis.total_orders) }}</div>
-            <small class="text-muted fw-semibold text-uppercase" style="font-size: 0.75rem;">Orders Ingested</small>
+          <div class="col-4 p-3 text-center" style="border-right: 1px solid var(--mm-border);">
+            <div class="kpi-val" style="font-size: 1.4rem;">{{ "{:,}".format(kpis.total_orders) }}</div>
+            <small style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 700; color: var(--mm-text-muted);">Orders Ingested</small>
           </div>
-          <div class="col-4 border-start ps-3">
-            <div class="h3 fw-bold text-dark mb-0">{{ "{:,}".format(kpis.total_customers) }}</div>
-            <small class="text-muted fw-semibold text-uppercase" style="font-size: 0.75rem;">Active Customers</small>
+          <div class="col-4 p-3 text-center">
+            <div class="kpi-val" style="font-size: 1.4rem;">{{ "{:,}".format(kpis.total_customers) }}</div>
+            <small style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 700; color: var(--mm-text-muted);">Active Customers</small>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-5">
-        <div class="mm-card p-4 shadow-lg border-primary-subtle position-relative">
-          <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+      <!-- Right: Warehouse Health Monitor Card -->
+      <div class="col-lg-5 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="glass-card p-4 scan-effect" style="border-color: rgba(124, 109, 248, 0.2);">
+          <!-- Card Header -->
+          <div class="d-flex align-items-center justify-content-between mb-4 pb-3" style="border-bottom: 1px solid var(--mm-border);">
             <div class="d-flex align-items-center gap-2">
               <span class="status-dot online"></span>
-              <span class="fw-bold text-dark small">Data Warehouse Health</span>
+              <span class="fw-bold small">Data Warehouse Health</span>
             </div>
-            <span class="badge bg-primary-subtle text-primary">Star Schema Active</span>
+            <span class="badge bg-primary-subtle" style="font-family: var(--font-mono); font-size: 0.7rem;">
+              <i class="fa-solid fa-star me-1"></i> Star Schema Active
+            </span>
           </div>
 
-          <div class="list-group list-group-flush mb-3">
-            <div class="list-group-item d-flex justify-content-between align-items-center px-0 py-2 border-0">
-              <span class="small text-muted"><i class="fa-solid fa-table-cells text-primary me-2"></i> FactSales (Grain: Order Item)</span>
-              <span class="fw-bold font-monospace">{{ global_stats.get('FactSales', 0) }} rows</span>
+          <!-- Schema Tables -->
+          <div class="d-flex flex-column gap-2 mb-4">
+            {% set schema_items = [
+              ('fa-table-cells', 'accent-indigo', 'FactSales', 'Order Item Grain', 'FactSales'),
+              ('fa-calendar', 'accent-cyan', 'DimDate', 'Calendar Dimensions', 'DimDate'),
+              ('fa-box', 'accent-amber', 'DimProduct', 'Product Catalog', 'DimProduct'),
+              ('fa-users', 'accent-emerald', 'DimCustomer', 'Customer Accounts', 'DimCustomer'),
+              ('fa-receipt', 'accent-purple', 'DimOrder', 'Invoice Registry', 'DimOrder')
+            ] %}
+            {% for icon, color, label, desc, key in schema_items %}
+            <div class="d-flex justify-content-between align-items-center py-2 px-3 rounded-3" style="background: rgba(124,109,248,0.04); border: 1px solid var(--mm-border); transition: all 0.15s ease;" onmouseover="this.style.background='rgba(124,109,248,0.08)'" onmouseout="this.style.background='rgba(124,109,248,0.04)'">
+              <span class="small" style="color: var(--mm-text-muted);">
+                <i class="fa-solid {{ icon }} me-2 {{ color }}"></i>
+                <span style="color: var(--mm-text-primary); font-weight: 600;">{{ label }}</span>
+                <span class="d-none d-sm-inline" style="font-size: 0.75rem; color: var(--mm-text-muted);"> · {{ desc }}</span>
+              </span>
+              <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--mm-primary); font-weight: 700;">
+                {{ global_stats.get(key, 0) }} <span style="color: var(--mm-text-muted); font-weight: 400;">rows</span>
+              </span>
             </div>
-            <div class="list-group-item d-flex justify-content-between align-items-center px-0 py-2 border-0">
-              <span class="small text-muted"><i class="fa-solid fa-calendar text-info me-2"></i> DimDate (Calendar Dimensions)</span>
-              <span class="fw-bold font-monospace">{{ global_stats.get('DimDate', 0) }} rows</span>
-            </div>
-            <div class="list-group-item d-flex justify-content-between align-items-center px-0 py-2 border-0">
-              <span class="small text-muted"><i class="fa-solid fa-box text-warning me-2"></i> DimProduct (Catalog Catalog)</span>
-              <span class="fw-bold font-monospace">{{ global_stats.get('DimProduct', 0) }} rows</span>
-            </div>
-            <div class="list-group-item d-flex justify-content-between align-items-center px-0 py-2 border-0">
-              <span class="small text-muted"><i class="fa-solid fa-users text-success me-2"></i> DimCustomer (Accounts)</span>
-              <span class="fw-bold font-monospace">{{ global_stats.get('DimCustomer', 0) }} rows</span>
-            </div>
-            <div class="list-group-item d-flex justify-content-between align-items-center px-0 py-2 border-0">
-              <span class="small text-muted"><i class="fa-solid fa-receipt text-purple me-2"></i> DimOrder (Invoices)</span>
-              <span class="fw-bold font-monospace">{{ global_stats.get('DimOrder', 0) }} rows</span>
-            </div>
+            {% endfor %}
           </div>
 
-          <div class="p-3 bg-light rounded-3 d-flex align-items-center justify-content-between">
+          <!-- Mining CTA -->
+          <div class="d-flex align-items-center justify-content-between p-3 rounded-3" style="background: rgba(124,109,248,0.06); border: 1px solid rgba(124,109,248,0.2);">
             <div>
-              <div class="small fw-bold text-dark">Data Mining Modules Ready</div>
-              <div class="text-muted" style="font-size: 0.78rem;">Apriori & K-Means loaded in memory</div>
+              <div class="small fw-bold mb-1">Mining Modules Ready</div>
+              <div style="font-size: 0.75rem; color: var(--mm-text-muted);">Apriori &amp; K-Means loaded in memory</div>
             </div>
-            <a href="{{ url_for('main.product_mining') }}" class="btn btn-sm btn-outline-primary fw-semibold">
+            <a href="{{ url_for('main.product_mining') }}" class="btn-mm-primary" style="padding: 0.42rem 1rem; font-size: 0.82rem; white-space: nowrap;">
               Launch <i class="fa-solid fa-arrow-right ms-1"></i>
             </a>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- Feature Cards Section -->
+
+<!-- ── FEATURE CARDS ──────────────────────────────────────────────────────── -->
 <section class="py-5" id="features">
-  <div class="container px-lg-4 py-3">
-    <div class="text-center mb-5" style="max-width: 720px; margin: 0 auto;">
-      <span class="badge bg-primary-subtle text-primary text-uppercase px-3 py-2 fw-bold mb-2">Core Capabilities</span>
-      <h2 class="fw-bold display-6">Architected for Real Retail Intelligence</h2>
-      <p class="text-muted">
-        Bridging theoretical Data Warehousing and Data Mining concepts into an interactive, high-performance web analytics application.
-      </p>
+  <div class="container px-lg-4 py-4">
+    <div class="text-center mb-5" style="max-width: 680px; margin: 0 auto;">
+      <span class="badge bg-primary-subtle" style="font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; padding: 0.4rem 1.1rem;">Core Capabilities</span>
+      <h2 class="fw-bold mt-3 mb-2" style="letter-spacing: -0.03em;">Architected for Real Retail Intelligence</h2>
+      <p style="color: var(--mm-text-muted); line-height: 1.75;">Bridging theoretical DWDM concepts into an interactive, high-performance analytics platform.</p>
     </div>
 
     <div class="row g-4">
       <!-- Feature 1 -->
       <div class="col-md-6 col-lg-3">
-        <div class="mm-card h-100 p-4 d-flex flex-column">
-          <div class="kpi-icon-wrap bg-primary-subtle text-primary mb-3">
+        <div class="mm-card hover-lift h-100 p-4 d-flex flex-column">
+          <div class="kpi-icon-wrap mb-4" style="background: rgba(124,109,248,0.1); color: var(--mm-primary); font-size: 1.2rem; width: 48px; height: 48px; border-radius: 14px;">
             <i class="fa-solid fa-users-viewfinder"></i>
           </div>
-          <h5 class="fw-bold mb-2">Customer Insights</h5>
-          <p class="text-muted small flex-grow-1">
-            Segment shoppers using scikit-learn K-Means clustering across standardized Recency, Frequency, Monetary (RFM), and Average Order Value dimensions.
+          <div class="pill-tag mb-3" style="width: fit-content;">K-Means</div>
+          <h5 class="fw-bold mb-2" style="letter-spacing: -0.02em;">Customer Insights</h5>
+          <p style="color: var(--mm-text-muted); font-size: 0.875rem; flex-grow: 1; line-height: 1.7;">
+            Segment shoppers using scikit-learn K-Means clustering across RFM and Average Order Value dimensions for actionable groupings.
           </p>
-          <a href="{{ url_for('main.customer_segmentation') }}" class="text-primary fw-bold text-decoration-none small mt-2">
-            View Segmentation <i class="fa-solid fa-chevron-right ms-1"></i>
+          <a href="{{ url_for('main.customer_segmentation') }}" class="fw-bold small mt-3 d-inline-flex align-items-center gap-2" style="color: var(--mm-primary); text-decoration: none;">
+            View Segmentation <i class="fa-solid fa-chevron-right" style="font-size: 0.72rem;"></i>
           </a>
         </div>
       </div>
 
       <!-- Feature 2 -->
       <div class="col-md-6 col-lg-3">
-        <div class="mm-card h-100 p-4 d-flex flex-column">
-          <div class="kpi-icon-wrap bg-purple-subtle text-purple mb-3" style="background: rgba(124, 58, 237, 0.1); color: #7c3aed;">
+        <div class="mm-card hover-lift h-100 p-4 d-flex flex-column">
+          <div class="kpi-icon-wrap mb-4" style="background: rgba(168,85,247,0.1); color: var(--mm-purple); font-size: 1.2rem; width: 48px; height: 48px; border-radius: 14px;">
             <i class="fa-solid fa-basket-shopping"></i>
           </div>
-          <h5 class="fw-bold mb-2">Product Associations</h5>
-          <p class="text-muted small flex-grow-1">
-            Discover co-purchasing rules with the Apriori algorithm via mlxtend. Quantify cross-selling synergies with mathematical Support, Confidence, and Lift metrics.
+          <div class="pill-tag mb-3" style="width: fit-content; background: rgba(168,85,247,0.1); color: var(--mm-purple); border-color: rgba(168,85,247,0.2);">Apriori</div>
+          <h5 class="fw-bold mb-2" style="letter-spacing: -0.02em;">Product Associations</h5>
+          <p style="color: var(--mm-text-muted); font-size: 0.875rem; flex-grow: 1; line-height: 1.7;">
+            Discover co-purchasing rules via mlxtend Apriori. Quantify cross-selling synergies with Support, Confidence, and Lift metrics.
           </p>
-          <a href="{{ url_for('main.product_mining') }}" class="text-primary fw-bold text-decoration-none small mt-2">
-            Run Apriori Rules <i class="fa-solid fa-chevron-right ms-1"></i>
+          <a href="{{ url_for('main.product_mining') }}" class="fw-bold small mt-3 d-inline-flex align-items-center gap-2" style="color: var(--mm-purple); text-decoration: none;">
+            Run Apriori Rules <i class="fa-solid fa-chevron-right" style="font-size: 0.72rem;"></i>
           </a>
         </div>
       </div>
 
       <!-- Feature 3 -->
       <div class="col-md-6 col-lg-3">
-        <div class="mm-card h-100 p-4 d-flex flex-column">
-          <div class="kpi-icon-wrap bg-info-subtle text-info mb-3">
+        <div class="mm-card hover-lift h-100 p-4 d-flex flex-column">
+          <div class="kpi-icon-wrap mb-4" style="background: rgba(6,182,212,0.1); color: var(--mm-accent); font-size: 1.2rem; width: 48px; height: 48px; border-radius: 14px;">
             <i class="fa-solid fa-cubes"></i>
           </div>
-          <h5 class="fw-bold mb-2">OLAP Analytics</h5>
-          <p class="text-muted small flex-grow-1">
-            Experience true multi-dimensional cube exploration with SQL-powered Roll-up, Drill-down, Slice, Dice, and Pivot cross-tabulations.
+          <div class="pill-tag mb-3" style="width: fit-content; background: rgba(6,182,212,0.1); color: var(--mm-accent); border-color: rgba(6,182,212,0.2);">OLAP</div>
+          <h5 class="fw-bold mb-2" style="letter-spacing: -0.02em;">OLAP Analytics</h5>
+          <p style="color: var(--mm-text-muted); font-size: 0.875rem; flex-grow: 1; line-height: 1.7;">
+            Multi-dimensional cube exploration with SQL-powered Roll-up, Drill-down, Slice, Dice, and Pivot cross-tabulations.
           </p>
-          <a href="{{ url_for('main.olap') }}" class="text-primary fw-bold text-decoration-none small mt-2">
-            Test Cube Operations <i class="fa-solid fa-chevron-right ms-1"></i>
+          <a href="{{ url_for('main.olap') }}" class="fw-bold small mt-3 d-inline-flex align-items-center gap-2" style="color: var(--mm-accent); text-decoration: none;">
+            Test Cube Ops <i class="fa-solid fa-chevron-right" style="font-size: 0.72rem;"></i>
           </a>
         </div>
       </div>
 
       <!-- Feature 4 -->
       <div class="col-md-6 col-lg-3">
-        <div class="mm-card h-100 p-4 d-flex flex-column">
-          <div class="kpi-icon-wrap bg-success-subtle text-success mb-3">
+        <div class="mm-card hover-lift h-100 p-4 d-flex flex-column">
+          <div class="kpi-icon-wrap mb-4" style="background: rgba(16,185,129,0.1); color: var(--mm-success); font-size: 1.2rem; width: 48px; height: 48px; border-radius: 14px;">
             <i class="fa-solid fa-chart-pie"></i>
           </div>
-          <h5 class="fw-bold mb-2">Sales Analytics</h5>
-          <p class="text-muted small flex-grow-1">
-            Monitor real-time revenue velocity, category distributions, bestselling catalog rankings, and executive trend indicators with interactive Chart.js widgets.
+          <div class="pill-tag mb-3" style="width: fit-content; background: rgba(16,185,129,0.1); color: var(--mm-success); border-color: rgba(16,185,129,0.2);">Analytics</div>
+          <h5 class="fw-bold mb-2" style="letter-spacing: -0.02em;">Sales Analytics</h5>
+          <p style="color: var(--mm-text-muted); font-size: 0.875rem; flex-grow: 1; line-height: 1.7;">
+            Monitor revenue velocity, category distributions, bestseller rankings, and executive indicators with interactive Chart.js widgets.
           </p>
-          <a href="{{ url_for('main.dashboard') }}" class="text-primary fw-bold text-decoration-none small mt-2">
-            Open Dashboard <i class="fa-solid fa-chevron-right ms-1"></i>
+          <a href="{{ url_for('main.dashboard') }}" class="fw-bold small mt-3 d-inline-flex align-items-center gap-2" style="color: var(--mm-success); text-decoration: none;">
+            Open Dashboard <i class="fa-solid fa-chevron-right" style="font-size: 0.72rem;"></i>
           </a>
         </div>
       </div>
@@ -173,116 +192,198 @@
   </div>
 </section>
 
-<!-- How MarketMind Works (Workflow Pipeline) -->
-<section class="py-5 bg-white border-top border-bottom">
-  <div class="container px-lg-4 py-3">
+
+<!-- ── ADMIN GOVERNANCE SPOTLIGHT ─────────────────────────────────────────── -->
+<section class="py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #080c1c 0%, #0f1630 50%, #080c1c 100%); border-top: 1px solid var(--mm-border); border-bottom: 1px solid var(--mm-border);">
+
+  <!-- Ambient glow effects -->
+  <div style="position: absolute; top: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(124,109,248,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+  <div style="position: absolute; bottom: -80px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 70%); pointer-events: none;"></div>
+
+  <div class="container px-lg-4 py-4 position-relative">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Content -->
+      <div class="col-lg-6">
+        <span class="badge bg-primary mb-3" style="font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; padding: 0.4rem 1.1rem;">Enterprise Governance</span>
+        <h2 class="fw-bold display-6 mb-3" style="color: #e2e8f6; letter-spacing: -0.03em;">Role-Based Admin Cockpit &amp; Data Operations</h2>
+        <p class="mb-4" style="color: var(--mm-text-muted); font-size: 1rem; line-height: 1.75;">
+          Take complete control of the retail data warehouse with dedicated administrative tooling. Manage user roles (Admin, Analyst, Viewer), inspect granular FactSales line items, oversee product catalogs, and recover dirty rows from the Staging Area.
+        </p>
+
+        <div class="row g-3 mb-4">
+          <div class="col-sm-6">
+            <div class="p-3 rounded-3" style="background: rgba(124,109,248,0.06); border: 1px solid rgba(124,109,248,0.15);">
+              <div class="fw-bold small mb-1" style="color: #e2e8f6;"><i class="fa-solid fa-users-gear me-2" style="color: var(--mm-primary);"></i> User Access Control</div>
+              <small style="color: var(--mm-text-muted);">Manage admins and analysts with PBKDF2 salt hashing and role enforcement.</small>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="p-3 rounded-3" style="background: rgba(6,182,212,0.05); border: 1px solid rgba(6,182,212,0.15);">
+              <div class="fw-bold small mb-1" style="color: #e2e8f6;"><i class="fa-solid fa-database me-2" style="color: var(--mm-accent);"></i> Staging Recovery</div>
+              <small style="color: var(--mm-text-muted);">Review rejected dirty rows and approve them directly into FactSales.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3">
+          <a href="{{ url_for('admin.quick_login') }}" class="btn-mm-primary" style="font-size: 0.92rem; padding: 0.65rem 1.6rem; border-radius: 12px;">
+            <i class="fa-solid fa-shield-halved"></i> Access Admin Dashboard
+          </a>
+          <a href="{{ url_for('admin.login') }}" class="btn-mm-ghost" style="font-size: 0.92rem; padding: 0.65rem 1.6rem; border-radius: 12px; border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7) !important;">
+            <i class="fa-solid fa-key"></i> Test Credentials
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Admin Cockpit Preview -->
+      <div class="col-lg-6">
+        <div class="glass-card p-4" style="border-color: rgba(124,109,248,0.2);">
+          <div class="d-flex align-items-center justify-content-between pb-3 mb-3" style="border-bottom: 1px solid rgba(124,109,248,0.12);">
+            <div class="d-flex align-items-center gap-2">
+              <span class="status-dot online"></span>
+              <span style="color: #e2e8f6; font-size: 0.875rem; font-weight: 700;">Control Center Preview</span>
+            </div>
+            <span class="badge bg-success-subtle" style="font-size: 0.7rem;">RBAC Enforced</span>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <div class="d-flex justify-content-between align-items-center p-3 rounded-3" style="background: rgba(124,109,248,0.05); border: 1px solid rgba(124,109,248,0.1);">
+              <span class="small" style="color: var(--mm-text-muted);"><i class="fa-solid fa-user-shield me-2" style="color: var(--mm-primary);"></i> Default Admin Account</span>
+              <span class="badge bg-primary-subtle" style="font-family: var(--font-mono); font-size: 0.68rem;">admin / Full CRUD</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-3 rounded-3" style="background: rgba(6,182,212,0.04); border: 1px solid rgba(6,182,212,0.1);">
+              <span class="small" style="color: var(--mm-text-muted);"><i class="fa-solid fa-chart-line me-2" style="color: var(--mm-accent);"></i> Data Analyst Account</span>
+              <span class="badge bg-info-subtle" style="font-family: var(--font-mono); font-size: 0.68rem;">analyst_priya / Ops</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-3 rounded-3" style="background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.1);">
+              <span class="small" style="color: var(--mm-text-muted);"><i class="fa-solid fa-file-shield me-2" style="color: var(--mm-warning);"></i> Activity Audit Logging</span>
+              <span class="badge bg-warning-subtle" style="font-family: var(--font-mono); font-size: 0.68rem;">Live SQLite Audit</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-3 rounded-3" style="background: rgba(168,85,247,0.04); border: 1px solid rgba(168,85,247,0.1);">
+              <span class="small" style="color: var(--mm-text-muted);"><i class="fa-solid fa-table me-2" style="color: var(--mm-purple);"></i> Order Line-Item Inspection</span>
+              <span class="badge" style="background: rgba(168,85,247,0.1); color: var(--mm-purple); border: 1px solid rgba(168,85,247,0.2); font-family: var(--font-mono); font-size: 0.68rem;">Granular Facts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PIPELINE ARCHITECTURE ──────────────────────────────────────────────── -->
+<section class="py-5" style="border-top: 1px solid var(--mm-border);">
+  <div class="container px-lg-4 py-4">
     <div class="text-center mb-5" style="max-width: 680px; margin: 0 auto;">
-      <span class="badge bg-success-subtle text-success text-uppercase px-3 py-2 fw-bold mb-2">Pipeline Architecture</span>
-      <h2 class="fw-bold">How MarketMind Works</h2>
-      <p class="text-muted">From raw transactional CSV logs to actionable business intelligence in four rigorous steps.</p>
+      <span class="badge bg-success-subtle" style="font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; padding: 0.4rem 1.1rem;">Pipeline Architecture</span>
+      <h2 class="fw-bold mt-3 mb-2" style="letter-spacing: -0.03em;">How MarketMind Works</h2>
+      <p style="color: var(--mm-text-muted); line-height: 1.75;">From raw transactional CSV logs to actionable business intelligence in four rigorous steps.</p>
     </div>
 
     <div class="row g-4">
       <div class="col-md-6 col-lg-3">
-        <div class="pipeline-step-card h-100">
+        <div class="pipeline-step-card">
           <div class="step-num-badge">1</div>
-          <h5 class="fw-bold mb-2">CSV Ingestion</h5>
-          <p class="text-muted small mb-0">
-            Upload raw transaction feeds with schema validation, header checking, type verification, and null handling.
-          </p>
+          <h5 class="fw-bold mb-2" style="letter-spacing: -0.02em;">CSV Ingestion</h5>
+          <p style="color: var(--mm-text-muted); font-size: 0.875rem; margin: 0; line-height: 1.7;">Upload raw transaction feeds with schema validation, header checking, type verification, and null handling.</p>
         </div>
       </div>
-
       <div class="col-md-6 col-lg-3">
-        <div class="pipeline-step-card h-100">
+        <div class="pipeline-step-card">
           <div class="step-num-badge">2</div>
-          <h5 class="fw-bold mb-2">ETL Transformation</h5>
-          <p class="text-muted small mb-0">
-            Deduplication, dirty row rejection to staging, surrogate key assignment, and star schema dimension loading.
-          </p>
+          <h5 class="fw-bold mb-2" style="letter-spacing: -0.02em;">ETL Transformation</h5>
+          <p style="color: var(--mm-text-muted); font-size: 0.875rem; margin: 0; line-height: 1.7;">Deduplication, dirty row rejection to staging, surrogate key assignment, and star schema dimension loading.</p>
         </div>
       </div>
-
       <div class="col-md-6 col-lg-3">
-        <div class="pipeline-step-card h-100">
+        <div class="pipeline-step-card">
           <div class="step-num-badge">3</div>
-          <h5 class="fw-bold mb-2">Data Mining Engine</h5>
-          <p class="text-muted small mb-0">
-            Execute mlxtend Apriori for frequent itemset rules and scikit-learn K-Means for multi-feature RFM clustering.
-          </p>
+          <h5 class="fw-bold mb-2" style="letter-spacing: -0.02em;">Data Mining Engine</h5>
+          <p style="color: var(--mm-text-muted); font-size: 0.875rem; margin: 0; line-height: 1.7;">Execute mlxtend Apriori for frequent itemset rules and scikit-learn K-Means for multi-feature RFM clustering.</p>
         </div>
       </div>
-
       <div class="col-md-6 col-lg-3">
-        <div class="pipeline-step-card h-100">
+        <div class="pipeline-step-card">
           <div class="step-num-badge">4</div>
-          <h5 class="fw-bold mb-2">Actionable Intelligence</h5>
-          <p class="text-muted small mb-0">
-            Interactive OLAP slice/dice cubes, natural language rule explanations, and executive performance reports.
-          </p>
+          <h5 class="fw-bold mb-2" style="letter-spacing: -0.02em;">Actionable Intelligence</h5>
+          <p style="color: var(--mm-text-muted); font-size: 0.875rem; margin: 0; line-height: 1.7;">Interactive OLAP slice/dice cubes, rule explanations, and executive performance reports.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Technology Stack Section -->
-<section class="py-5">
-  <div class="container px-lg-4 py-3">
+
+<!-- ── TECH STACK ──────────────────────────────────────────────────────────── -->
+<section class="py-5" style="border-top: 1px solid var(--mm-border);">
+  <div class="container px-lg-4 py-4">
     <div class="text-center mb-5" style="max-width: 680px; margin: 0 auto;">
-      <span class="badge bg-secondary-subtle text-secondary text-uppercase px-3 py-2 fw-bold mb-2">Under The Hood</span>
-      <h2 class="fw-bold">Modern Full-Stack DWDM Technology Stack</h2>
-      <p class="text-muted">Built with reliable, maintainable libraries running seamlessly on Windows and VS Code.</p>
+      <span class="badge bg-secondary-subtle" style="font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; padding: 0.4rem 1.1rem;">Under The Hood</span>
+      <h2 class="fw-bold mt-3 mb-2" style="letter-spacing: -0.03em;">Modern Full-Stack DWDM Technology</h2>
+      <p style="color: var(--mm-text-muted); line-height: 1.75;">Built with reliable, maintainable libraries running seamlessly across platforms.</p>
     </div>
 
     <div class="row g-4 text-center">
       <div class="col-6 col-md-3">
-        <div class="mm-card p-4 h-100">
-          <i class="fa-brands fa-python display-5 text-primary mb-3"></i>
-          <h6 class="fw-bold mb-1">Python Flask</h6>
-          <small class="text-muted">REST API & MVC Web Server</small>
+        <div class="mm-card hover-lift p-4 h-100">
+          <div class="kpi-icon-wrap mx-auto mb-3" style="width: 56px; height: 56px; font-size: 1.5rem; background: rgba(124,109,248,0.1); color: var(--mm-primary); border-radius: 16px;">
+            <i class="fa-brands fa-python"></i>
+          </div>
+          <h6 class="fw-bold mb-1" style="letter-spacing: -0.01em;">Python Flask</h6>
+          <small style="color: var(--mm-text-muted);">REST API &amp; MVC Web Server</small>
         </div>
       </div>
       <div class="col-6 col-md-3">
-        <div class="mm-card p-4 h-100">
-          <i class="fa-solid fa-database display-5 text-success mb-3"></i>
-          <h6 class="fw-bold mb-1">SQLite Star Schema</h6>
-          <small class="text-muted">FactSales + Dimensions + OLAP</small>
+        <div class="mm-card hover-lift p-4 h-100">
+          <div class="kpi-icon-wrap mx-auto mb-3" style="width: 56px; height: 56px; font-size: 1.5rem; background: rgba(16,185,129,0.1); color: var(--mm-success); border-radius: 16px;">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h6 class="fw-bold mb-1" style="letter-spacing: -0.01em;">SQLite Star Schema</h6>
+          <small style="color: var(--mm-text-muted);">FactSales + Dimensions + OLAP</small>
         </div>
       </div>
       <div class="col-6 col-md-3">
-        <div class="mm-card p-4 h-100">
-          <i class="fa-solid fa-chart-simple display-5 text-warning mb-3"></i>
-          <h6 class="fw-bold mb-1">scikit-learn & mlxtend</h6>
-          <small class="text-muted">K-Means & Apriori Engines</small>
+        <div class="mm-card hover-lift p-4 h-100">
+          <div class="kpi-icon-wrap mx-auto mb-3" style="width: 56px; height: 56px; font-size: 1.5rem; background: rgba(245,158,11,0.1); color: var(--mm-warning); border-radius: 16px;">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+          <h6 class="fw-bold mb-1" style="letter-spacing: -0.01em;">scikit-learn &amp; mlxtend</h6>
+          <small style="color: var(--mm-text-muted);">K-Means &amp; Apriori Engines</small>
         </div>
       </div>
       <div class="col-6 col-md-3">
-        <div class="mm-card p-4 h-100">
-          <i class="fa-brands fa-bootstrap display-5 text-info mb-3"></i>
-          <h6 class="fw-bold mb-1">Bootstrap 5 & Chart.js</h6>
-          <small class="text-muted">Responsive UI & Interactive Visuals</small>
+        <div class="mm-card hover-lift p-4 h-100">
+          <div class="kpi-icon-wrap mx-auto mb-3" style="width: 56px; height: 56px; font-size: 1.5rem; background: rgba(6,182,212,0.1); color: var(--mm-accent); border-radius: 16px;">
+            <i class="fa-brands fa-bootstrap"></i>
+          </div>
+          <h6 class="fw-bold mb-1" style="letter-spacing: -0.01em;">Bootstrap 5 &amp; Chart.js</h6>
+          <small style="color: var(--mm-text-muted);">Responsive UI &amp; Visuals</small>
         </div>
       </div>
     </div>
 
     <!-- CTA Banner -->
-    <div class="mm-card p-5 mt-5 text-center text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, #0f172a, #312e81);">
-      <div class="position-relative z-1" style="max-width: 650px; margin: 0 auto;">
-        <h3 class="fw-bold mb-3">Ready to Analyze Customer Behavior?</h3>
-        <p class="text-white-50 mb-4">
+    <div class="mt-5 p-5 text-center position-relative overflow-hidden rounded-4" style="background: linear-gradient(135deg, #0b0f1a 0%, #131b35 100%); border: 1px solid rgba(124,109,248,0.2);">
+      <!-- Ambient glow -->
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 450px; height: 200px; background: radial-gradient(ellipse, rgba(124,109,248,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+      <div class="position-relative" style="max-width: 580px; margin: 0 auto; z-index: 1;">
+        <h3 class="fw-bold mb-3" style="color: #e2e8f6; letter-spacing: -0.03em;">Ready to Analyze Customer Behavior?</h3>
+        <p class="mb-4" style="color: var(--mm-text-muted); line-height: 1.75;">
           Explore the analytics dashboard, upload new batch transactions, test association rules, or drill-down the sales cube.
         </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="{{ url_for('main.dashboard') }}" class="btn btn-primary btn-lg px-4 fw-bold">
-            <i class="fa-solid fa-gauge-high me-1"></i> Open Analytics Portal
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="{{ url_for('main.dashboard') }}" class="btn-mm-primary" style="font-size: 0.95rem; padding: 0.7rem 1.85rem; border-radius: 12px;">
+            <i class="fa-solid fa-gauge-high"></i> Open Analytics Portal
           </a>
-          <a href="{{ url_for('main.data_import') }}" class="btn btn-outline-light btn-lg px-4 fw-bold">
-            <i class="fa-solid fa-file-import me-1"></i> Ingest New Data
+          <a href="{{ url_for('main.data_import') }}" class="btn-mm-ghost" style="font-size: 0.95rem; padding: 0.7rem 1.85rem; border-radius: 12px; border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7) !important;">
+            <i class="fa-solid fa-file-import"></i> Ingest New Data
           </a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 {% endblock %}

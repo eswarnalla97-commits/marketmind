@@ -1,0 +1,272 @@
+{% extends "admin/base.html" %}
+
+{% block title %}User Management — MarketMind Admin{% endblock %}
+
+{% block admin_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div>
+    <h3 class="fw-extrabold text-dark mb-1">User & Role Management</h3>
+    <p class="text-muted small mb-0">Manage system administrators, data analysts, and stakeholder access levels.</p>
+  </div>
+  {% if current_user.role == 'Admin' %}
+  <button type="button" class="btn btn-mm-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addUserModal">
+    <i class="fa-solid fa-user-plus me-1"></i> Register New User
+  </button>
+  {% endif %}
+</div>
+
+<!-- Search & Filter Controls -->
+<div class="mm-card p-3 mb-4">
+  <form method="GET" action="{{ url_for('admin.users') }}" class="row g-2 align-items-center">
+    <div class="col-md-5">
+      <div class="input-group input-group-sm">
+        <span class="input-group-text bg-white border-end-0 text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" name="q" class="form-control border-start-0" placeholder="Search by username, name, or email..." value="{{ search }}">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <select name="role" class="form-select form-select-sm" onchange="this.form.submit()">
+        <option value="all" {% if role == 'all' %}selected{% endif %}>All Roles</option>
+        <option value="Admin" {% if role == 'Admin' %}selected{% endif %}>Admin (Full Control)</option>
+        <option value="Analyst" {% if role == 'Analyst' %}selected{% endif %}>Analyst (Data Ops)</option>
+        <option value="Viewer" {% if role == 'Viewer' %}selected{% endif %}>Viewer (Read-Only)</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+        <option value="all" {% if status == 'all' %}selected{% endif %}>All Statuses</option>
+        <option value="Active" {% if status == 'Active' %}selected{% endif %}>Active</option>
+        <option value="Suspended" {% if status == 'Suspended' %}selected{% endif %}>Suspended</option>
+      </select>
+    </div>
+    <div class="col-md-2 d-flex gap-2">
+      <button type="submit" class="btn btn-mm-primary btn-sm flex-grow-1">Filter</button>
+      <a href="{{ url_for('admin.users') }}" class="btn btn-light border btn-sm">Reset</a>
+    </div>
+  </form>
+</div>
+
+<!-- Users Data Table -->
+<div class="mm-card mb-4">
+  <div class="mm-table-container">
+    <table class="mm-table">
+      <thead>
+        <tr>
+          <th>User Account</th>
+          <th>Email Address</th>
+          <th>Role</th>
+          <th>Account Status</th>
+          <th>Created At</th>
+          <th>Last Login</th>
+          <th class="text-end">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if users %}
+        {% for u in users %}
+        <tr>
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 0.85rem;">
+                <i class="fa-solid {{ u.Avatar or 'fa-user-tie' }}"></i>
+              </div>
+              <div>
+                <div class="fw-bold text-dark">{{ u.FullName }}</div>
+                <small class="text-muted font-monospace">@{{ u.Username }}</small>
+              </div>
+            </div>
+          </td>
+          <td><span class="text-muted">{{ u.Email }}</span></td>
+          <td>
+            {% if u.Role == 'Admin' %}
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle"><i class="fa-solid fa-shield-halved me-1"></i> Admin</span>
+            {% elif u.Role == 'Analyst' %}
+            <span class="badge bg-info-subtle text-info border border-info-subtle"><i class="fa-solid fa-chart-line me-1"></i> Analyst</span>
+            {% else %}
+            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle"><i class="fa-solid fa-eye me-1"></i> Viewer</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if u.Status == 'Active' %}
+            <span class="badge bg-success-subtle text-success"><i class="fa-solid fa-circle-check me-1"></i> Active</span>
+            {% else %}
+            <span class="badge bg-danger-subtle text-danger"><i class="fa-solid fa-ban me-1"></i> Suspended</span>
+            {% endif %}
+          </td>
+          <td><small class="text-muted">{{ u.CreatedAt[:10] if u.CreatedAt else 'N/A' }}</small></td>
+          <td><small class="text-muted">{{ u.LastLogin[:16] if u.LastLogin else 'Never' }}</small></td>
+          <td class="text-end">
+            {% if current_user.role == 'Admin' %}
+            <div class="dropdown">
+              <button class="btn btn-sm btn-light border py-1 px-2" type="button" data-bs-toggle="dropdown">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 p-2" style="border-radius: 10px;">
+                <li>
+                  <button class="dropdown-item small py-2 rounded-2" onclick="editUser('{{ u.UserID }}', '{{ u.FullName }}', '{{ u.Email }}', '{{ u.Role }}', '{{ u.Status }}')">
+                    <i class="fa-solid fa-pen-to-square me-2 text-primary"></i> Edit Profile
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item small py-2 rounded-2" onclick="AdminApp.toggleUserStatus('{{ u.UserID }}')">
+                    <i class="fa-solid fa-toggle-on me-2 text-warning"></i> Toggle Status
+                  </button>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <button class="dropdown-item small py-2 rounded-2 text-danger" onclick="AdminApp.deleteUser('{{ u.UserID }}', '{{ u.Username }}')">
+                    <i class="fa-solid fa-trash me-2"></i> Delete Account
+                  </button>
+                </li>
+              </ul>
+            </div>
+            {% else %}
+            <span class="text-muted small"><i class="fa-solid fa-lock"></i> View Only</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+          <td colspan="7" class="text-center py-4 text-muted">No users found matching current filters.</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  {% if total_pages > 1 %}
+  <div class="p-3 border-top d-flex align-items-center justify-content-between">
+    <small class="text-muted">Showing {{ users|length }} of {{ total }} accounts</small>
+    <nav>
+      <ul class="pagination pagination-sm mb-0">
+        <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.users', page=page-1, q=search, role=role, status=status) }}">Previous</a>
+        </li>
+        {% for p in range(1, total_pages + 1) %}
+        <li class="page-item {% if p == page %}active{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.users', page=p, q=search, role=role, status=status) }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+        <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.users', page=page+1, q=search, role=role, status=status) }}">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Modal: Add New User -->
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+      <div class="modal-header border-bottom">
+        <h5 class="modal-title fw-bold" id="addUserModalLabel"><i class="fa-solid fa-user-plus text-primary me-2"></i> Register New User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="addUserForm" onsubmit="event.preventDefault(); AdminApp.saveUser(this);">
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Full Name</label>
+            <input type="text" name="full_name" class="form-control" placeholder="Prof. Rajesh Sharma" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Username</label>
+            <input type="text" name="username" class="form-control" placeholder="rajesh_sharma" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Email Address</label>
+            <input type="email" name="email" class="form-control" placeholder="rajesh@university.edu" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Temporary Password</label>
+            <input type="password" name="password" class="form-control" placeholder="At least 6 characters" minlength="6" required>
+          </div>
+          <div class="row g-2">
+            <div class="col-6">
+              <label class="form-label small fw-bold">System Role</label>
+              <select name="role" class="form-select">
+                <option value="Analyst">Analyst (Data Ops)</option>
+                <option value="Admin">Administrator (Full Access)</option>
+                <option value="Viewer">Viewer (Read-Only)</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label class="form-label small fw-bold">Account Status</label>
+              <select name="status" class="form-select">
+                <option value="Active">Active</option>
+                <option value="Suspended">Suspended</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top bg-light" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+          <button type="button" class="btn btn-light border btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-mm-primary btn-sm">Create Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Edit User -->
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+      <div class="modal-header border-bottom">
+        <h5 class="modal-title fw-bold"><i class="fa-solid fa-pen-to-square text-primary me-2"></i> Edit User Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="editUserForm" onsubmit="event.preventDefault(); AdminApp.updateUser(currentEditUserId, this);">
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Full Name</label>
+            <input type="text" id="editFullName" name="full_name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Email Address</label>
+            <input type="email" id="editEmail" name="email" class="form-control" required>
+          </div>
+          <div class="row g-2">
+            <div class="col-6">
+              <label class="form-label small fw-bold">Role</label>
+              <select id="editRole" name="role" class="form-select">
+                <option value="Admin">Admin</option>
+                <option value="Analyst">Analyst</option>
+                <option value="Viewer">Viewer</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label class="form-label small fw-bold">Status</label>
+              <select id="editStatus" name="status" class="form-select">
+                <option value="Active">Active</option>
+                <option value="Suspended">Suspended</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top bg-light" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+          <button type="button" class="btn btn-light border btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-mm-primary btn-sm">Update User</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentEditUserId = null;
+function editUser(id, fullName, email, role, status) {
+  currentEditUserId = id;
+  document.getElementById('editFullName').value = fullName;
+  document.getElementById('editEmail').value = email;
+  document.getElementById('editRole').value = role;
+  document.getElementById('editStatus').value = status;
+  new bootstrap.Modal(document.getElementById('editUserModal')).show();
+}
+</script>
+{% endblock %}

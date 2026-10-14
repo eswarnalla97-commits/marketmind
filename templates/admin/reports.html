@@ -1,0 +1,127 @@
+{% extends "admin/base.html" %}
+
+{% block title %}System Audit & Reports — MarketMind Admin{% endblock %}
+
+{% block admin_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div>
+    <h3 class="fw-extrabold text-dark mb-1">System Audit Trail & Analytics Reports</h3>
+    <p class="text-muted small mb-0">Complete chronological audit logs tracking data warehouse mutations, logins, and configurations.</p>
+  </div>
+  <div class="d-flex align-items-center gap-2">
+    <a href="/api/admin/export-audit" class="btn btn-mm-primary btn-sm">
+      <i class="fa-solid fa-file-csv me-1"></i> Download Audit Trail (CSV)
+    </a>
+  </div>
+</div>
+
+<!-- Architecture & Compliance Summary Cards -->
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="p-3 bg-white border rounded-3 shadow-xs">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="small fw-bold text-muted text-uppercase">Data Warehouse Engine</span>
+        <span class="badge bg-success-subtle text-success">Compliant</span>
+      </div>
+      <div class="h5 fw-bold mb-1 text-dark">Kimball Star Schema</div>
+      <p class="text-muted small mb-0">Grain verified at order item level. Conformed dimensions: DimDate, DimProduct, DimCustomer, DimOrder.</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="p-3 bg-white border rounded-3 shadow-xs">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="small fw-bold text-muted text-uppercase">Authentication Standard</span>
+        <span class="badge bg-primary-subtle text-primary">PBKDF2-SHA256</span>
+      </div>
+      <div class="h5 fw-bold mb-1 text-dark">Role-Based Access Control</div>
+      <p class="text-muted small mb-0">Separation of duties between Admin, Analyst, and Viewer roles. Encrypted session cookies.</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="p-3 bg-white border rounded-3 shadow-xs">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="small fw-bold text-muted text-uppercase">Currency & Locality</span>
+        <span class="badge bg-info-subtle text-info">en-IN (INR - ₹)</span>
+      </div>
+      <div class="h5 fw-bold mb-1 text-dark">Indian Retail Standard</div>
+      <p class="text-muted small mb-0">Formatted with Lakhs / Crores grouping. Transactions mapped across Indian commercial centers.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Activity Audit Log -->
+<div class="mm-card mb-4">
+  <div class="mm-card-header">
+    <div class="d-flex align-items-center gap-2">
+      <h6 class="fw-bold mb-0"><i class="fa-solid fa-shield-halved text-primary me-2"></i> Real-Time Activity Log (ActivityLogs)</h6>
+      <span class="badge bg-light text-dark border">{{ logs|length }} Entries Displayed</span>
+    </div>
+  </div>
+
+  <!-- Search Filter -->
+  <div class="p-3 border-bottom bg-light">
+    <form method="GET" action="{{ url_for('admin.reports') }}" class="d-flex gap-2" style="max-width: 480px;">
+      <div class="input-group input-group-sm">
+        <span class="input-group-text bg-white border-end-0 text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" name="q" class="form-control border-start-0" placeholder="Search by username, action, or details..." value="{{ search }}">
+      </div>
+      <button type="submit" class="btn btn-mm-primary btn-sm">Filter</button>
+      <a href="{{ url_for('admin.reports') }}" class="btn btn-light border btn-sm">Reset</a>
+    </form>
+  </div>
+
+  <!-- Audit Table -->
+  <div class="mm-table-container">
+    <table class="mm-table">
+      <thead>
+        <tr>
+          <th>Log ID</th>
+          <th>Timestamp</th>
+          <th>Actor (User)</th>
+          <th>Action Type</th>
+          <th>Target Entity</th>
+          <th>Entity ID</th>
+          <th>Audit Details</th>
+          <th>Origin IP</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if logs %}
+        {% for l in logs %}
+        <tr>
+          <td><span class="font-monospace text-muted">#{{ l.LogID }}</span></td>
+          <td><small class="text-muted font-monospace">{{ l.CreatedAt }}</small></td>
+          <td>
+            <div class="fw-bold text-dark small"><i class="fa-solid fa-user me-1 text-muted"></i> {{ l.Username }}</div>
+          </td>
+          <td>
+            {% if 'Login' in l.Action %}
+            <span class="badge bg-success-subtle text-success">{{ l.Action }}</span>
+            {% elif 'Delete' in l.Action %}
+            <span class="badge bg-danger-subtle text-danger">{{ l.Action }}</span>
+            {% elif 'Create' in l.Action or 'Approve' in l.Action %}
+            <span class="badge bg-primary-subtle text-primary">{{ l.Action }}</span>
+            {% else %}
+            <span class="badge bg-secondary-subtle text-secondary">{{ l.Action }}</span>
+            {% endif %}
+          </td>
+          <td><span class="badge bg-light text-dark border">{{ l.Entity }}</span></td>
+          <td><code style="font-size: 0.75rem;">{{ l.EntityID or 'N/A' }}</code></td>
+          <td style="max-width: 300px;">
+            <small class="text-muted text-break">{{ l.Details }}</small>
+          </td>
+          <td><small class="font-monospace text-muted">{{ l.IPAddress }}</small></td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+          <td colspan="8" class="text-center py-4 text-muted">No audit logs found.</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

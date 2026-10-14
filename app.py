@@ -1,13 +1,18 @@
 import os
 from flask import Flask, render_template
 from config import config
-from database.db_manager import init_db, get_warehouse_stats
+from database.db_manager import init_db, get_warehouse_stats, query_scalar, execute_commit
 from routes.main_routes import main_bp
 from routes.api_routes import api_bp
+from routes.admin_routes import admin_bp
+from routes.admin_api_routes import admin_api_bp
+from werkzeug.security import generate_password_hash
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(config)
+    app.config['SESSION_COOKIE_HTTPONLY'] = True
+    app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
     # Ensure required directories exist
     os.makedirs(config.DATA_DIR, exist_ok=True)
@@ -19,9 +24,32 @@ def create_app():
         print("Database not found. Initializing schema...")
         init_db()
 
+    # Ensure Admin tables and default admin account exist
+    try:
+        user_count = query_scalar("SELECT COUNT(*) FROM Users") or 0
+        if user_count == 0:
+            execute_commit("""
+                INSERT INTO Users (Username, Email, PasswordHash, FullName, Role, Status)
+                VALUES 
+                (?, ?, ?, ?, 'Admin', 'Active'),
+                (?, ?, ?, ?, 'Analyst', 'Active'),
+                (?, ?, ?, ?, 'Viewer', 'Active')
+            """, (
+                'admin', 'admin@marketmind.internal', generate_password_hash('Admin@MarketMind2024'), 'Dr. Rajesh Sharma (Lead DWDM Admin)',
+                'analyst_priya', 'priya.verma@marketmind.internal', generate_password_hash('Priya@2024'), 'Priya Verma (Data Analyst)',
+                'viewer_arun', 'arun.nair@marketmind.internal', generate_password_hash('Viewer@2024'), 'Arun Nair (Executive Stakeholder)'
+            ))
+            from database.admin_service import DEFAULT_SETTINGS
+            for k, v in DEFAULT_SETTINGS.items():
+                execute_commit("INSERT OR IGNORE INTO SystemSettings (SettingKey, SettingValue) VALUES (?, ?)", (k, v))
+    except Exception as e:
+        pass
+
     # Register blueprints
     app.register_blueprint(main_bp)
     app.register_blueprint(api_bp)
+    app.register_blueprint(admin_bp)
+    app.register_blueprint(admin_api_bp)
 
     # Indian Currency (INR - ₹) Formatting Filter
     def format_indian_currency(val):
@@ -60,11 +88,22 @@ def create_app():
             stats = get_warehouse_stats()
         except Exception:
             stats = {}
+        from flask import session
+        current_user = {
+            'is_authenticated': 'user_id' in session,
+            'id': session.get('user_id'),
+            'username': session.get('username'),
+            'role': session.get('role'),
+            'full_name': session.get('full_name'),
+            'email': session.get('email'),
+            'avatar': session.get('avatar', 'fa-user-tie')
+        }
         return {
             'app_name': 'MarketMind',
             'global_stats': stats,
             'current_year': 2024,
-            'format_inr': format_indian_currency
+            'format_inr': format_indian_currency,
+            'current_user': current_user
         }
 
     @app.errorhandler(404)

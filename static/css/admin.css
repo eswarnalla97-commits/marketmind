@@ -1,0 +1,350 @@
+/* ============================================================================
+   MarketMind — Admin Dashboard Stylesheet (2026 Enterprise Edition)
+   Collapsible sidebar, responsive header, data tables, modals & analytics widgets.
+   ============================================================================ */
+
+:root {
+  --admin-sidebar-width: 260px;
+  --admin-sidebar-collapsed-width: 76px;
+  --admin-header-height: 68px;
+  --admin-sidebar-bg: #0f172a;       /* Slate 900 */
+  --admin-sidebar-hover: #1e293b;    /* Slate 800 */
+  --admin-sidebar-active: #4f46e5;   /* Electric Indigo */
+  --admin-sidebar-text: #94a3b8;     /* Slate 400 */
+  --admin-sidebar-text-active: #ffffff;
+}
+
+body.admin-body {
+  background-color: #f1f5f9;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Sidebar Styling */
+#adminSidebar {
+  width: var(--admin-sidebar-width);
+  min-width: var(--admin-sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--admin-sidebar-bg);
+  color: var(--admin-sidebar-text);
+  z-index: 1040;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1), transform 0.28s ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#adminSidebar.collapsed {
+  width: var(--admin-sidebar-collapsed-width);
+  min-width: var(--admin-sidebar-collapsed-width);
+}
+
+#adminSidebar.collapsed .sidebar-text,
+#adminSidebar.collapsed .sidebar-badge,
+#adminSidebar.collapsed .sidebar-section-title {
+  display: none !important;
+}
+
+#adminSidebar.collapsed .sidebar-brand-name {
+  display: none !important;
+}
+
+#adminSidebar.collapsed .sidebar-link {
+  justify-content: center;
+  padding: 0.75rem 0;
+}
+
+#adminSidebar.collapsed .sidebar-link i {
+  font-size: 1.25rem;
+  margin: 0 !important;
+}
+
+/* Sidebar Brand Header */
+.sidebar-header {
+  height: var(--admin-header-height);
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.sidebar-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.4);
+}
+
+/* Sidebar Navigation Items */
+.sidebar-menu {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.25rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-section-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #64748b;
+  padding: 0.75rem 0.75rem 0.35rem 0.75rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  color: var(--admin-sidebar-text);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sidebar-link i {
+  font-size: 1.05rem;
+  width: 22px;
+  text-align: center;
+}
+
+.sidebar-link:hover {
+  background-color: var(--admin-sidebar-hover);
+  color: #ffffff;
+}
+
+.sidebar-link.active {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+/* Sidebar Footer / User Widget */
+.sidebar-footer {
+  padding: 1rem 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  font-size: 1rem;
+}
+
+/* Main Content Area */
+#adminMainWrapper {
+  margin-left: var(--admin-sidebar-width);
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#adminSidebar.collapsed ~ #adminMainWrapper {
+  margin-left: var(--admin-sidebar-collapsed-width);
+}
+
+/* Top Navigation Bar */
+#adminTopbar {
+  height: var(--admin-header-height);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--mm-border);
+  padding: 0 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sidebar-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--mm-border);
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mm-dark-navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-toggle-btn:hover {
+  background: var(--mm-subtle-bg);
+  border-color: #cbd5e1;
+}
+
+/* Admin KPI Stat Cards */
+.admin-stat-card {
+  background: #ffffff;
+  border: 1px solid var(--mm-border);
+  border-radius: var(--mm-radius);
+  padding: 1.35rem 1.5rem;
+  box-shadow: var(--mm-shadow-xs);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--mm-shadow);
+  border-color: #cbd5e1;
+}
+
+.admin-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.admin-stat-val {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--mm-dark-navy);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.admin-stat-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--mm-text-muted);
+}
+
+/* Activity Timeline */
+.activity-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.activity-timeline::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 9px;
+  width: 2px;
+  background: var(--mm-border);
+}
+
+.activity-item {
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+
+.activity-item:last-child {
+  padding-bottom: 0;
+}
+
+.activity-dot {
+  position: absolute;
+  left: -28px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--mm-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-dot.dot-success {
+  border-color: #10b981;
+}
+.activity-dot.dot-warning {
+  border-color: #f59e0b;
+}
+.activity-dot.dot-danger {
+  border-color: #ef4444;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991.98px) {
+  #adminSidebar {
+    transform: translateX(-100%);
+  }
+
+  #adminSidebar.show-mobile {
+    transform: translateX(0);
+  }
+
+  #adminMainWrapper {
+    margin-left: 0 !important;
+  }
+
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1035;
+  }
+
+  .sidebar-backdrop.show {
+    display: block;
+  }
+}

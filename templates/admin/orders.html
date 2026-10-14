@@ -1,0 +1,190 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Order & Sales Management — MarketMind Admin{% endblock %}
+
+{% block admin_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div>
+    <h3 class="fw-extrabold text-dark mb-1">Orders & Invoices Management</h3>
+    <p class="text-muted small mb-0">Track retail transactions, verify line-item grain in FactSales, and update fulfillment status.</p>
+  </div>
+</div>
+
+<!-- Search & Status Filter -->
+<div class="mm-card p-3 mb-4">
+  <form method="GET" action="{{ url_for('admin.orders') }}" class="row g-2 align-items-center">
+    <div class="col-md-6">
+      <div class="input-group input-group-sm">
+        <span class="input-group-text bg-white border-end-0 text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" name="q" class="form-control border-start-0" placeholder="Search by Invoice No (e.g. INV-1001), Customer Name or ID..." value="{{ search }}">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+        <option value="all" {% if status == 'all' %}selected{% endif %}>All Order Statuses</option>
+        <option value="Completed" {% if status == 'Completed' %}selected{% endif %}>Completed</option>
+        <option value="Pending" {% if status == 'Pending' %}selected{% endif %}>Pending</option>
+        <option value="Shipped" {% if status == 'Shipped' %}selected{% endif %}>Shipped</option>
+        <option value="Cancelled" {% if status == 'Cancelled' %}selected{% endif %}>Cancelled</option>
+        <option value="Refunded" {% if status == 'Refunded' %}selected{% endif %}>Refunded</option>
+      </select>
+    </div>
+    <div class="col-md-2 d-flex gap-2">
+      <button type="submit" class="btn btn-mm-primary btn-sm flex-grow-1">Filter</button>
+      <a href="{{ url_for('admin.orders') }}" class="btn btn-light border btn-sm">Reset</a>
+    </div>
+  </form>
+</div>
+
+<!-- Orders Table -->
+<div class="mm-card mb-4">
+  <div class="mm-table-container">
+    <table class="mm-table">
+      <thead>
+        <tr>
+          <th>Invoice #</th>
+          <th>Order Date</th>
+          <th>Customer Account</th>
+          <th>State / Region</th>
+          <th>Items Mined</th>
+          <th>Total Value (INR)</th>
+          <th>Status</th>
+          <th class="text-end">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if orders %}
+        {% for o in orders %}
+        <tr>
+          <td>
+            <span class="fw-bold font-monospace text-primary">{{ o.InvoiceNo }}</span>
+          </td>
+          <td><small class="text-muted">{{ o.OrderDate }}</small></td>
+          <td>
+            <div class="fw-bold text-dark">{{ o.CustomerName }}</div>
+            <small class="text-muted font-monospace">{{ o.CustomerID }}</small>
+          </td>
+          <td><span class="badge bg-light text-dark border">{{ o.Country }}</span></td>
+          <td>
+            <span class="badge bg-secondary-subtle text-secondary font-monospace">{{ o.LineItemsCount or o.TotalItems }} lines</span>
+          </td>
+          <td>
+            <span class="fw-bold text-dark">{{ o.CalculatedTotal or o.TotalOrderValue | inr }}</span>
+          </td>
+          <td>
+            <select class="form-select form-select-sm" style="font-size: 0.8rem; width: 130px;" onchange="AdminApp.updateOrderStatus('{{ o.OrderKey }}', this)">
+              <option value="Completed" {% if o.OrderStatus == 'Completed' %}selected{% endif %}>Completed</option>
+              <option value="Pending" {% if o.OrderStatus == 'Pending' %}selected{% endif %}>Pending</option>
+              <option value="Shipped" {% if o.OrderStatus == 'Shipped' %}selected{% endif %}>Shipped</option>
+              <option value="Cancelled" {% if o.OrderStatus == 'Cancelled' %}selected{% endif %}>Cancelled</option>
+              <option value="Refunded" {% if o.OrderStatus == 'Refunded' %}selected{% endif %}>Refunded</option>
+            </select>
+          </td>
+          <td class="text-end">
+            <button type="button" class="btn btn-sm btn-light border py-1 px-2" title="Inspect Line Items" onclick="AdminApp.viewOrderDetails('{{ o.OrderKey }}')">
+              <i class="fa-solid fa-list-ul text-primary"></i>
+            </button>
+            {% if current_user.role == 'Admin' %}
+            <button type="button" class="btn btn-sm btn-light border py-1 px-2 text-danger ms-1" title="Delete Invoice" onclick="AdminApp.deleteOrder('{{ o.OrderKey }}', '{{ o.InvoiceNo }}')">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+          <td colspan="8" class="text-center py-4 text-muted">No orders found matching criteria.</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  {% if total_pages > 1 %}
+  <div class="p-3 border-top d-flex align-items-center justify-content-between">
+    <small class="text-muted">Showing {{ orders|length }} of {{ total }} orders</small>
+    <nav>
+      <ul class="pagination pagination-sm mb-0">
+        <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.orders', page=page-1, q=search, status=status) }}">Previous</a>
+        </li>
+        {% for p in range(1, total_pages + 1) %}
+        <li class="page-item {% if p == page %}active{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.orders', page=p, q=search, status=status) }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+        <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.orders', page=page+1, q=search, status=status) }}">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Modal: Order Line Items Details -->
+<div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+      <div class="modal-header border-bottom">
+        <div>
+          <h5 class="modal-title fw-bold text-dark mb-0">
+            <i class="fa-solid fa-receipt text-primary me-2"></i> Invoice <span id="modalOrderInvoice" class="font-monospace text-primary"></span>
+          </h5>
+          <small class="text-muted">Star Schema FactSales Granular Line Items</small>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <!-- Order Meta Info Cards -->
+        <div class="row g-2 mb-4 p-3 bg-light rounded-3">
+          <div class="col-md-3 col-6">
+            <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Customer</small>
+            <div id="modalOrderCustomer" class="fw-bold text-dark small"></div>
+          </div>
+          <div class="col-md-3 col-6">
+            <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Date</small>
+            <div id="modalOrderDate" class="fw-bold text-dark small"></div>
+          </div>
+          <div class="col-md-3 col-6">
+            <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Region</small>
+            <div id="modalOrderCountry" class="fw-bold text-dark small"></div>
+          </div>
+          <div class="col-md-3 col-6">
+            <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Status</small>
+            <div><span id="modalOrderStatus" class="badge bg-success-subtle text-success"></span></div>
+          </div>
+        </div>
+
+        <!-- Line Items Table -->
+        <div class="mm-table-container">
+          <table class="mm-table">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Product Description</th>
+                <th>Category</th>
+                <th class="text-center">Qty</th>
+                <th class="text-end">Unit Price</th>
+                <th class="text-end">Amount</th>
+              </tr>
+            </thead>
+            <tbody id="modalOrderItemsBody"></tbody>
+            <tfoot>
+              <tr class="table-light">
+                <td colspan="5" class="text-end fw-bold">Aggregate Total:</td>
+                <td class="text-end fw-extrabold text-primary font-monospace" id="modalOrderTotal"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer border-top bg-light" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+        <button type="button" class="btn btn-light border btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

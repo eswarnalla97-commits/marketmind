@@ -8,10 +8,10 @@
   <!-- Header -->
   <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
     <div>
-      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill small fw-bold mb-2" style="background: rgba(124, 58, 237, 0.1); color: #7c3aed;">
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill small fw-bold mb-2" style="background: rgba(176, 87, 255, 0.1); color: var(--mm-neon-purple); border: 1px solid rgba(176, 87, 255, 0.2); text-transform: uppercase; letter-spacing: 0.07em; font-size: 0.72rem;">
         <i class="fa-solid fa-basket-shopping"></i> Market Basket Analysis
       </div>
-      <h2 class="fw-bold text-dark mb-1">Product Association Rule Mining</h2>
+      <h2 class="fw-bold mb-1">Product Association Rule Mining</h2>
       <p class="text-muted small mb-0">Discover co-purchase patterns with the Apriori algorithm (mlxtend) calculated over real warehouse invoices.</p>
     </div>
     <div class="d-flex gap-2">
@@ -27,8 +27,8 @@
       
       <!-- Min Support Slider -->
       <div class="col-md-3">
-        <label for="minSupport" class="form-label small fw-bold text-dark d-flex justify-content-between">
-          <span><i class="fa-solid fa-sliders text-primary me-1"></i> Minimum Support:</span>
+        <label for="minSupport" class="form-label small fw-bold d-flex justify-content-between">
+          <span><i class="fa-solid fa-sliders me-1" style="color: var(--mm-neon-teal);"></i> Minimum Support:</span>
           <span id="supportValDisplay" class="badge bg-primary">2.0%</span>
         </label>
         <input type="range" class="form-range" id="minSupport" min="0.005" max="0.10" step="0.005" value="0.02">
@@ -40,8 +40,8 @@
 
       <!-- Min Confidence Slider -->
       <div class="col-md-3">
-        <label for="minConfidence" class="form-label small fw-bold text-dark d-flex justify-content-between">
-          <span><i class="fa-solid fa-shield-halved text-success me-1"></i> Minimum Confidence:</span>
+        <label for="minConfidence" class="form-label small fw-bold d-flex justify-content-between">
+          <span><i class="fa-solid fa-shield-halved me-1" style="color: var(--mm-neon-green);"></i> Minimum Confidence:</span>
           <span id="confValDisplay" class="badge bg-success">25%</span>
         </label>
         <input type="range" class="form-range" id="minConfidence" min="0.10" max="0.80" step="0.05" value="0.25">
@@ -53,8 +53,8 @@
 
       <!-- Sort By Metric -->
       <div class="col-md-2">
-        <label for="sortByMetric" class="form-label small fw-bold text-dark">
-          <i class="fa-solid fa-arrow-down-short-wide text-warning me-1"></i> Rank Rules By:
+        <label for="sortByMetric" class="form-label small fw-bold">
+          <i class="fa-solid fa-arrow-down-short-wide me-1" style="color: var(--mm-neon-amber);"></i> Rank Rules By:
         </label>
         <select id="sortByMetric" class="form-select form-select-sm">
           <option value="lift" selected>Lift (Cross-sell Synergy)</option>
@@ -65,8 +65,8 @@
 
       <!-- Category Filter -->
       <div class="col-md-2">
-        <label for="categoryFilter" class="form-label small fw-bold text-dark">
-          <i class="fa-solid fa-filter text-info me-1"></i> Category Filter:
+        <label for="categoryFilter" class="form-label small fw-bold">
+          <i class="fa-solid fa-filter me-1" style="color: var(--mm-neon-blue);"></i> Category Filter:
         </label>
         <select id="categoryFilter" class="form-select form-select-sm">
           <option value="all">All Catalog Items</option>
@@ -89,26 +89,26 @@
   <div class="row g-3 mb-4">
     <div class="col-md-3 col-6">
       <div class="mm-card p-3">
-        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">Analyzed Baskets</small>
-        <h4 id="statBaskets" class="fw-bold text-dark mb-0">...</h4>
+        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 0.08em;">Analyzed Baskets</small>
+        <h4 id="statBaskets" class="fw-bold mb-0 mt-1">...</h4>
       </div>
     </div>
     <div class="col-md-3 col-6">
       <div class="mm-card p-3">
-        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">Frequent Itemsets Found</small>
-        <h4 id="statItemsets" class="fw-bold text-primary mb-0">...</h4>
+        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 0.08em;">Frequent Itemsets</small>
+        <h4 id="statItemsets" class="fw-bold mb-0 mt-1" style="color: var(--mm-neon-teal);">...</h4>
       </div>
     </div>
     <div class="col-md-3 col-6">
       <div class="mm-card p-3">
-        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">Association Rules Generated</small>
-        <h4 id="statRules" class="fw-bold text-success mb-0">...</h4>
+        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 0.08em;">Association Rules</small>
+        <h4 id="statRules" class="fw-bold mb-0 mt-1" style="color: var(--mm-neon-green);">...</h4>
       </div>
     </div>
     <div class="col-md-3 col-6">
       <div class="mm-card p-3">
-        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">Peak Lift Synergies</small>
-        <h4 id="statMaxLift" class="fw-bold text-warning mb-0">...</h4>
+        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 0.08em;">Peak Lift Synergies</small>
+        <h4 id="statMaxLift" class="fw-bold mb-0 mt-1" style="color: var(--mm-neon-amber);">...</h4>
       </div>
     </div>
   </div>

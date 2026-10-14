@@ -1,0 +1,211 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Product Catalog — MarketMind Admin{% endblock %}
+
+{% block admin_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div>
+    <h3 class="fw-extrabold text-dark mb-1">Product Catalog & SKU Dimension</h3>
+    <p class="text-muted small mb-0">Maintain DimProduct entries, analyze SKU revenue contributions, and configure unit prices.</p>
+  </div>
+  {% if current_user.role == 'Admin' %}
+  <button type="button" class="btn btn-mm-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addProductModal">
+    <i class="fa-solid fa-plus me-1"></i> Add New Product SKU
+  </button>
+  {% endif %}
+</div>
+
+<!-- Search & Category Filters -->
+<div class="mm-card p-3 mb-4">
+  <form method="GET" action="{{ url_for('admin.products') }}" class="row g-2 align-items-center">
+    <div class="col-md-6">
+      <div class="input-group input-group-sm">
+        <span class="input-group-text bg-white border-end-0 text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" name="q" class="form-control border-start-0" placeholder="Search by SKU code or product name..." value="{{ search }}">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <select name="category" class="form-select form-select-sm" onchange="this.form.submit()">
+        <option value="all" {% if category == 'all' %}selected{% endif %}>All Categories</option>
+        {% for cat in categories %}
+        <option value="{{ cat }}" {% if category == cat %}selected{% endif %}>{{ cat }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-2 d-flex gap-2">
+      <button type="submit" class="btn btn-mm-primary btn-sm flex-grow-1">Filter</button>
+      <a href="{{ url_for('admin.products') }}" class="btn btn-light border btn-sm">Reset</a>
+    </div>
+  </form>
+</div>
+
+<!-- Products Table -->
+<div class="mm-card mb-4">
+  <div class="mm-table-container">
+    <table class="mm-table">
+      <thead>
+        <tr>
+          <th>SKU Code</th>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Unit Price (INR)</th>
+          <th>Units Sold</th>
+          <th>Revenue Generated</th>
+          <th>Orders Count</th>
+          <th class="text-end">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if products %}
+        {% for p in products %}
+        <tr>
+          <td><span class="badge bg-light text-primary border font-monospace">{{ p.ProductID }}</span></td>
+          <td><strong class="text-dark">{{ p.ProductName }}</strong></td>
+          <td><span class="badge bg-secondary-subtle text-secondary">{{ p.Category }}</span></td>
+          <td><span class="fw-bold font-monospace">{{ p.UnitPrice | inr }}</span></td>
+          <td><span class="font-monospace">{{ "{:,}".format(p.UnitsSold) }}</span></td>
+          <td><span class="fw-bold text-success font-monospace">{{ p.RevenueGenerated | inr }}</span></td>
+          <td><small class="text-muted">{{ p.OrdersCount }} orders</small></td>
+          <td class="text-end">
+            {% if current_user.role == 'Admin' %}
+            <button type="button" class="btn btn-sm btn-light border py-1 px-2" title="Edit SKU" onclick="editProduct('{{ p.ProductKey }}', '{{ p.ProductID }}', '{{ p.ProductName }}', '{{ p.Category }}', '{{ p.UnitPrice }}')">
+              <i class="fa-solid fa-pen-to-square text-primary"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-light border py-1 px-2 text-danger ms-1" title="Delete SKU" onclick="AdminApp.deleteProduct('{{ p.ProductKey }}', '{{ p.ProductName }}')">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+            {% else %}
+            <span class="text-muted small"><i class="fa-solid fa-lock"></i> View Only</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+          <td colspan="8" class="text-center py-4 text-muted">No products found.</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  {% if total_pages > 1 %}
+  <div class="p-3 border-top d-flex align-items-center justify-content-between">
+    <small class="text-muted">Showing {{ products|length }} of {{ total }} SKUs</small>
+    <nav>
+      <ul class="pagination pagination-sm mb-0">
+        <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.products', page=page-1, q=search, category=category) }}">Previous</a>
+        </li>
+        {% for p in range(1, total_pages + 1) %}
+        <li class="page-item {% if p == page %}active{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.products', page=p, q=search, category=category) }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+        <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.products', page=page+1, q=search, category=category) }}">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Modal: Add Product -->
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+      <div class="modal-header border-bottom">
+        <h5 class="modal-title fw-bold"><i class="fa-solid fa-plus text-primary me-2"></i> Add New Product SKU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="addProductForm" onsubmit="event.preventDefault(); AdminApp.saveProduct(this);">
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Product ID (SKU)</label>
+            <input type="text" name="product_id" class="form-control font-monospace" placeholder="e.g. PROD-1099" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Product Name</label>
+            <input type="text" name="product_name" class="form-control" placeholder="Wireless Noise-Cancelling Headphones" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Category</label>
+            <input type="text" name="category" class="form-control" list="catList" placeholder="Electronics" required>
+            <datalist id="catList">
+              {% for cat in categories %}
+              <option value="{{ cat }}">
+              {% endfor %}
+            </datalist>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Unit Price (INR - ₹)</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light">₹</span>
+              <input type="number" step="0.01" min="1" name="unit_price" class="form-control" placeholder="2499.00" required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top bg-light" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+          <button type="button" class="btn btn-light border btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-mm-primary btn-sm">Create SKU</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Edit Product -->
+<div class="modal fade" id="editProductModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+      <div class="modal-header border-bottom">
+        <h5 class="modal-title fw-bold"><i class="fa-solid fa-pen-to-square text-primary me-2"></i> Edit Product SKU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="editProductForm" onsubmit="event.preventDefault(); AdminApp.updateProduct(currentEditProdKey, this);">
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Product SKU (Read Only)</label>
+            <input type="text" id="editProdId" class="form-control font-monospace bg-light" readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Product Name</label>
+            <input type="text" id="editProdName" name="product_name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Category</label>
+            <input type="text" id="editCategory" name="category" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Unit Price (INR - ₹)</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light">₹</span>
+              <input type="number" step="0.01" min="1" id="editUnitPrice" name="unit_price" class="form-control" required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top bg-light" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+          <button type="button" class="btn btn-light border btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-mm-primary btn-sm">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentEditProdKey = null;
+function editProduct(key, id, name, cat, price) {
+  currentEditProdKey = key;
+  document.getElementById('editProdId').value = id;
+  document.getElementById('editProdName').value = name;
+  document.getElementById('editCategory').value = cat;
+  document.getElementById('editUnitPrice').value = price;
+  new bootstrap.Modal(document.getElementById('editProductModal')).show();
+}
+</script>
+{% endblock %}

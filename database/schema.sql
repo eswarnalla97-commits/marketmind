@@ -131,3 +131,39 @@ CREATE TABLE IF NOT EXISTS FeedbackSubmissions (
     Status TEXT DEFAULT 'New',
     SubmittedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- ============================================================================
+-- 5. ADMIN AUTHENTICATION, ROLES & AUDIT LOGS
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS Users (
+    UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Username TEXT UNIQUE NOT NULL,
+    Email TEXT UNIQUE NOT NULL,
+    PasswordHash TEXT NOT NULL,
+    FullName TEXT NOT NULL,
+    Role TEXT DEFAULT 'Analyst', -- 'Admin', 'Analyst', 'Viewer'
+    Status TEXT DEFAULT 'Active', -- 'Active', 'Suspended'
+    Avatar TEXT DEFAULT 'fa-user-tie',
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    LastLogin TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS ActivityLogs (
+    LogID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Username TEXT NOT NULL,
+    Action TEXT NOT NULL,
+    Entity TEXT NOT NULL,
+    EntityID TEXT,
+    Details TEXT,
+    IPAddress TEXT DEFAULT '127.0.0.1',
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS SystemSettings (
+    SettingKey TEXT PRIMARY KEY,
+    SettingValue TEXT NOT NULL,
+    Description TEXT,
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+

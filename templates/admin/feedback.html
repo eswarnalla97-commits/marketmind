@@ -1,0 +1,147 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Viva Feedback & Submissions — MarketMind Admin{% endblock %}
+
+{% block admin_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div>
+    <h3 class="fw-extrabold text-dark mb-1">Viva Evaluator & Visitor Feedback</h3>
+    <p class="text-muted small mb-0">Review project appraisal ratings, evaluators remarks, and stakeholder inquiries stored in SQLite.</p>
+  </div>
+</div>
+
+<!-- Search & Status Filters -->
+<div class="mm-card p-3 mb-4">
+  <form method="GET" action="{{ url_for('admin.feedback') }}" class="row g-2 align-items-center">
+    <div class="col-md-5">
+      <div class="input-group input-group-sm">
+        <span class="input-group-text bg-white border-end-0 text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" name="q" class="form-control border-start-0" placeholder="Search by name, email, subject or message..." value="{{ search }}">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+        <option value="all" {% if status == 'all' %}selected{% endif %}>All Statuses</option>
+        <option value="New" {% if status == 'New' %}selected{% endif %}>New</option>
+        <option value="Reviewed" {% if status == 'Reviewed' %}selected{% endif %}>Reviewed</option>
+        <option value="Archived" {% if status == 'Archived' %}selected{% endif %}>Archived</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <select name="rating" class="form-select form-select-sm" onchange="this.form.submit()">
+        <option value="all" {% if rating == 'all' %}selected{% endif %}>All Ratings</option>
+        <option value="5" {% if rating == '5' %}selected{% endif %}>5 Stars</option>
+        <option value="4" {% if rating == '4' %}selected{% endif %}>4 Stars</option>
+        <option value="3" {% if rating == '3' %}selected{% endif %}>3 Stars</option>
+        <option value="2" {% if rating == '2' %}selected{% endif %}>2 Stars</option>
+        <option value="1" {% if rating == '1' %}selected{% endif %}>1 Star</option>
+      </select>
+    </div>
+    <div class="col-md-2 d-flex gap-2">
+      <button type="submit" class="btn btn-mm-primary btn-sm flex-grow-1">Filter</button>
+      <a href="{{ url_for('admin.feedback') }}" class="btn btn-light border btn-sm">Reset</a>
+    </div>
+  </form>
+</div>
+
+<!-- Feedback Table -->
+<div class="mm-card mb-4">
+  <div class="mm-table-container">
+    <table class="mm-table">
+      <thead>
+        <tr>
+          <th>Evaluator / User</th>
+          <th>Rating</th>
+          <th>Category</th>
+          <th>Subject & Comments</th>
+          <th>Status</th>
+          <th>Submitted At</th>
+          <th class="text-end">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if feedbacks %}
+        {% for f in feedbacks %}
+        <tr>
+          <td>
+            <div class="fw-bold text-dark">{{ f.Name }}</div>
+            <small class="text-muted">{{ f.Email }}</small>
+          </td>
+          <td>
+            <div class="text-warning small text-nowrap">
+              {% for i in range(f.Rating) %}
+              <i class="fa-solid fa-star"></i>
+              {% endfor %}
+              {% for i in range(5 - f.Rating) %}
+              <i class="fa-regular fa-star text-muted"></i>
+              {% endfor %}
+            </div>
+          </td>
+          <td><span class="badge bg-light text-dark border">{{ f.Category }}</span></td>
+          <td style="max-width: 320px;">
+            <div class="fw-bold small text-dark">{{ f.Subject }}</div>
+            <div class="text-muted small text-truncate" title="{{ f.Message }}">{{ f.Message }}</div>
+          </td>
+          <td>
+            {% if f.Status == 'Reviewed' %}
+            <span class="badge bg-success-subtle text-success"><i class="fa-solid fa-check me-1"></i> Reviewed</span>
+            {% elif f.Status == 'Archived' %}
+            <span class="badge bg-secondary-subtle text-secondary"><i class="fa-solid fa-box-archive me-1"></i> Archived</span>
+            {% else %}
+            <span class="badge bg-warning-subtle text-warning"><i class="fa-solid fa-bell me-1"></i> New</span>
+            {% endif %}
+          </td>
+          <td><small class="text-muted">{{ f.SubmittedAt }}</small></td>
+          <td class="text-end">
+            <div class="btn-group btn-group-sm">
+              {% if f.Status != 'Reviewed' %}
+              <button type="button" class="btn btn-light border" title="Mark Reviewed" onclick="AdminApp.updateFeedbackStatus('{{ f.FeedbackID }}', 'Reviewed')">
+                <i class="fa-solid fa-check text-success"></i>
+              </button>
+              {% endif %}
+              {% if f.Status != 'Archived' %}
+              <button type="button" class="btn btn-light border" title="Archive" onclick="AdminApp.updateFeedbackStatus('{{ f.FeedbackID }}', 'Archived')">
+                <i class="fa-solid fa-box-archive text-secondary"></i>
+              </button>
+              {% endif %}
+              {% if current_user.role == 'Admin' %}
+              <button type="button" class="btn btn-light border text-danger" title="Delete Entry" onclick="AdminApp.deleteFeedback('{{ f.FeedbackID }}')">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              {% endif %}
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+          <td colspan="7" class="text-center py-4 text-muted">No feedback records found.</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  {% if total_pages > 1 %}
+  <div class="p-3 border-top d-flex align-items-center justify-content-between">
+    <small class="text-muted">Showing {{ feedbacks|length }} of {{ total }} submissions</small>
+    <nav>
+      <ul class="pagination pagination-sm mb-0">
+        <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.feedback', page=page-1, q=search, status=status, rating=rating) }}">Previous</a>
+        </li>
+        {% for p in range(1, total_pages + 1) %}
+        <li class="page-item {% if p == page %}active{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.feedback', page=p, q=search, status=status, rating=rating) }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+        <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+          <a class="page-link" href="{{ url_for('admin.feedback', page=page+1, q=search, status=status, rating=rating) }}">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

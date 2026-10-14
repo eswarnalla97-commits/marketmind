@@ -84,7 +84,7 @@ def get_warehouse_stats():
     try:
         cursor = conn.cursor()
         stats = {}
-        for table in ['FactSales', 'DimCustomer', 'DimProduct', 'DimDate', 'DimOrder', 'StagingTransactions', 'ETLHistory', 'FeedbackSubmissions']:
+        for table in ['FactSales', 'DimCustomer', 'DimProduct', 'DimDate', 'DimOrder', 'StagingTransactions', 'ETLHistory', 'FeedbackSubmissions', 'Users', 'ActivityLogs']:
             try:
                 cursor.execute(f"SELECT COUNT(*) FROM {table}")
                 stats[table] = cursor.fetchone()[0]

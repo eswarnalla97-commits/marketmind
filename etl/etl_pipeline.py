@@ -302,7 +302,7 @@ def run_etl(file_path, original_filename="uploaded_file.csv", batch_id=None):
         status = 'Success' if rejected_records == 0 else 'Partial'
 
         cursor.execute("""
-            INSERT INTO ETLHistory (
+            INSERT OR REPLACE INTO ETLHistory (
                 BatchID, FileName, TotalRecords, AcceptedRecords,
                 RejectedRecords, DuplicateRecords, ExecutionTimeSeconds,
                 Status, Details
@@ -333,7 +333,7 @@ def run_etl(file_path, original_filename="uploaded_file.csv", batch_id=None):
         conn.rollback()
         duration = round(time.time() - start_time, 2)
         cursor.execute("""
-            INSERT INTO ETLHistory (
+            INSERT OR REPLACE INTO ETLHistory (
                 BatchID, FileName, TotalRecords, AcceptedRecords,
                 RejectedRecords, DuplicateRecords, ExecutionTimeSeconds,
                 Status, Details

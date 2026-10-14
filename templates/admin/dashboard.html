@@ -1,0 +1,340 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Admin Dashboard Cockpit — MarketMind{% endblock %}
+
+{% block admin_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div>
+    <h3 class="fw-extrabold text-dark mb-1">Administrative Control Center</h3>
+    <p class="text-muted small mb-0">Overview of warehouse telemetry, user operations, and data mining pipeline health.</p>
+  </div>
+  <div class="d-flex align-items-center gap-2">
+    <button type="button" class="btn btn-mm-primary btn-sm" onclick="AdminApp.triggerETL(this)">
+      <i class="fa-solid fa-rotate me-1"></i> Trigger ETL Pipeline
+    </button>
+    <a href="{{ url_for('admin.reports') }}" class="btn btn-mm-outline btn-sm">
+      <i class="fa-solid fa-download me-1"></i> Export Audit
+    </a>
+  </div>
+</div>
+
+<!-- Primary 4 KPI Stat Cards -->
+<div class="row g-3 mb-4">
+  <div class="col-xl-3 col-md-6">
+    <div class="admin-stat-card">
+      <div class="d-flex align-items-start justify-content-between mb-2">
+        <span class="admin-stat-title">Total Mined Revenue</span>
+        <div class="admin-stat-icon bg-primary-subtle text-primary">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+        </div>
+      </div>
+      <div class="admin-stat-val text-primary">{{ metrics.total_revenue | inr }}</div>
+      <div class="small text-muted mt-2 d-flex align-items-center gap-1">
+        <i class="fa-solid fa-circle-check text-success"></i> 
+        <span>Aggregate FactSales grain total</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6">
+    <div class="admin-stat-card">
+      <div class="d-flex align-items-start justify-content-between mb-2">
+        <span class="admin-stat-title">Ingested Invoices</span>
+        <div class="admin-stat-icon bg-info-subtle text-info">
+          <i class="fa-solid fa-receipt"></i>
+        </div>
+      </div>
+      <div class="admin-stat-val text-dark">{{ "{:,}".format(metrics.total_orders) }}</div>
+      <div class="small text-muted mt-2 d-flex align-items-center gap-1">
+        <span class="badge bg-success-subtle text-success">{{ metrics.completed_orders }} Completed</span>
+        <span class="text-muted">in DimOrder</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6">
+    <div class="admin-stat-card">
+      <div class="d-flex align-items-start justify-content-between mb-2">
+        <span class="admin-stat-title">System Accounts</span>
+        <div class="admin-stat-icon bg-success-subtle text-success">
+          <i class="fa-solid fa-users-gear"></i>
+        </div>
+      </div>
+      <div class="admin-stat-val text-dark">{{ metrics.user_count }}</div>
+      <div class="small text-muted mt-2 d-flex align-items-center gap-1">
+        <span class="badge bg-primary-subtle text-primary">{{ metrics.active_users }} Active</span>
+        <span class="text-muted">Admins, Analysts, Viewers</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6">
+    <div class="admin-stat-card">
+      <div class="d-flex align-items-start justify-content-between mb-2">
+        <span class="admin-stat-title">FactSales Records</span>
+        <div class="admin-stat-icon text-purple" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">
+          <i class="fa-solid fa-table-cells"></i>
+        </div>
+      </div>
+      <div class="admin-stat-val text-dark">{{ "{:,}".format(metrics.total_facts) }}</div>
+      <div class="small text-muted mt-2 d-flex align-items-center gap-1">
+        <i class="fa-solid fa-database text-info"></i>
+        <span>Star Schema order line items</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Secondary Operational Metric Badges -->
+<div class="row g-3 mb-4">
+  <div class="col-md-3 col-6">
+    <div class="p-3 bg-white border rounded-3 shadow-xs d-flex align-items-center gap-3">
+      <div class="p-2 rounded-2 bg-warning-subtle text-warning fs-5">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <div>
+        <div class="small text-muted fw-bold text-uppercase" style="font-size: 0.7rem;">Staging In Review</div>
+        <div class="h5 fw-bold mb-0 text-dark">{{ metrics.staging_pending + metrics.staging_rejected }} records</div>
+      </div>
+      <a href="{{ url_for('admin.etl_management') }}" class="ms-auto btn btn-sm btn-light border py-1 px-2" title="Review Staging">
+        <i class="fa-solid fa-chevron-right small"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-6">
+    <div class="p-3 bg-white border rounded-3 shadow-xs d-flex align-items-center gap-3">
+      <div class="p-2 rounded-2 bg-primary-subtle text-primary fs-5">
+        <i class="fa-solid fa-comments"></i>
+      </div>
+      <div>
+        <div class="small text-muted fw-bold text-uppercase" style="font-size: 0.7rem;">Evaluator Feedback</div>
+        <div class="h5 fw-bold mb-0 text-dark">{{ metrics.pending_feedback }} new / {{ metrics.total_feedback }} total</div>
+      </div>
+      <a href="{{ url_for('admin.feedback') }}" class="ms-auto btn btn-sm btn-light border py-1 px-2" title="Manage Feedback">
+        <i class="fa-solid fa-chevron-right small"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-6">
+    <div class="p-3 bg-white border rounded-3 shadow-xs d-flex align-items-center gap-3">
+      <div class="p-2 rounded-2 bg-success-subtle text-success fs-5">
+        <i class="fa-solid fa-boxes-stacked"></i>
+      </div>
+      <div>
+        <div class="small text-muted fw-bold text-uppercase" style="font-size: 0.7rem;">Active Catalog SKUs</div>
+        <div class="h5 fw-bold mb-0 text-dark">{{ metrics.total_products }} Products</div>
+      </div>
+      <a href="{{ url_for('admin.products') }}" class="ms-auto btn btn-sm btn-light border py-1 px-2" title="Manage Products">
+        <i class="fa-solid fa-chevron-right small"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-6">
+    <div class="p-3 bg-white border rounded-3 shadow-xs d-flex align-items-center gap-3">
+      <div class="p-2 rounded-2 bg-info-subtle text-info fs-5">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+      </div>
+      <div>
+        <div class="small text-muted fw-bold text-uppercase" style="font-size: 0.7rem;">ETL Executions</div>
+        <div class="h5 fw-bold mb-0 text-dark">{{ metrics.total_etl_batches }} Batches Run</div>
+      </div>
+      <a href="{{ url_for('admin.etl_management') }}" class="ms-auto btn btn-sm btn-light border py-1 px-2" title="View ETL History">
+        <i class="fa-solid fa-chevron-right small"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Charts & Activity Row -->
+<div class="row g-4 mb-4">
+  <!-- Chart 1: Order Status Distribution -->
+  <div class="col-lg-4">
+    <div class="mm-card h-100">
+      <div class="mm-card-header">
+        <h6 class="fw-bold mb-0"><i class="fa-solid fa-chart-pie text-primary me-2"></i> Order Status Breakdown</h6>
+      </div>
+      <div class="mm-card-body d-flex flex-column align-items-center justify-content-center">
+        <div style="max-width: 250px; width: 100%;">
+          <canvas id="orderStatusChart" height="230"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart 2: System User Roles Breakdown -->
+  <div class="col-lg-4">
+    <div class="mm-card h-100">
+      <div class="mm-card-header">
+        <h6 class="fw-bold mb-0"><i class="fa-solid fa-user-shield text-info me-2"></i> User Access Distribution</h6>
+      </div>
+      <div class="mm-card-body d-flex flex-column align-items-center justify-content-center">
+        <div style="max-width: 260px; width: 100%;">
+          <canvas id="userRolesChart" height="230"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Activity Audit Timeline -->
+  <div class="col-lg-4">
+    <div class="mm-card h-100">
+      <div class="mm-card-header">
+        <h6 class="fw-bold mb-0"><i class="fa-solid fa-list-check text-warning me-2"></i> Recent System Activity</h6>
+        <a href="{{ url_for('admin.reports') }}" class="small text-primary fw-bold text-decoration-none">View All</a>
+      </div>
+      <div class="mm-card-body" style="max-height: 310px; overflow-y: auto;">
+        {% if metrics.recent_activity %}
+        <div class="activity-timeline">
+          {% for log in metrics.recent_activity %}
+          <div class="activity-item">
+            <div class="activity-dot {% if 'Login' in log.Action %}dot-success{% elif 'Delete' in log.Action %}dot-danger{% elif 'Create' in log.Action %}dot-success{% else %}dot-warning{% endif %}"></div>
+            <div class="small fw-bold text-dark">{{ log.Action }}</div>
+            <div class="small text-muted" style="font-size: 0.78rem;">{{ log.Details }}</div>
+            <div class="small text-muted font-monospace" style="font-size: 0.7rem;">
+              <i class="fa-regular fa-clock me-1"></i> {{ log.CreatedAt }} &bull; By: <strong>{{ log.Username }}</strong>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center text-muted py-4 small">No activity logs recorded yet.</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Star Schema Warehouse Table Health -->
+<div class="mm-card mb-4">
+  <div class="mm-card-header">
+    <h6 class="fw-bold mb-0"><i class="fa-solid fa-database text-primary me-2"></i> Star Schema Warehouse Table Health & Grain Telemetry</h6>
+    <span class="badge bg-light text-dark border">SQLite3 Database Engine</span>
+  </div>
+  <div class="mm-table-container">
+    <table class="mm-table">
+      <thead>
+        <tr>
+          <th>Table Name</th>
+          <th>Schema Role</th>
+          <th>Grain Specification</th>
+          <th>Current Row Count</th>
+          <th>Integrity Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="fw-bold text-primary">FactSales</span></td>
+          <td><span class="badge bg-primary-subtle text-primary">Fact Table</span></td>
+          <td><code>1 Order Line Item</code> (No double counting)</td>
+          <td class="fw-bold font-monospace">{{ "{:,}".format(stats.get('FactSales', 0)) }}</td>
+          <td><span class="badge bg-success-subtle text-success"><i class="fa-solid fa-check me-1"></i> Active</span></td>
+        </tr>
+        <tr>
+          <td><strong>DimDate</strong></td>
+          <td><span class="badge bg-info-subtle text-info">Dimension</span></td>
+          <td>1 Calendar Day (YYYYMMDD surrogate key)</td>
+          <td class="font-monospace">{{ stats.get('DimDate', 0) }}</td>
+          <td><span class="badge bg-success-subtle text-success"><i class="fa-solid fa-check me-1"></i> Active</span></td>
+        </tr>
+        <tr>
+          <td><strong>DimProduct</strong></td>
+          <td><span class="badge bg-info-subtle text-info">Dimension</span></td>
+          <td>1 Unique Product SKU & Category</td>
+          <td class="font-monospace">{{ stats.get('DimProduct', 0) }}</td>
+          <td><span class="badge bg-success-subtle text-success"><i class="fa-solid fa-check me-1"></i> Active</span></td>
+        </tr>
+        <tr>
+          <td><strong>DimCustomer</strong></td>
+          <td><span class="badge bg-info-subtle text-info">Dimension</span></td>
+          <td>1 Shopper Profile & State Geography</td>
+          <td class="font-monospace">{{ stats.get('DimCustomer', 0) }}</td>
+          <td><span class="badge bg-success-subtle text-success"><i class="fa-solid fa-check me-1"></i> Active</span></td>
+        </tr>
+        <tr>
+          <td><strong>DimOrder</strong></td>
+          <td><span class="badge bg-info-subtle text-info">Dimension</span></td>
+          <td>1 Retail Invoice Header & Status</td>
+          <td class="font-monospace">{{ stats.get('DimOrder', 0) }}</td>
+          <td><span class="badge bg-success-subtle text-success"><i class="fa-solid fa-check me-1"></i> Active</span></td>
+        </tr>
+        <tr>
+          <td><strong>StagingTransactions</strong></td>
+          <td><span class="badge bg-warning-subtle text-warning">Staging Area</span></td>
+          <td>Raw Ingestion & Dirty Record Isolation</td>
+          <td class="font-monospace">{{ stats.get('StagingTransactions', 0) }}</td>
+          <td><span class="badge bg-warning-subtle text-warning">Audit Trail</span></td>
+        </tr>
+        <tr>
+          <td><strong>Users</strong></td>
+          <td><span class="badge bg-dark-subtle text-dark">Security</span></td>
+          <td>Admin & Analyst System Accounts</td>
+          <td class="font-monospace">{{ stats.get('Users', 0) }}</td>
+          <td><span class="badge bg-success-subtle text-success"><i class="fa-solid fa-lock me-1"></i> Secure</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Chart 1: Order Status Chart
+  const statusData = {{ metrics.order_status_distribution | tojson }};
+  const statusLabels = statusData.map(s => s.OrderStatus || 'Unknown');
+  const statusCounts = statusData.map(s => s.Count);
+
+  const ctxStatus = document.getElementById('orderStatusChart').getContext('2d');
+  new Chart(ctxStatus, {
+    type: 'doughnut',
+    data: {
+      labels: statusLabels.length ? statusLabels : ['Completed'],
+      datasets: [{
+        data: statusCounts.length ? statusCounts : [1],
+        backgroundColor: ['#4f46e5', '#10b981', '#f59e0b', '#ef4444', '#06b6d4'],
+        borderWidth: 2,
+        borderColor: '#ffffff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } }
+      },
+      cutout: '65%'
+    }
+  });
+
+  // Chart 2: User Roles Chart
+  const userRolesData = {{ metrics.user_roles | tojson }};
+  const roleLabels = userRolesData.map(r => r.Role);
+  const roleCounts = userRolesData.map(r => r.Count);
+
+  const ctxRoles = document.getElementById('userRolesChart').getContext('2d');
+  new Chart(ctxRoles, {
+    type: 'bar',
+    data: {
+      labels: roleLabels.length ? roleLabels : ['Admin', 'Analyst', 'Viewer'],
+      datasets: [{
+        label: 'Users',
+        data: roleCounts.length ? roleCounts : [1, 1, 1],
+        backgroundColor: ['#4f46e5', '#0ea5e9', '#8b5cf6'],
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, ticks: { precision: 0 } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+});
+</script>
+{% endblock %}

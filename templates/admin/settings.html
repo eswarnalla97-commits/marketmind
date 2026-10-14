@@ -1,0 +1,174 @@
+{% extends "admin/base.html" %}
+
+{% block title %}System Settings & Profile — MarketMind Admin{% endblock %}
+
+{% block admin_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div>
+    <h3 class="fw-extrabold text-dark mb-1">System Configurations & Profile Settings</h3>
+    <p class="text-muted small mb-0">Manage security credentials, application defaults, and Star Schema maintenance policies.</p>
+  </div>
+</div>
+
+<div class="row g-4">
+  <!-- Profile & Security Column -->
+  <div class="col-lg-6">
+    <!-- Admin Profile Card -->
+    <div class="mm-card mb-4">
+      <div class="mm-card-header">
+        <h6 class="fw-bold mb-0"><i class="fa-solid fa-user-circle text-primary me-2"></i> Administrator Profile</h6>
+        <span class="badge bg-primary-subtle text-primary">{{ user.Role }}</span>
+      </div>
+      <div class="mm-card-body">
+        <form onsubmit="event.preventDefault(); AdminApp.updateProfile(this);">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Username</label>
+            <input type="text" class="form-control bg-light font-monospace" value="{{ user.Username }}" readonly>
+            <small class="text-muted">Username is permanently assigned.</small>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Full Name</label>
+            <input type="text" name="full_name" class="form-control" value="{{ user.FullName }}" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Email Address</label>
+            <input type="email" name="email" class="form-control" value="{{ user.Email }}" required>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-mm-primary btn-sm">
+              <i class="fa-solid fa-floppy-disk me-1"></i> Update Profile
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Password Change Card -->
+    <div class="mm-card mb-4">
+      <div class="mm-card-header">
+        <h6 class="fw-bold mb-0"><i class="fa-solid fa-key text-warning me-2"></i> Update Password</h6>
+      </div>
+      <div class="mm-card-body">
+        <form onsubmit="event.preventDefault(); AdminApp.changePassword(this);">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Current Password</label>
+            <input type="password" name="current_password" class="form-control" placeholder="••••••••••••" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">New Password</label>
+            <input type="password" name="new_password" class="form-control" placeholder="At least 6 characters" minlength="6" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Confirm New Password</label>
+            <input type="password" name="confirm_password" class="form-control" placeholder="••••••••••••" minlength="6" required>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-warning btn-sm fw-bold">
+              <i class="fa-solid fa-shield-check me-1"></i> Change Password
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- System Configurations Column -->
+  <div class="col-lg-6">
+    <div class="mm-card mb-4">
+      <div class="mm-card-header">
+        <h6 class="fw-bold mb-0"><i class="fa-solid fa-sliders text-info me-2"></i> Portal & Algorithm Parameters</h6>
+        <span class="badge bg-light text-dark border">Global Config</span>
+      </div>
+      <div class="mm-card-body">
+        {% if current_user.role == 'Admin' %}
+        <form onsubmit="event.preventDefault(); AdminApp.updateSettings(this);">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Default Currency Code</label>
+            <select name="currency_code" class="form-select">
+              <option value="INR" {% if settings.currency_code == 'INR' %}selected{% endif %}>INR — Indian Rupee (₹)</option>
+              <option value="USD" {% if settings.currency_code == 'USD' %}selected{% endif %}>USD — US Dollar ($)</option>
+            </select>
+            <small class="text-muted">Currently enforces Indian number grouping (Lakhs & Crores).</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Apriori Mining Default Minimum Support</label>
+            <input type="number" step="0.005" min="0.005" max="0.5" name="default_min_support" class="form-control font-monospace" value="{{ settings.default_min_support }}">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Apriori Mining Default Minimum Confidence</label>
+            <input type="number" step="0.05" min="0.1" max="0.95" name="default_min_confidence" class="form-control font-monospace" value="{{ settings.default_min_confidence }}">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold">K-Means Customer Default Clusters (K)</label>
+            <input type="number" min="2" max="6" name="default_kmeans_clusters" class="form-control font-monospace" value="{{ settings.default_kmeans_clusters }}">
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" name="auto_sync_etl" value="true" id="autoSyncCheck" {% if settings.auto_sync_etl == 'true' %}checked{% endif %}>
+              <label class="form-check-label small fw-bold" for="autoSyncCheck">
+                Auto-sync FactSales surrogate keys during ETL
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" name="maintenance_mode" value="true" id="maintCheck" {% if settings.maintenance_mode == 'true' %}checked{% endif %}>
+              <label class="form-check-label small fw-bold text-danger" for="maintCheck">
+                Maintenance Mode (Restricts public uploads)
+              </label>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-mm-primary btn-sm">
+              <i class="fa-solid fa-floppy-disk me-1"></i> Save Configuration
+            </button>
+          </div>
+        </form>
+        {% else %}
+        <div class="alert alert-info border-0 small">
+          <i class="fa-solid fa-lock me-1"></i> Only administrators can modify global system configurations.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Star Schema Maintenance Card -->
+    <div class="mm-card mb-4">
+      <div class="mm-card-header">
+        <h6 class="fw-bold mb-0"><i class="fa-solid fa-database text-success me-2"></i> Star Schema Diagnostics</h6>
+      </div>
+      <div class="mm-card-body">
+        <div class="p-3 bg-light rounded-3 mb-3">
+          <div class="d-flex justify-content-between mb-2 small">
+            <span class="text-muted">Storage Format:</span>
+            <span class="fw-bold font-monospace">SQLite3 WAL Mode</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2 small">
+            <span class="text-muted">Surrogate Keys:</span>
+            <span class="fw-bold text-success font-monospace">Enabled (Integer PKs)</span>
+          </div>
+          <div class="d-flex justify-content-between small">
+            <span class="text-muted">Foreign Key Enforcement:</span>
+            <span class="fw-bold text-success font-monospace">PRAGMA foreign_keys = ON</span>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('api.api_download_sample_data') }}" class="btn btn-light border btn-sm flex-grow-1">
+            <i class="fa-solid fa-file-csv me-1"></i> Download Seed CSV
+          </a>
+          <a href="{{ url_for('api.api_download_template') }}" class="btn btn-light border btn-sm flex-grow-1">
+            <i class="fa-solid fa-download me-1"></i> Template CSV
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
